@@ -1,0 +1,7 @@
+addi s0, x0, 1 	// x8 = 1
+addi s1, x0, 2	// x9 = 2
+sub s2, s1, s0	// x18 = 1
+beq s2, s0, func
+or s1, s1, s0
+func:
+and s1, s1, s0

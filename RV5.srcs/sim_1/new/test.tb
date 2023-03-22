@@ -1,0 +1,43 @@
+`timescale 1ns / 1ps
+module test_tb();
+
+reg clk, rstn;
+reg[15:0] sw_i;
+reg[63:0] nowPC, newPC;
+reg[31:0] instr;
+reg[4:0] rs1, rs2, rd;
+reg[63:0] imm;
+reg[63:0] RD1;
+reg[63:0] RD2;
+reg[63:0] alu_result;
+
+CPU t_CPU(.clk(clk), .rstn(rstn), .sw_i(sw_i));
+
+initial begin
+    nowPC = 0;
+    newPC = 0;
+    instr = 0;
+    clk = 0;
+    rstn = 0;
+    sw_i = 16'b0100_0000_0000_0000;
+    #50 rstn = 1;
+    #50 rstn = 0;
+    #50 rstn = 1;
+    #50 clk = 1;
+end
+
+always begin
+    #50 clk = ~clk;
+        nowPC = t_CPU.nowPC;
+        newPC = t_CPU.newPC;
+        instr = t_CPU.instr;
+        rs1 = t_CPU.rs1;
+        rs2 = t_CPU.rs2;
+        rd = t_CPU.rd;
+        imm = t_CPU.imm;
+        RD1 = t_CPU.RD1;
+        RD2 = t_CPU.RD2;
+        alu_result = t_CPU.alu_result;
+end
+
+endmodule
