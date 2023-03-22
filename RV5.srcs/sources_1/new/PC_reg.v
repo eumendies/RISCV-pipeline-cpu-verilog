@@ -24,18 +24,18 @@ module PC_reg(
     input clk,
     input rstn,
     input[63:0] nextPC,
-    output[63:0] nowPC
+    output reg [63:0] nowPC
     );
     
-    reg[63:0] PC;
     always@(negedge rstn) begin
-        if (!rstn) PC <= 64'b0;
-        else begin PC <= PC; end
+        if (!rstn) nowPC <= 64'b0;
+        else begin nowPC <= nowPC; end
     end
     
     always@(posedge clk) begin
-        PC = nextPC;
+        nowPC = nextPC;
+        if (nowPC > 24) nowPC = 0;
+        else nowPC = nowPC;
     end
-    assign nowPC = PC;
     
 endmodule

@@ -44,13 +44,18 @@ module CPU(
     ImmGen U_imm(.instr(instr), .imm(imm));
         
     // 零输出信号
-    wire[7:0] Zero;
+    wire Zero;
     
     // PC寄存器
     wire[63:0] newPC;
     wire[63:0] nowPC;
     PC_adder U_PCadder(.nowPC(nowPC), .imm(imm), .Branch(Branch), .Zero(Zero), .newPC(newPC));
     PC_reg U_PC(.clk(clk), .rstn(rstn), .nextPC(newPC), .nowPC(nowPC));
+    
+//    always@(instr) begin
+//        if (Branch && Zero) begin newPC = nowPC + imm; end
+//        else begin newPC = nowPC + 4; end
+//    end
     
     // 指令存储器
     ROM U_imem(.PC(nowPC), .instr(instr));
@@ -95,7 +100,7 @@ module CPU(
     // LED展示
     // 选择展示内容
     reg[63:0] display_data;
-    always@(sw_i) begin
+    always@(sw_i or instr or nowPC) begin
         if (sw_i[0] == 0) begin
             case (sw_i[14:11])
                 4'b1000: display_data = instr;

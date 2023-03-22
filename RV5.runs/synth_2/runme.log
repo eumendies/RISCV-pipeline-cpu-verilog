@@ -10,29 +10,7 @@
     ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 
 source CPU.tcl -notrace
-Command: read_checkpoint -auto_incremental -incremental E:/vivado/RV5/RV5/RV5.srcs/utils_1/imports/synth_2/ALU.dcp
-INFO: [Vivado 12-5825] Read reference checkpoint from E:/vivado/RV5/RV5/RV5.srcs/utils_1/imports/synth_2/ALU.dcp for incremental synthesis
-INFO: [Vivado 12-7989] Please ensure there are no constraint changes
-Command: synth_design -top CPU -part xc7a100tcsg324-1
-Starting synth_design
-Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
-INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
-INFO: [Device 21-403] Loading part xc7a100tcsg324-1
-
-*** Halting run - EA reset detected ***
-
-
-*** Running vivado
-    with args -log CPU.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source CPU.tcl
-
-
-
-****** Vivado v2022.2 (64-bit)
-  **** SW Build 3671981 on Fri Oct 14 05:00:03 MDT 2022
-  **** IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
-    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
-
-source CPU.tcl -notrace
+create_project: Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 395.070 ; gain = 58.184
 Command: read_checkpoint -auto_incremental -incremental E:/vivado/RV5/RV5/RV5.srcs/utils_1/imports/synth_2/ALU.dcp
 INFO: [Vivado 12-5825] Read reference checkpoint from E:/vivado/RV5/RV5/RV5.srcs/utils_1/imports/synth_2/ALU.dcp for incremental synthesis
 INFO: [Vivado 12-7989] Please ensure there are no constraint changes
@@ -45,173 +23,46 @@ INFO: [Designutils 20-5440] No compile time benefit to using incremental synthes
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 2776
+INFO: [Synth 8-7075] Helper process launched with PID 9588
 INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [D:/Environment/vivado/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1229.133 ; gain = 408.227
+Starting RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:10 . Memory (MB): peak = 1230.047 ; gain = 408.551
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'CPU' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:23]
-WARNING: [Synth 8-567] referenced signal 'PC' should be on the sensitivity list [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:74]
-WARNING: [Synth 8-567] referenced signal 'ALUSrc' should be on the sensitivity list [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:74]
-WARNING: [Synth 8-567] referenced signal 'Branch' should be on the sensitivity list [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:82]
-WARNING: [Synth 8-567] referenced signal 'Zero' should be on the sensitivity list [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:82]
-WARNING: [Synth 8-567] referenced signal 'PC_opt' should be on the sensitivity list [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:82]
-WARNING: [Synth 8-567] referenced signal 'PC' should be on the sensitivity list [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:82]
-WARNING: [Synth 8-567] referenced signal 'MemtoReg' should be on the sensitivity list [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:82]
-WARNING: [Synth 8-567] referenced signal 'mem_data' should be on the sensitivity list [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:82]
-INFO: [Synth 8-6157] synthesizing module 'imem' [E:/vivado/RV5/RV5/RV5.runs/synth_2/.Xil/Vivado-27044-LAPTOP-7D1D3GGC/realtime/imem_stub.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'imem' (0#1) [E:/vivado/RV5/RV5/RV5.runs/synth_2/.Xil/Vivado-27044-LAPTOP-7D1D3GGC/realtime/imem_stub.v:5]
+INFO: [Synth 8-6157] synthesizing module 'Clk_div' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/Clk_div.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'Clk_div' (0#1) [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/Clk_div.v:23]
 INFO: [Synth 8-6157] synthesizing module 'Controller' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/Controller.v:23]
 INFO: [Synth 8-6155] done synthesizing module 'Controller' (0#1) [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/Controller.v:23]
-INFO: [Synth 8-6157] synthesizing module 'RegFile' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RegFile.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'RegFile' (0#1) [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RegFile.v:23]
 INFO: [Synth 8-6157] synthesizing module 'ImmGen' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/ImmGen.v:23]
 INFO: [Synth 8-6155] done synthesizing module 'ImmGen' (0#1) [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/ImmGen.v:23]
+INFO: [Synth 8-6157] synthesizing module 'PC_reg' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:23]
+WARNING: [Synth 8-6090] variable 'nowPC' is written by both blocking and non-blocking assignments, entire logic could be removed [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:37]
+WARNING: [Synth 8-6090] variable 'nowPC' is written by both blocking and non-blocking assignments, entire logic could be removed [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:38]
+INFO: [Synth 8-6155] done synthesizing module 'PC_reg' (0#1) [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:23]
+WARNING: [Synth 8-567] referenced signal 'Branch' should be on the sensitivity list [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:55]
+WARNING: [Synth 8-567] referenced signal 'Zero' should be on the sensitivity list [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:55]
+WARNING: [Synth 8-567] referenced signal 'nowPC' should be on the sensitivity list [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:55]
+WARNING: [Synth 8-567] referenced signal 'imm' should be on the sensitivity list [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:55]
+INFO: [Synth 8-6157] synthesizing module 'ROM' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/ROM.v:23]
+INFO: [Synth 8-6157] synthesizing module 'imem' [E:/vivado/RV5/RV5/RV5.runs/synth_2/.Xil/Vivado-8052-LAPTOP-7D1D3GGC/realtime/imem_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'imem' (0#1) [E:/vivado/RV5/RV5/RV5.runs/synth_2/.Xil/Vivado-8052-LAPTOP-7D1D3GGC/realtime/imem_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'ROM' (0#1) [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/ROM.v:23]
+INFO: [Synth 8-6157] synthesizing module 'Instr_decoder' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/Instr_decoder.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'Instr_decoder' (0#1) [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/Instr_decoder.v:23]
+INFO: [Synth 8-6157] synthesizing module 'RegFile' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RegFile.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'RegFile' (0#1) [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RegFile.v:23]
+INFO: [Synth 8-6157] synthesizing module 'Mux' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/Mux.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'Mux' (0#1) [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/Mux.v:23]
 INFO: [Synth 8-6157] synthesizing module 'ALU' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/ALU.v:23]
 INFO: [Synth 8-6155] done synthesizing module 'ALU' (0#1) [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/ALU.v:23]
 INFO: [Synth 8-6157] synthesizing module 'RAM' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:23]
-WARNING: [Synth 8-324] index 32 out of range [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:40]
-WARNING: [Synth 8-324] index 33 out of range [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:40]
-WARNING: [Synth 8-324] index 34 out of range [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:40]
-WARNING: [Synth 8-324] index 35 out of range [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:40]
-WARNING: [Synth 8-324] index 36 out of range [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:40]
-WARNING: [Synth 8-324] index 37 out of range [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:40]
-WARNING: [Synth 8-324] index 38 out of range [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:40]
-WARNING: [Synth 8-324] index 39 out of range [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:40]
-WARNING: [Synth 8-324] index 40 out of range [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:40]
-WARNING: [Synth 8-324] index 41 out of range [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:40]
-WARNING: [Synth 8-324] index 42 out of range [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:40]
-WARNING: [Synth 8-324] index 43 out of range [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:40]
-WARNING: [Synth 8-324] index 44 out of range [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:40]
-WARNING: [Synth 8-324] index 45 out of range [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:40]
-WARNING: [Synth 8-324] index 46 out of range [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:40]
-WARNING: [Synth 8-324] index 47 out of range [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:40]
-WARNING: [Synth 8-324] index 48 out of range [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:40]
-WARNING: [Synth 8-324] index 49 out of range [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:40]
-WARNING: [Synth 8-324] index 50 out of range [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:40]
-WARNING: [Synth 8-324] index 51 out of range [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:40]
-WARNING: [Synth 8-324] index 52 out of range [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:40]
-WARNING: [Synth 8-324] index 53 out of range [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:40]
-WARNING: [Synth 8-324] index 54 out of range [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:40]
-WARNING: [Synth 8-324] index 55 out of range [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:40]
-WARNING: [Synth 8-324] index 56 out of range [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:40]
-WARNING: [Synth 8-324] index 57 out of range [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:40]
-WARNING: [Synth 8-324] index 58 out of range [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:40]
-WARNING: [Synth 8-324] index 59 out of range [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:40]
-WARNING: [Synth 8-324] index 60 out of range [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:40]
-WARNING: [Synth 8-324] index 61 out of range [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:40]
-WARNING: [Synth 8-324] index 62 out of range [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:40]
-WARNING: [Synth 8-324] index 63 out of range [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:40]
-WARNING: [Synth 8-324] index 64 out of range [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:40]
-WARNING: [Synth 8-324] index 65 out of range [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:40]
-WARNING: [Synth 8-324] index 66 out of range [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:40]
-WARNING: [Synth 8-324] index 67 out of range [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:40]
-WARNING: [Synth 8-324] index 68 out of range [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:40]
-WARNING: [Synth 8-324] index 69 out of range [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:40]
-WARNING: [Synth 8-324] index 70 out of range [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:40]
-WARNING: [Synth 8-324] index 71 out of range [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:40]
-WARNING: [Synth 8-324] index 72 out of range [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:40]
-WARNING: [Synth 8-324] index 73 out of range [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:40]
-WARNING: [Synth 8-324] index 74 out of range [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:40]
-WARNING: [Synth 8-324] index 75 out of range [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:40]
-WARNING: [Synth 8-324] index 76 out of range [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:40]
-WARNING: [Synth 8-324] index 77 out of range [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:40]
-WARNING: [Synth 8-324] index 78 out of range [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:40]
-WARNING: [Synth 8-324] index 79 out of range [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:40]
-WARNING: [Synth 8-324] index 80 out of range [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:40]
-WARNING: [Synth 8-324] index 81 out of range [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:40]
-WARNING: [Synth 8-324] index 82 out of range [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:40]
-WARNING: [Synth 8-324] index 83 out of range [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:40]
-WARNING: [Synth 8-324] index 84 out of range [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:40]
-WARNING: [Synth 8-324] index 85 out of range [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:40]
-WARNING: [Synth 8-324] index 86 out of range [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:40]
-WARNING: [Synth 8-324] index 87 out of range [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:40]
-WARNING: [Synth 8-324] index 88 out of range [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:40]
-WARNING: [Synth 8-324] index 89 out of range [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:40]
-WARNING: [Synth 8-324] index 90 out of range [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:40]
-WARNING: [Synth 8-324] index 91 out of range [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:40]
-WARNING: [Synth 8-324] index 92 out of range [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:40]
-WARNING: [Synth 8-324] index 93 out of range [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:40]
-WARNING: [Synth 8-324] index 94 out of range [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:40]
-WARNING: [Synth 8-324] index 95 out of range [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:40]
-WARNING: [Synth 8-324] index 96 out of range [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:40]
-WARNING: [Synth 8-324] index 97 out of range [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:40]
-WARNING: [Synth 8-324] index 98 out of range [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:40]
-WARNING: [Synth 8-324] index 99 out of range [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:40]
-WARNING: [Synth 8-324] index 100 out of range [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:40]
-WARNING: [Synth 8-324] index 101 out of range [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:40]
-WARNING: [Synth 8-324] index 102 out of range [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:40]
-WARNING: [Synth 8-324] index 103 out of range [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:40]
-WARNING: [Synth 8-324] index 104 out of range [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:40]
-WARNING: [Synth 8-324] index 105 out of range [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:40]
-WARNING: [Synth 8-324] index 106 out of range [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:40]
-WARNING: [Synth 8-324] index 107 out of range [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:40]
-WARNING: [Synth 8-324] index 108 out of range [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:40]
-WARNING: [Synth 8-324] index 109 out of range [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:40]
-WARNING: [Synth 8-324] index 110 out of range [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:40]
-WARNING: [Synth 8-324] index 111 out of range [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:40]
-WARNING: [Synth 8-324] index 112 out of range [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:40]
-WARNING: [Synth 8-324] index 113 out of range [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:40]
-WARNING: [Synth 8-324] index 114 out of range [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:40]
-WARNING: [Synth 8-324] index 115 out of range [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:40]
-WARNING: [Synth 8-324] index 116 out of range [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:40]
-WARNING: [Synth 8-324] index 117 out of range [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:40]
-WARNING: [Synth 8-324] index 118 out of range [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:40]
-WARNING: [Synth 8-324] index 119 out of range [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:40]
-WARNING: [Synth 8-324] index 120 out of range [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:40]
-WARNING: [Synth 8-324] index 121 out of range [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:40]
-WARNING: [Synth 8-324] index 122 out of range [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:40]
-WARNING: [Synth 8-324] index 123 out of range [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:40]
-WARNING: [Synth 8-324] index 124 out of range [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:40]
-WARNING: [Synth 8-324] index 125 out of range [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:40]
-WARNING: [Synth 8-324] index 126 out of range [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:40]
-WARNING: [Synth 8-324] index 127 out of range [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:40]
-WARNING: [Synth 8-324] index 128 out of range [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:40]
-WARNING: [Synth 8-324] index 129 out of range [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:40]
-WARNING: [Synth 8-324] index 130 out of range [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:40]
-WARNING: [Synth 8-324] index 131 out of range [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:40]
-INFO: [Common 17-14] Message 'Synth 8-324' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 INFO: [Synth 8-6155] done synthesizing module 'RAM' (0#1) [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:23]
 INFO: [Synth 8-6085] Hierarchical reference on 'rf' stops possible memory inference [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RegFile.v:31]
-WARNING: [Synth 8-567] referenced signal 'instr' should be on the sensitivity list [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:116]
-WARNING: [Synth 8-567] referenced signal 'reg_data' should be on the sensitivity list [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:116]
-WARNING: [Synth 8-567] referenced signal 'PC' should be on the sensitivity list [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:116]
+WARNING: [Synth 8-567] referenced signal 'reg_data' should be on the sensitivity list [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:103]
 INFO: [Synth 8-6157] synthesizing module 'seg7x16' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/seg7x16.v:23]
 INFO: [Synth 8-155] case statement is not full and has no default [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/seg7x16.v:88]
 INFO: [Synth 8-6155] done synthesizing module 'seg7x16' (0#1) [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/seg7x16.v:23]
 INFO: [Synth 8-6155] done synthesizing module 'CPU' (0#1) [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:23]
-WARNING: [Synth 8-7137] Register rf_reg[31] in module RegFile has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RegFile.v:38]
-WARNING: [Synth 8-7137] Register rf_reg[30] in module RegFile has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RegFile.v:38]
-WARNING: [Synth 8-7137] Register rf_reg[29] in module RegFile has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RegFile.v:38]
-WARNING: [Synth 8-7137] Register rf_reg[28] in module RegFile has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RegFile.v:38]
-WARNING: [Synth 8-7137] Register rf_reg[27] in module RegFile has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RegFile.v:38]
-WARNING: [Synth 8-7137] Register rf_reg[26] in module RegFile has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RegFile.v:38]
-WARNING: [Synth 8-7137] Register rf_reg[25] in module RegFile has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RegFile.v:38]
-WARNING: [Synth 8-7137] Register rf_reg[24] in module RegFile has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RegFile.v:38]
-WARNING: [Synth 8-7137] Register rf_reg[23] in module RegFile has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RegFile.v:38]
-WARNING: [Synth 8-7137] Register rf_reg[22] in module RegFile has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RegFile.v:38]
-WARNING: [Synth 8-7137] Register rf_reg[21] in module RegFile has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RegFile.v:38]
-WARNING: [Synth 8-7137] Register rf_reg[20] in module RegFile has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RegFile.v:38]
-WARNING: [Synth 8-7137] Register rf_reg[19] in module RegFile has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RegFile.v:38]
-WARNING: [Synth 8-7137] Register rf_reg[18] in module RegFile has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RegFile.v:38]
-WARNING: [Synth 8-7137] Register rf_reg[17] in module RegFile has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RegFile.v:38]
-WARNING: [Synth 8-7137] Register rf_reg[16] in module RegFile has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RegFile.v:38]
-WARNING: [Synth 8-7137] Register rf_reg[15] in module RegFile has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RegFile.v:38]
-WARNING: [Synth 8-7137] Register rf_reg[14] in module RegFile has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RegFile.v:38]
-WARNING: [Synth 8-7137] Register rf_reg[13] in module RegFile has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RegFile.v:38]
-WARNING: [Synth 8-7137] Register rf_reg[12] in module RegFile has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RegFile.v:38]
-WARNING: [Synth 8-7137] Register rf_reg[11] in module RegFile has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RegFile.v:38]
-WARNING: [Synth 8-7137] Register rf_reg[10] in module RegFile has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RegFile.v:38]
-WARNING: [Synth 8-7137] Register rf_reg[9] in module RegFile has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RegFile.v:38]
-WARNING: [Synth 8-7137] Register rf_reg[8] in module RegFile has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RegFile.v:38]
-WARNING: [Synth 8-7137] Register rf_reg[7] in module RegFile has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RegFile.v:38]
-WARNING: [Synth 8-7137] Register rf_reg[6] in module RegFile has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RegFile.v:38]
-WARNING: [Synth 8-7137] Register rf_reg[5] in module RegFile has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RegFile.v:38]
-WARNING: [Synth 8-7137] Register rf_reg[4] in module RegFile has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RegFile.v:38]
-WARNING: [Synth 8-7137] Register rf_reg[3] in module RegFile has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RegFile.v:38]
-WARNING: [Synth 8-7137] Register rf_reg[2] in module RegFile has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RegFile.v:38]
-WARNING: [Synth 8-7137] Register rf_reg[1] in module RegFile has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RegFile.v:38]
-WARNING: [Synth 8-7137] Register rf_reg[0] in module RegFile has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RegFile.v:38]
 WARNING: [Synth 8-7137] Register ReadData_reg in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:39]
 WARNING: [Synth 8-7137] Register store_reg[31] in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:40]
 WARNING: [Synth 8-7137] Register store_reg[30] in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:40]
@@ -245,7 +96,24 @@ WARNING: [Synth 8-7137] Register store_reg[3] in module RAM has both Set and res
 WARNING: [Synth 8-7137] Register store_reg[2] in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:40]
 WARNING: [Synth 8-7137] Register store_reg[1] in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:40]
 WARNING: [Synth 8-7137] Register store_reg[0] in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:40]
-WARNING: [Synth 8-7137] Register reg_data_reg in module CPU has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:109]
+WARNING: [Synth 8-7137] Register reg_data_reg in module CPU has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:96]
+WARNING: [Synth 8-7129] Port instr[31] in module Instr_decoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[30] in module Instr_decoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[29] in module Instr_decoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[28] in module Instr_decoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[27] in module Instr_decoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[26] in module Instr_decoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[25] in module Instr_decoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[14] in module Instr_decoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[13] in module Instr_decoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[12] in module Instr_decoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[6] in module Instr_decoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[5] in module Instr_decoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[4] in module Instr_decoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[3] in module Instr_decoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[2] in module Instr_decoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[1] in module Instr_decoder is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[0] in module Instr_decoder is either unconnected or has no load
 WARNING: [Synth 8-7129] Port instr[24] in module Controller is either unconnected or has no load
 WARNING: [Synth 8-7129] Port instr[23] in module Controller is either unconnected or has no load
 WARNING: [Synth 8-7129] Port instr[22] in module Controller is either unconnected or has no load
@@ -261,34 +129,40 @@ WARNING: [Synth 8-7129] Port instr[10] in module Controller is either unconnecte
 WARNING: [Synth 8-7129] Port instr[9] in module Controller is either unconnected or has no load
 WARNING: [Synth 8-7129] Port instr[8] in module Controller is either unconnected or has no load
 WARNING: [Synth 8-7129] Port instr[7] in module Controller is either unconnected or has no load
-WARNING: [Synth 8-7129] Port sw_i[10] in module CPU is either unconnected or has no load
-WARNING: [Synth 8-7129] Port sw_i[9] in module CPU is either unconnected or has no load
-WARNING: [Synth 8-7129] Port sw_i[8] in module CPU is either unconnected or has no load
-WARNING: [Synth 8-7129] Port sw_i[7] in module CPU is either unconnected or has no load
-WARNING: [Synth 8-7129] Port sw_i[6] in module CPU is either unconnected or has no load
-WARNING: [Synth 8-7129] Port sw_i[5] in module CPU is either unconnected or has no load
-WARNING: [Synth 8-7129] Port sw_i[4] in module CPU is either unconnected or has no load
-WARNING: [Synth 8-7129] Port sw_i[3] in module CPU is either unconnected or has no load
-WARNING: [Synth 8-7129] Port sw_i[2] in module CPU is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sw_i[14] in module Clk_div is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sw_i[13] in module Clk_div is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sw_i[12] in module Clk_div is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sw_i[11] in module Clk_div is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sw_i[10] in module Clk_div is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sw_i[9] in module Clk_div is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sw_i[8] in module Clk_div is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sw_i[7] in module Clk_div is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sw_i[6] in module Clk_div is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sw_i[5] in module Clk_div is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sw_i[4] in module Clk_div is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sw_i[3] in module Clk_div is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sw_i[2] in module Clk_div is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sw_i[1] in module Clk_div is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sw_i[0] in module Clk_div is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1364.008 ; gain = 543.102
+Finished RTL Elaboration : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 1355.641 ; gain = 534.145
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1364.008 ; gain = 543.102
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1355.641 ; gain = 534.145
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1364.008 ; gain = 543.102
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1355.641 ; gain = 534.145
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.114 . Memory (MB): peak = 1364.008 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.213 . Memory (MB): peak = 1355.641 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
-Parsing XDC File [e:/vivado/RV5/RV5/RV5.gen/sources_1/ip/imem/imem/imem_in_context.xdc] for cell 'U_imem'
-Finished Parsing XDC File [e:/vivado/RV5/RV5/RV5.gen/sources_1/ip/imem/imem/imem_in_context.xdc] for cell 'U_imem'
+Parsing XDC File [e:/vivado/RV5/RV5/RV5.gen/sources_1/ip/imem/imem/imem_in_context.xdc] for cell 'U_imem/your_instance_name'
+Finished Parsing XDC File [e:/vivado/RV5/RV5/RV5.gen/sources_1/ip/imem/imem/imem_in_context.xdc] for cell 'U_imem/your_instance_name'
 Parsing XDC File [C:/Users/14315/Desktop/vivado/第二次实验/icf.xdc]
 WARNING: [Vivado 12-507] No nets matched 'sw_i_IBUF[15]'. [C:/Users/14315/Desktop/vivado/第二次实验/icf.xdc:5]
 WARNING: [Vivado 12-584] No ports matched 'led_o[0]'. [C:/Users/14315/Desktop/vivado/第二次实验/icf.xdc:45]
@@ -313,33 +187,33 @@ INFO: [Project 1-236] Implementation specific constraints were found while readi
 Resolution: To avoid this warning, move constraints listed in [.Xil/CPU_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1471.957 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1422.699 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.024 . Memory (MB): peak = 1471.957 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.046 . Memory (MB): peak = 1422.699 ; gain = 0.000
 INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [D:/Environment/vivado/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 1471.957 ; gain = 651.051
+Finished Constraint Validation : Time (s): cpu = 00:00:30 ; elapsed = 00:00:32 . Memory (MB): peak = 1422.699 ; gain = 601.203
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 1471.957 ; gain = 651.051
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:30 ; elapsed = 00:00:32 . Memory (MB): peak = 1422.699 ; gain = 601.203
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
-Applied set_property KEEP_HIERARCHY = SOFT for U_imem. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for U_imem/your_instance_name. (constraint file  auto generated constraint).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 1471.957 ; gain = 651.051
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:30 ; elapsed = 00:00:32 . Memory (MB): peak = 1422.699 ; gain = 601.203
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1471.957 ; gain = 651.051
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 1422.699 ; gain = 601.203
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -353,13 +227,12 @@ Detailed RTL Component Info :
 +---XORs : 
 	   2 Input     64 Bit         XORs := 1     
 +---Registers : 
-	               64 Bit    Registers := 36    
+	               64 Bit    Registers := 35    
 	                8 Bit    Registers := 33    
-	                7 Bit    Registers := 1     
 	                5 Bit    Registers := 1     
 	                3 Bit    Registers := 1     
 +---Muxes : 
-	   2 Input   64 Bit        Muxes := 204   
+	   2 Input   64 Bit        Muxes := 16    
 	   4 Input   64 Bit        Muxes := 1     
 	   3 Input   64 Bit        Muxes := 1     
 	   2 Input    8 Bit        Muxes := 58    
@@ -372,10 +245,10 @@ Detailed RTL Component Info :
 	   2 Input    2 Bit        Muxes := 1     
 	   4 Input    2 Bit        Muxes := 1     
 	   2 Input    1 Bit        Muxes := 32    
-	   8 Input    1 Bit        Muxes := 4     
-	   9 Input    1 Bit        Muxes := 28    
 	   3 Input    1 Bit        Muxes := 6     
 	   4 Input    1 Bit        Muxes := 1     
+	   8 Input    1 Bit        Muxes := 4     
+	   9 Input    1 Bit        Muxes := 28    
 	  18 Input    1 Bit        Muxes := 1     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
@@ -393,6 +266,21 @@ Finished Part Resource Summary
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+WARNING: [Synth 8-7129] Port instr[24] in module Controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[23] in module Controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[22] in module Controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[21] in module Controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[20] in module Controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[19] in module Controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[18] in module Controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[17] in module Controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[16] in module Controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[15] in module Controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[11] in module Controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[10] in module Controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[9] in module Controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[8] in module Controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[7] in module Controller is either unconnected or has no load
 WARNING: [Synth 8-7129] Port sw_i[10] in module CPU is either unconnected or has no load
 WARNING: [Synth 8-7129] Port sw_i[9] in module CPU is either unconnected or has no load
 WARNING: [Synth 8-7129] Port sw_i[8] in module CPU is either unconnected or has no load
@@ -402,292 +290,191 @@ WARNING: [Synth 8-7129] Port sw_i[5] in module CPU is either unconnected or has 
 WARNING: [Synth 8-7129] Port sw_i[4] in module CPU is either unconnected or has no load
 WARNING: [Synth 8-7129] Port sw_i[3] in module CPU is either unconnected or has no load
 WARNING: [Synth 8-7129] Port sw_i[2] in module CPU is either unconnected or has no load
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'i_0/PC_reg[63]/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'i_0/PC_reg[62]/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'i_0/PC_reg[61]/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'i_0/PC_reg[60]/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'i_0/PC_reg[59]/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'i_0/PC_reg[58]/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'i_0/PC_reg[57]/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'i_0/PC_reg[56]/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'i_0/PC_reg[55]/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'i_0/PC_reg[54]/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'i_0/PC_reg[53]/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'i_0/PC_reg[52]/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'i_0/PC_reg[51]/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'i_0/PC_reg[50]/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'i_0/PC_reg[49]/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'i_0/PC_reg[48]/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'i_0/PC_reg[47]/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'i_0/PC_reg[46]/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'i_0/PC_reg[45]/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'i_0/PC_reg[44]/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'i_0/PC_reg[43]/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'i_0/PC_reg[42]/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'i_0/PC_reg[41]/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'i_0/PC_reg[40]/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'i_0/PC_reg[39]/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'i_0/PC_reg[38]/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'i_0/PC_reg[37]/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'i_0/PC_reg[36]/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'i_0/PC_reg[35]/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'i_0/PC_reg[34]/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'i_0/PC_reg[33]/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'i_0/PC_reg[32]/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'i_0/PC_reg[31]/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'i_0/PC_reg[30]/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'i_0/PC_reg[29]/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'i_0/PC_reg[28]/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'i_0/PC_reg[27]/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'i_0/PC_reg[26]/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'i_0/PC_reg[25]/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'i_0/PC_reg[24]/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'i_0/PC_reg[23]/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'i_0/PC_reg[22]/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'i_0/PC_reg[21]/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'i_0/PC_reg[20]/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'i_0/PC_reg[19]/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'i_0/PC_reg[18]/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'i_0/PC_reg[17]/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'i_0/PC_reg[16]/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'i_0/PC_reg[15]/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'i_0/PC_reg[14]/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'U_PC/nowPC_reg[63]__0/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'U_PC/nowPC_reg[62]__0/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'U_PC/nowPC_reg[61]__0/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'U_PC/nowPC_reg[60]__0/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'U_PC/nowPC_reg[59]__0/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'U_PC/nowPC_reg[58]__0/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'U_PC/nowPC_reg[57]__0/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'U_PC/nowPC_reg[56]__0/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'U_PC/nowPC_reg[55]__0/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'U_PC/nowPC_reg[54]__0/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'U_PC/nowPC_reg[53]__0/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'U_PC/nowPC_reg[52]__0/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'U_PC/nowPC_reg[51]__0/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'U_PC/nowPC_reg[50]__0/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'U_PC/nowPC_reg[49]__0/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'U_PC/nowPC_reg[48]__0/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'U_PC/nowPC_reg[47]__0/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'U_PC/nowPC_reg[46]__0/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'U_PC/nowPC_reg[45]__0/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'U_PC/nowPC_reg[44]__0/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'U_PC/nowPC_reg[43]__0/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'U_PC/nowPC_reg[42]__0/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'U_PC/nowPC_reg[41]__0/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'U_PC/nowPC_reg[40]__0/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'U_PC/nowPC_reg[39]__0/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'U_PC/nowPC_reg[38]__0/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'U_PC/nowPC_reg[37]__0/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'U_PC/nowPC_reg[36]__0/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'U_PC/nowPC_reg[35]__0/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'U_PC/nowPC_reg[34]__0/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'U_PC/nowPC_reg[33]__0/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'U_PC/nowPC_reg[32]__0/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'U_PC/nowPC_reg[31]__0/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'U_PC/nowPC_reg[30]__0/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'U_PC/nowPC_reg[29]__0/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'U_PC/nowPC_reg[28]__0/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'U_PC/nowPC_reg[27]__0/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'U_PC/nowPC_reg[26]__0/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'U_PC/nowPC_reg[25]__0/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'U_PC/nowPC_reg[24]__0/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'U_PC/nowPC_reg[23]__0/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'U_PC/nowPC_reg[22]__0/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'U_PC/nowPC_reg[21]__0/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'U_PC/nowPC_reg[20]__0/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'U_PC/nowPC_reg[19]__0/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'U_PC/nowPC_reg[18]__0/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'U_PC/nowPC_reg[17]__0/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'U_PC/nowPC_reg[16]__0/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'U_PC/nowPC_reg[15]__0/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'U_PC/nowPC_reg[14]__0/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
 INFO: [Common 17-14] Message 'Synth 8-6859' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:60]
-WARNING: [Synth 8-3332] Sequential element (rf_reg[0][63]_C) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (rf_reg[0][62]_C) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (rf_reg[0][61]_C) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (rf_reg[0][60]_C) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (rf_reg[0][59]_C) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (rf_reg[0][58]_C) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (rf_reg[0][57]_C) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (rf_reg[0][56]_C) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (rf_reg[0][55]_C) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (rf_reg[0][54]_C) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (rf_reg[0][53]_C) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (rf_reg[0][52]_C) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (rf_reg[0][51]_C) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (rf_reg[0][50]_C) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (rf_reg[0][49]_C) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (rf_reg[0][48]_C) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (rf_reg[0][47]_C) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (rf_reg[0][46]_C) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (rf_reg[0][45]_C) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (rf_reg[0][44]_C) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (rf_reg[0][43]_C) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (rf_reg[0][42]_C) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (rf_reg[0][41]_C) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (rf_reg[0][40]_C) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (rf_reg[0][39]_C) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (rf_reg[0][38]_C) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (rf_reg[0][37]_C) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (rf_reg[0][36]_C) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (rf_reg[0][35]_C) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (rf_reg[0][34]_C) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (rf_reg[0][33]_C) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (rf_reg[0][32]_C) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (rf_reg[0][31]_C) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (rf_reg[0][30]_C) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (rf_reg[0][29]_C) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (rf_reg[0][28]_C) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (rf_reg[0][27]_C) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (rf_reg[0][26]_C) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (rf_reg[0][25]_C) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (rf_reg[0][24]_C) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (rf_reg[0][23]_C) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (rf_reg[0][22]_C) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (rf_reg[0][21]_C) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (rf_reg[0][20]_C) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (rf_reg[0][19]_C) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (rf_reg[0][18]_C) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (rf_reg[0][17]_C) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (rf_reg[0][16]_C) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (rf_reg[0][15]_C) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (rf_reg[0][14]_C) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (rf_reg[0][13]_C) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (rf_reg[0][12]_C) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (rf_reg[0][11]_C) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (rf_reg[0][10]_C) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (rf_reg[0][9]_C) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (rf_reg[0][8]_C) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (rf_reg[0][7]_C) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (rf_reg[0][6]_C) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (rf_reg[0][5]_C) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (rf_reg[0][4]_C) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (rf_reg[0][3]_C) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (rf_reg[0][2]_C) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (rf_reg[0][1]_C) is unused and will be removed from module RegFile.
-WARNING: [Synth 8-3332] Sequential element (rf_reg[0][0]_C) is unused and will be removed from module RegFile.
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:24 ; elapsed = 00:01:25 . Memory (MB): peak = 1491.863 ; gain = 670.957
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:35 ; elapsed = 00:01:37 . Memory (MB): peak = 1422.699 ; gain = 601.203
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:28 ; elapsed = 00:01:29 . Memory (MB): peak = 1491.863 ; gain = 670.957
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:44 ; elapsed = 00:01:46 . Memory (MB): peak = 1422.699 ; gain = 601.203
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:01:49 ; elapsed = 00:01:50 . Memory (MB): peak = 1665.113 ; gain = 844.207
+Finished Timing Optimization : Time (s): cpu = 00:01:58 ; elapsed = 00:02:00 . Memory (MB): peak = 1422.699 ; gain = 601.203
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
-WARNING: [Synth 8-3332] Sequential element (U_RF/rf_reg[31][4]_LDC) is unused and will be removed from module CPU.
-WARNING: [Synth 8-3332] Sequential element (U_RF/rf_reg[31][4]_C) is unused and will be removed from module CPU.
-WARNING: [Synth 8-3332] Sequential element (U_RF/rf_reg[31][3]_LDC) is unused and will be removed from module CPU.
-WARNING: [Synth 8-3332] Sequential element (U_RF/rf_reg[31][3]_C) is unused and will be removed from module CPU.
-WARNING: [Synth 8-3332] Sequential element (U_RF/rf_reg[31][2]_LDC) is unused and will be removed from module CPU.
-WARNING: [Synth 8-3332] Sequential element (U_RF/rf_reg[31][2]_C) is unused and will be removed from module CPU.
-WARNING: [Synth 8-3332] Sequential element (U_RF/rf_reg[31][1]_LDC) is unused and will be removed from module CPU.
-WARNING: [Synth 8-3332] Sequential element (U_RF/rf_reg[31][1]_C) is unused and will be removed from module CPU.
-WARNING: [Synth 8-3332] Sequential element (U_RF/rf_reg[31][0]_LDC) is unused and will be removed from module CPU.
-WARNING: [Synth 8-3332] Sequential element (U_RF/rf_reg[31][0]_C) is unused and will be removed from module CPU.
-WARNING: [Synth 8-3332] Sequential element (U_RF/rf_reg[30][4]_LDC) is unused and will be removed from module CPU.
-WARNING: [Synth 8-3332] Sequential element (U_RF/rf_reg[30][4]_C) is unused and will be removed from module CPU.
-WARNING: [Synth 8-3332] Sequential element (U_RF/rf_reg[30][3]_LDC) is unused and will be removed from module CPU.
-WARNING: [Synth 8-3332] Sequential element (U_RF/rf_reg[30][3]_C) is unused and will be removed from module CPU.
-WARNING: [Synth 8-3332] Sequential element (U_RF/rf_reg[30][2]_LDC) is unused and will be removed from module CPU.
-WARNING: [Synth 8-3332] Sequential element (U_RF/rf_reg[30][2]_C) is unused and will be removed from module CPU.
-WARNING: [Synth 8-3332] Sequential element (U_RF/rf_reg[30][1]_LDC) is unused and will be removed from module CPU.
-WARNING: [Synth 8-3332] Sequential element (U_RF/rf_reg[30][1]_C) is unused and will be removed from module CPU.
-WARNING: [Synth 8-3332] Sequential element (U_RF/rf_reg[29][4]_LDC) is unused and will be removed from module CPU.
-WARNING: [Synth 8-3332] Sequential element (U_RF/rf_reg[29][4]_C) is unused and will be removed from module CPU.
-WARNING: [Synth 8-3332] Sequential element (U_RF/rf_reg[29][3]_LDC) is unused and will be removed from module CPU.
-WARNING: [Synth 8-3332] Sequential element (U_RF/rf_reg[29][3]_C) is unused and will be removed from module CPU.
-WARNING: [Synth 8-3332] Sequential element (U_RF/rf_reg[29][2]_LDC) is unused and will be removed from module CPU.
-WARNING: [Synth 8-3332] Sequential element (U_RF/rf_reg[29][2]_C) is unused and will be removed from module CPU.
-WARNING: [Synth 8-3332] Sequential element (U_RF/rf_reg[29][0]_LDC) is unused and will be removed from module CPU.
-WARNING: [Synth 8-3332] Sequential element (U_RF/rf_reg[29][0]_C) is unused and will be removed from module CPU.
-WARNING: [Synth 8-3332] Sequential element (U_RF/rf_reg[28][4]_LDC) is unused and will be removed from module CPU.
-WARNING: [Synth 8-3332] Sequential element (U_RF/rf_reg[28][4]_C) is unused and will be removed from module CPU.
-WARNING: [Synth 8-3332] Sequential element (U_RF/rf_reg[28][3]_LDC) is unused and will be removed from module CPU.
-WARNING: [Synth 8-3332] Sequential element (U_RF/rf_reg[28][3]_C) is unused and will be removed from module CPU.
-WARNING: [Synth 8-3332] Sequential element (U_RF/rf_reg[28][2]_LDC) is unused and will be removed from module CPU.
-WARNING: [Synth 8-3332] Sequential element (U_RF/rf_reg[28][2]_C) is unused and will be removed from module CPU.
-WARNING: [Synth 8-3332] Sequential element (U_RF/rf_reg[27][4]_LDC) is unused and will be removed from module CPU.
-WARNING: [Synth 8-3332] Sequential element (U_RF/rf_reg[27][4]_C) is unused and will be removed from module CPU.
-WARNING: [Synth 8-3332] Sequential element (U_RF/rf_reg[27][3]_LDC) is unused and will be removed from module CPU.
-WARNING: [Synth 8-3332] Sequential element (U_RF/rf_reg[27][3]_C) is unused and will be removed from module CPU.
-INFO: [Common 17-14] Message 'Synth 8-3332' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:01:55 ; elapsed = 00:01:56 . Memory (MB): peak = 1698.469 ; gain = 877.562
+Finished Technology Mapping : Time (s): cpu = 00:02:07 ; elapsed = 00:02:10 . Memory (MB): peak = 1500.590 ; gain = 679.094
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -705,37 +492,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:02:00 ; elapsed = 00:02:01 . Memory (MB): peak = 1703.973 ; gain = 883.066
+Finished IO Insertion : Time (s): cpu = 00:02:17 ; elapsed = 00:02:20 . Memory (MB): peak = 1515.129 ; gain = 693.633
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:02:00 ; elapsed = 00:02:01 . Memory (MB): peak = 1703.973 ; gain = 883.066
+Finished Renaming Generated Instances : Time (s): cpu = 00:02:17 ; elapsed = 00:02:20 . Memory (MB): peak = 1515.129 ; gain = 693.633
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:02:01 ; elapsed = 00:02:02 . Memory (MB): peak = 1703.973 ; gain = 883.066
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:02:18 ; elapsed = 00:02:21 . Memory (MB): peak = 1515.129 ; gain = 693.633
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:02:01 ; elapsed = 00:02:02 . Memory (MB): peak = 1703.973 ; gain = 883.066
+Finished Renaming Generated Ports : Time (s): cpu = 00:02:18 ; elapsed = 00:02:21 . Memory (MB): peak = 1515.129 ; gain = 693.633
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:02:01 ; elapsed = 00:02:03 . Memory (MB): peak = 1703.973 ; gain = 883.066
+Finished Handling Custom Attributes : Time (s): cpu = 00:02:19 ; elapsed = 00:02:21 . Memory (MB): peak = 1515.129 ; gain = 693.633
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:02:01 ; elapsed = 00:02:03 . Memory (MB): peak = 1703.973 ; gain = 883.066
+Finished Renaming Generated Nets : Time (s): cpu = 00:02:19 ; elapsed = 00:02:22 . Memory (MB): peak = 1515.129 ; gain = 693.633
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -755,45 +542,42 @@ Report Cell Usage:
 |1     |imem   |     1|
 |2     |BUFG   |     2|
 |3     |CARRY4 |    51|
-|4     |LUT1   |  2123|
-|5     |LUT2   |  1497|
-|6     |LUT3   |  2358|
-|7     |LUT4   |   311|
-|8     |LUT5   |  1061|
-|9     |LUT6   |  6067|
-|10    |MUXF7  |   796|
-|11    |MUXF8  |   158|
-|12    |FDCE   |  4316|
-|13    |FDPE   |   168|
-|14    |FDRE   |  1968|
-|15    |LDC    |  1904|
-|16    |IBUF   |     9|
-|17    |OBUF   |    16|
+|4     |LUT1   |    25|
+|5     |LUT2   |   203|
+|6     |LUT3   |  2377|
+|7     |LUT4   |   262|
+|8     |LUT5   |   436|
+|9     |LUT6   |  3111|
+|10    |MUXF7  |   772|
+|11    |MUXF8  |   146|
+|12    |FDCE   |  2411|
+|13    |FDPE   |    88|
+|14    |FDRE   |    64|
+|15    |IBUF   |     9|
+|16    |OBUF   |    16|
 +------+-------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:02:01 ; elapsed = 00:02:03 . Memory (MB): peak = 1703.973 ; gain = 883.066
+Finished Writing Synthesis Report : Time (s): cpu = 00:02:19 ; elapsed = 00:02:22 . Memory (MB): peak = 1515.129 ; gain = 693.633
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 192 critical warnings and 362 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:01:52 ; elapsed = 00:02:00 . Memory (MB): peak = 1703.973 ; gain = 775.117
-Synthesis Optimization Complete : Time (s): cpu = 00:02:01 ; elapsed = 00:02:03 . Memory (MB): peak = 1703.973 ; gain = 883.066
+Synthesis finished with 0 errors, 192 critical warnings and 25 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:59 ; elapsed = 00:02:16 . Memory (MB): peak = 1515.129 ; gain = 626.574
+Synthesis Optimization Complete : Time (s): cpu = 00:02:19 ; elapsed = 00:02:22 . Memory (MB): peak = 1515.129 ; gain = 693.633
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.185 . Memory (MB): peak = 1703.973 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 2909 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.237 . Memory (MB): peak = 1525.348 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 969 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
-WARNING: [Netlist 29-101] Netlist 'CPU' is not ideal for floorplanning, since the cellview 'RegFile' contains a large number of primitives.  Please consider enabling hierarchy in synthesis if you want to do floorplanning.
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1703.973 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1529.773 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
-  A total of 1904 instances were transformed.
-  LDC => LDCE: 1904 instances
+No Unisim elements were transformed.
 
-Synth Design complete, checksum: c5ab975a
+Synth Design complete, checksum: 550fbbed
 INFO: [Common 17-83] Releasing license: Synthesis
-44 Infos, 330 Warnings, 164 Critical Warnings and 0 Errors encountered.
+52 Infos, 131 Warnings, 164 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:02:08 ; elapsed = 00:02:10 . Memory (MB): peak = 1703.973 ; gain = 1277.398
+synth_design: Time (s): cpu = 00:02:30 ; elapsed = 00:02:36 . Memory (MB): peak = 1529.773 ; gain = 1102.316
 INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
 INFO: [Common 17-1381] The checkpoint 'E:/vivado/RV5/RV5/RV5.runs/synth_2/CPU.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file CPU_utilization_synth.rpt -pb CPU_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Wed Mar 22 11:44:00 2023...
+INFO: [Common 17-206] Exiting Vivado at Wed Mar 22 18:13:10 2023...

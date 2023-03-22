@@ -37,7 +37,7 @@ module RAM(
     always@(posedge clk or negedge rstn) begin
         if (!rstn) begin
             ReadData = 0;
-            for (i = 0; i < 1024; i = i + 1) begin store[i] = 8'b0; end
+            for (i = 0; i < 32; i = i + 1) begin store[i] = 8'b0; end
         end
         else if (MemWrite) begin
             // 一个字节一个字节存储

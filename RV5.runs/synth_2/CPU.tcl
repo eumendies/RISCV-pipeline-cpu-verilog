@@ -70,8 +70,6 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_2" START { ROLLUP_AUTO }
-set_param xicom.use_bs_reader 1
-set_msg_config -id {Common 17-41} -limit 10000000
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a100tcsg324-1
 
@@ -91,9 +89,14 @@ add_files E:/vivado/RV5/RV5/test.coe
 read_verilog -library xil_defaultlib {
   E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/config.v
   E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/ALU.v
+  E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/Clk_div.v
   E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/Controller.v
   E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/ImmGen.v
+  E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/Instr_decoder.v
+  E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/Mux.v
+  E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v
   E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v
+  E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/ROM.v
   E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RegFile.v
   E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/seg7x16.v
   E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v

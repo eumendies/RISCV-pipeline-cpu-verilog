@@ -30,7 +30,7 @@ module PC_adder(
     
     reg[63:0] result;
     always@(*) begin
-        if (Branch && (Zero == 0)) result = nowPC + imm;
+        if (Branch && Zero) result = nowPC + imm;
         else result = nowPC + 4; 
     end
     assign newPC = result;

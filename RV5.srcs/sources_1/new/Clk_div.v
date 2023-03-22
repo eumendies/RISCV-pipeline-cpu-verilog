@@ -33,6 +33,6 @@ module Clk_div(
         if (!rstn) clkdiv <= 0;
         else clkdiv <= clkdiv + 1'b1; 
     end
-    assign Clk_CPU = (sw_i[15]) ? clkdiv[27] : clkdiv[25];
+    assign Clk_CPU = (sw_i[15]) ? clkdiv[25] : clkdiv[24];
 
 endmodule

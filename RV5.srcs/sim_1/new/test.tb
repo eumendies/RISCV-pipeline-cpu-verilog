@@ -2,6 +2,7 @@
 module test_tb();
 
 reg clk, rstn;
+reg Clk_CPU;
 reg[15:0] sw_i;
 reg[63:0] nowPC, newPC;
 reg[31:0] instr;
@@ -28,6 +29,7 @@ end
 
 always begin
     #50 clk = ~clk;
+        Clk_CPU = t_CPU.Clk_CPU;
         nowPC = t_CPU.nowPC;
         newPC = t_CPU.newPC;
         instr = t_CPU.instr;

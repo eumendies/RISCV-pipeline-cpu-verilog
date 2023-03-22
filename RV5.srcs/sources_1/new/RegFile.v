@@ -35,7 +35,7 @@ module RegFile(
         // ³õÊ¼»¯¼Ä´æÆ÷
         if (!rstn) begin
             for (i = 0; i < 32; i = i + 1) begin
-                rf[i] = i;
+                rf[i] <= i;
             end
         end
         // Ð´¼Ä´æÆ÷

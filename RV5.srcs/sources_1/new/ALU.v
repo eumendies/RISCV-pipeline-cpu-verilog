@@ -24,7 +24,7 @@ module ALU(
     input signed[63:0] A, B,
     input[3:0] ALUControl,
     output signed[63:0] C,
-    output reg[7:0] Zero
+    output reg Zero
     );
 
     reg[63:0] result;
