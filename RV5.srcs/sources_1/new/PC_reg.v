@@ -18,7 +18,7 @@
 // Additional Comments:
 // 
 //////////////////////////////////////////////////////////////////////////////////
-
+`include "config.v"
 
 module PC_reg(
     input clk,
@@ -27,6 +27,8 @@ module PC_reg(
     output reg [63:0] nowPC
     );
     
+    initial begin nowPC = 64'b0; end
+    
     always@(negedge rstn) begin
         if (!rstn) nowPC <= 64'b0;
         else begin nowPC <= nowPC; end
@@ -34,7 +36,7 @@ module PC_reg(
     
     always@(posedge clk) begin
         nowPC = nextPC;
-        if (nowPC > 24) nowPC = 0;
+        if (nowPC > `INSTR_NUM * 4) nowPC = 0;
         else nowPC = nowPC;
     end
     

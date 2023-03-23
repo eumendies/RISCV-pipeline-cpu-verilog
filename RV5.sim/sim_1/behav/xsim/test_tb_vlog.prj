@@ -5,9 +5,12 @@ verilog xil_defaultlib  \
 "../../../../RV5.srcs/sources_1/new/CPU.v" \
 "../../../../RV5.srcs/sources_1/new/Clk_div.v" \
 "../../../../RV5.srcs/sources_1/new/Controller.v" \
+"../../../../RV5.srcs/sources_1/new/EX_MEM_reg.v" \
+"../../../../RV5.srcs/sources_1/new/ID_EX_reg.v" \
+"../../../../RV5.srcs/sources_1/new/IF_ID_reg.v" \
 "../../../../RV5.srcs/sources_1/new/ImmGen.v" \
-"../../../../RV5.srcs/sources_1/new/Instr_decoder.v" \
-"../../../../RV5.srcs/sources_1/new/Mux.v" \
+"../../../../RV5.srcs/sources_1/new/MEM_WB_reg.v" \
+"../../../../RV5.srcs/sources_1/new/Mux_2.v" \
 "../../../../RV5.srcs/sources_1/new/PC_adder.v" \
 "../../../../RV5.srcs/sources_1/new/PC_reg.v" \
 "../../../../RV5.srcs/sources_1/new/RAM.v" \

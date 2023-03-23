@@ -30,14 +30,20 @@ module RAM(
     output reg [63:0] ReadData
     );
 
-    // 1KB RAM, 按字节寻址
-    reg[7:0] store[31:0];
+    // 256B RAM, 按字节寻址
+    reg[7:0] store[255:0];
     
-    integer i;    
+    integer i;
+    initial begin
+        for (i = 0; i < 256; i = i + 1) begin
+            store[i] <= i;
+        end
+    end
+    
     always@(posedge clk or negedge rstn) begin
         if (!rstn) begin
             ReadData = 0;
-            for (i = 0; i < 32; i = i + 1) begin store[i] = 8'b0; end
+            for (i = 0; i < 32; i = i + 1) begin store[i] <= i; end
         end
         else if (MemWrite) begin
             // 一个字节一个字节存储

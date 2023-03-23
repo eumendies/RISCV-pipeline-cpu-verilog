@@ -21,7 +21,9 @@
 
 
 module PC_adder(
+    input clk,
     input[63:0] nowPC,
+    input[63:0] ID_EX_PC,
     input[63:0] imm,
     input Branch,
     input Zero,
@@ -29,9 +31,12 @@ module PC_adder(
     );
     
     reg[63:0] result;
+    initial begin result <= 4; end
     always@(*) begin
-        if (Branch && Zero) result = nowPC + imm;
-        else result = nowPC + 4; 
+        // 如果需要跳转，更新PC为ID_EX_PC + imm
+        // 如果不需要跳转，将现在用于取指的PC加上4
+        if (Branch && Zero) result <= ID_EX_PC + imm;
+        else result <= nowPC + 4; 
     end
     assign newPC = result;
     

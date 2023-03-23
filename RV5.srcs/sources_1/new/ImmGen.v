@@ -26,6 +26,8 @@ module ImmGen(
     );
     
     reg[63:0] result;
+    initial begin result <= 64'b0; end
+    
     always@(*) begin
         // I-types, addi, slli
         if (instr[6:0] == `I_OPCODE) begin

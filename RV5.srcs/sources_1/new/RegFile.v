@@ -31,6 +31,12 @@ module RegFile(
     reg[63:0] rf[31:0];
     
     integer i;
+    initial begin
+        for (i = 0; i < 32; i = i + 1) begin
+            rf[i] <= i;
+        end
+    end
+    
     always@(posedge clk or negedge rstn) begin
         // ³õÊ¼»¯¼Ä´æÆ÷
         if (!rstn) begin
