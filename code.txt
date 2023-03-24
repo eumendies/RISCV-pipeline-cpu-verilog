@@ -3,6 +3,7 @@ addi s1, x0, 2	// x9 = 2
 add s2, s1, s0	// x18 = x9 + x8 = 3
 sub s2, s1, s0	// x18 = x9 - x8 = 1
 ld s3, 3(x0)
+add t0, x0, s3
 sd s1, 3(x0)
 beq s2, s0, func
 or s1, s1, s0

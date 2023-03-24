@@ -23,6 +23,7 @@
 module PC_reg(
     input clk,
     input rstn,
+    input PCwrite,
     input[63:0] nextPC,
     output reg [63:0] nowPC
     );
@@ -35,9 +36,11 @@ module PC_reg(
     end
     
     always@(posedge clk) begin
-        nowPC = nextPC;
-        if (nowPC > `INSTR_NUM * 4) nowPC = 0;
-        else nowPC = nowPC;
+        if (PCwrite) begin
+            nowPC = nextPC;
+            if (nowPC > `INSTR_NUM * 4) nowPC = 0;
+            else nowPC = nowPC;
+        end
     end
     
 endmodule

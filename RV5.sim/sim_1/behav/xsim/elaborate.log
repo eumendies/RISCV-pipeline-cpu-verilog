@@ -15,6 +15,7 @@ Compiling module xil_defaultlib.imem
 Compiling module xil_defaultlib.ROM
 Compiling module xil_defaultlib.IF_ID_reg
 Compiling module xil_defaultlib.Controller
+Compiling module xil_defaultlib.Hazard_unit
 Compiling module xil_defaultlib.ImmGen
 Compiling module xil_defaultlib.RegFile
 Compiling module xil_defaultlib.ID_EX_reg

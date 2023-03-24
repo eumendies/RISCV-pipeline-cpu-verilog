@@ -34,7 +34,8 @@ module CPU(
     // PC寄存器
     wire[63:0] newPC;
     wire[63:0] nowPC;
-    PC_reg U_PC(.clk(clk), .rstn(rstn), .nextPC(newPC), .nowPC(nowPC));
+    wire PCwrite;
+    PC_reg U_PC(.clk(clk), .rstn(rstn), .PCwrite(PCwrite), .nextPC(newPC), .nowPC(nowPC));
     
     // 指令存储器
     wire[31:0] instr;
@@ -43,6 +44,7 @@ module CPU(
     // IF/ID流水线寄存器的值
     wire[63:0] IF_ID_PC;
     wire[31:0] IF_ID_instr;
+    wire IF_ID_write;
     
     // ID/EX流水线寄存器的值    
     wire[63:0] ID_EX_PC, ID_EX_imm, ID_EX_RD1, ID_EX_RD2;
@@ -50,6 +52,7 @@ module CPU(
     wire ID_EX_regwrite, ID_EX_ALUSrc, ID_EX_MemRead;
     wire ID_EX_MemWrite, ID_EX_MemtoReg, ID_EX_Branch;
     wire[3:0] ID_EX_ALUControl;
+    wire flush;
     
     // EX/MEM流水线寄存器的值
     wire[31:0] EX_MEM_instr;
@@ -62,7 +65,7 @@ module CPU(
     wire[63:0] MEM_WB_alu_result, MEM_WB_mem_data;
     wire MEM_WB_regwrite, MEM_WB_MemtoReg;
     
-    IF_ID_reg reg1(.clk(clk), .instr(instr), .PC(nowPC), 
+    IF_ID_reg reg1(.clk(clk), .instr(instr), .PC(nowPC), .IF_ID_write(IF_ID_write),
                    .IF_ID_instr(IF_ID_instr), .IF_ID_PC(IF_ID_PC));
  
     // 控制信号
@@ -71,6 +74,11 @@ module CPU(
     Controller U_controller(.instr(IF_ID_instr), .regwrite(regwrite),
                         .ALUSrc(ALUSrc), .ALUControl(ALUControl), .MemRead(MemRead),
                         .MemWrite(MemWrite), .MemtoReg(MemtoReg), .Branch(Branch));
+    
+    // load-use冒险检测单元
+    Hazard_unit U_detector(.ID_EX_MemRead(ID_EX_MemRead), .ID_EX_rd(ID_EX_instr[11:7]), 
+                           .IF_ID_rs1(IF_ID_instr[19:15]), .IF_ID_rs2(IF_ID_instr[24:20]),
+                           .PCwrite(PCwrite), .IF_ID_write(IF_ID_write), .flush(flush));
     
     // 立即数
     wire[63:0] imm;
@@ -85,10 +93,10 @@ module CPU(
 
     // ID/EX流水线寄存器
     // 保存指令、PC、立即数、寄存器读取的数据、控制信号
-    ID_EX_reg reg2(.clk(clk), .instr(IF_ID_instr), .PC(IF_ID_PC), .imm(imm), .RD1(RD1), .RD2(RD2),
-                   .regwrite(regwrite), .ALUSrc(ALUSrc), .MemRead(MemRead), 
-                   .MemWrite(MemWrite), .MemtoReg(MemtoReg),.Branch(Branch),
-                   .ALUControl(ALUControl),
+    ID_EX_reg reg2(.clk(clk), .instr(IF_ID_instr), .flush(flush), .PC(IF_ID_PC), 
+                   .imm(imm), .RD1(RD1), .RD2(RD2), .regwrite(regwrite), .ALUSrc(ALUSrc), 
+                   .MemRead(MemRead), .MemWrite(MemWrite), .MemtoReg(MemtoReg),
+                   .Branch(Branch), .ALUControl(ALUControl),
                    .ID_EX_instr(ID_EX_instr), .ID_EX_PC(ID_EX_PC), .ID_EX_imm(ID_EX_imm),
                    .ID_EX_RD1(ID_EX_RD1), .ID_EX_RD2(ID_EX_RD2),
                    .ID_EX_regwrite(ID_EX_regwrite), .ID_EX_ALUSrc(ID_EX_ALUSrc), 
