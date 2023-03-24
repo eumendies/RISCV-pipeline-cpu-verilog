@@ -3,9 +3,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 2023/03/22 13:50:19
+// Create Date: 2023/03/24 14:17:37
 // Design Name: 
-// Module Name: Mux
+// Module Name: Hazard_unit
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
@@ -20,18 +20,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module MUX_2(
-    input[63:0] opt1,
-    input[63:0] opt2,
-    input control,
-    output[63:0] result
+module Hazard_unit(
+
     );
-    
-    reg[63:0] temp;
-    always@(*) begin
-        if (!control) temp = opt1;
-        else temp = opt2;
-    end
-    assign result = temp;
-    
 endmodule

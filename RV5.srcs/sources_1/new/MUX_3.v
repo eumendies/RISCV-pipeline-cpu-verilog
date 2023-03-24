@@ -3,9 +3,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 2023/03/22 13:50:19
+// Create Date: 2023/03/23 18:41:58
 // Design Name: 
-// Module Name: Mux
+// Module Name: MUX_3
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
@@ -20,18 +20,20 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module MUX_2(
-    input[63:0] opt1,
-    input[63:0] opt2,
-    input control,
+module MUX_3(
+    input[63:0] opt1, opt2, opt3,
+    input[1:0] control,
     output[63:0] result
     );
     
     reg[63:0] temp;
     always@(*) begin
-        if (!control) temp = opt1;
-        else temp = opt2;
+        case(control) 
+            2'b00: temp = opt1;
+            2'b01: temp = opt2;
+            2'b10: temp = opt3;
+            default: temp = opt1;
+        endcase
     end
     assign result = temp;
-    
 endmodule

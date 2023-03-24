@@ -27,7 +27,7 @@ module RAM(
     input MemRead,
     input[63:0] address,
     input[63:0] WD,
-    output reg [63:0] ReadData
+    output[63:0] ReadData
     );
 
     // 256B RAM, °´×Ö½ÚÑ°Ö·
@@ -42,7 +42,6 @@ module RAM(
     
     always@(posedge clk or negedge rstn) begin
         if (!rstn) begin
-            ReadData = 0;
             for (i = 0; i < 32; i = i + 1) begin store[i] <= i; end
         end
         else if (MemWrite) begin
@@ -56,19 +55,18 @@ module RAM(
             store[address + 6] <= WD[55:48];
             store[address + 7] <= WD[63:56];
         end
-        else if (MemRead) begin
-            ReadData[7:0] <= store[address + 0];
-            ReadData[15:8] <= store[address + 1];
-            ReadData[23:16] <= store[address + 2];
-            ReadData[31:24] <= store[address + 3];
-            ReadData[39:32] <= store[address + 4];
-            ReadData[47:40] <= store[address + 5];
-            ReadData[55:48] <= store[address + 6];
-            ReadData[63:56] <= store[address + 7];
-        end
         else begin
-            ReadData <= 0;
+            store[i] <= store[i]; 
         end
     end
+    
+    assign ReadData[7:0] = store[address + 0];
+    assign ReadData[15:8] = store[address + 1];
+    assign ReadData[23:16] = store[address + 2];
+    assign ReadData[31:24] = store[address + 3];
+    assign ReadData[39:32] = store[address + 4];
+    assign ReadData[47:40] = store[address + 5];
+    assign ReadData[55:48] = store[address + 6];
+    assign ReadData[63:56] = store[address + 7];
     
 endmodule

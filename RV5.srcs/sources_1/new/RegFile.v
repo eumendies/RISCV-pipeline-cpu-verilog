@@ -26,18 +26,12 @@ module RegFile(
     input RFWr,
     input[4:0] rs1, rs2, rd,
     input[63:0] WD,
-    output reg[63:0] RD1, RD2
+    output[63:0] RD1, RD2
     );
     reg[63:0] rf[31:0];
     
     integer i;
-    initial begin
-        for (i = 0; i < 32; i = i + 1) begin
-            rf[i] <= i;
-        end
-    end
-    
-    always@(posedge clk or negedge rstn) begin
+    always@(*) begin
         // ³õÊ¼»¯¼Ä´æÆ÷
         if (!rstn) begin
             for (i = 0; i < 32; i = i + 1) begin
@@ -52,9 +46,7 @@ module RegFile(
         else begin rf[0] <= 0; end
     end
     
-    always@(*) begin
-        // ¶Á¼Ä´æÆ÷
-        RD1 <= (rs1 != 0) ? rf[rs1] : 0;
-        RD2 <= (rs2 != 0) ? rf[rs2] : 0;
-    end
+    assign RD1 = (rs1 != 0) ? rf[rs1] : 0;
+    assign RD2 = (rs2 != 0) ? rf[rs2] : 0; 
+
 endmodule

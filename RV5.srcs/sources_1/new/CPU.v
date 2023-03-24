@@ -95,16 +95,24 @@ module CPU(
                    .ID_EX_MemRead(ID_EX_MemRead), .ID_EX_MemWrite(ID_EX_MemWrite), 
                    .ID_EX_MemtoReg(ID_EX_MemtoReg), .ID_EX_Branch(ID_EX_Branch),
                    .ID_EX_ALUControl(ID_EX_ALUControl));
+    
+    // 前递信号
+    wire[1:0] forwardA, forwardB;
  
     // ALU操作数2
-    wire[63:0] src2; 
-    Mux_2 U_alu_mux(.opt1(ID_EX_RD2), .opt2(ID_EX_imm), .control(ID_EX_ALUSrc), .result(src2));
+    wire[63:0] src1, t_src2, src2; 
+    MUX_3 U_src1_mux(.opt1(ID_EX_RD1), .opt2(WD), .opt3(EX_MEM_alu_result), 
+                     .control(forwardA), .result(src1));
+    MUX_3 U_src2_mux(.opt1(ID_EX_RD2), .opt2(WD), .opt3(EX_MEM_alu_result), 
+                     .control(forwardB), .result(t_src2));
+    // 立即数的多选器
+    MUX_2 U_imm_mux(.opt1(t_src2), .opt2(ID_EX_imm), .control(ID_EX_ALUSrc), .result(src2));
     
     // 零输出信号
     wire Zero; 
     // ALU计算结果
     wire[63:0] alu_result;
-    ALU U_ALU(.A(ID_EX_RD1), .B(src2), .ALUControl(ID_EX_ALUControl), .C(alu_result), .Zero(Zero));
+    ALU U_ALU(.A(src1), .B(src2), .ALUControl(ID_EX_ALUControl), .C(alu_result), .Zero(Zero));
     
     // PC加法器
     PC_adder U_PCadder(.clk(clk), .nowPC(nowPC), .ID_EX_PC(ID_EX_PC),
@@ -131,7 +139,12 @@ module CPU(
                     .MEM_WB_MemtoReg(MEM_WB_MemtoReg));
     
     // 写回多选器
-    Mux_2 U_WB_mux(.opt1(MEM_WB_alu_result), .opt2(MEM_WB_mem_data), .control(MEM_WB_MemtoReg), .result(WD));
+    MUX_2 U_WB_mux(.opt1(MEM_WB_alu_result), .opt2(MEM_WB_mem_data), .control(MEM_WB_MemtoReg), .result(WD));
+    
+    Forwarding U_forward(.EX_MEM_regwrite(EX_MEM_regwrite), .EX_MEM_rd(EX_MEM_instr[11:7]),
+                         .MEM_WB_regwrite(MEM_WB_regwrite), .MEM_WB_rd(MEM_WB_instr[11:7]),
+                         .ID_EX_rs1(ID_EX_instr[19:15]), .ID_EX_rs2(ID_EX_instr[24:20]),
+                         .forwardA(forwardA), .forwardB(forwardB));
     
     reg[4:0] reg_addr;
     reg[63:0] reg_data;

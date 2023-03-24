@@ -35,21 +35,21 @@ module Forwarding(
         if (EX_MEM_regwrite && EX_MEM_rd != 5'b0 && EX_MEM_rd == ID_EX_rs1) begin 
             t_forwardA = 2'b10;
         end
-        else if (EX_MEM_regwrite && EX_MEM_rd != 5'b0 && EX_MEM_rd == ID_EX_rs2) begin
+        else if (MEM_WB_regwrite && MEM_WB_rd != 5'b0 && MEM_WB_rd == ID_EX_rs1) begin
+            // 只有在EX阶段不进行前递的时候才处理MEM冒险
+            t_forwardA = 2'b01;
+        end
+        else t_forwardA = 2'b00;
+        
+        if (EX_MEM_regwrite && EX_MEM_rd != 5'b0 && EX_MEM_rd == ID_EX_rs2) begin
             t_forwardB = 2'b10;
         end
-        else begin
-            // 只有在EX阶段不进行前递的时候才处理MEM冒险
-            if (MEM_WB_regwrite && MEM_WB_rd != 5'b0 && MEM_WB_rd == ID_EX_rs1) begin
-                t_forwardA = 2'b01;
-            end 
-            else if (MEM_WB_regwrite && MEM_WB_rd != 5'b0 && MEM_WB_rd == ID_EX_rs2) begin
-                t_forwardB = 2'b01;
-            end
-            else begin
-                t_forwardA = 2'b00;
-                t_forwardB = 2'b00;
-            end
+        else if (MEM_WB_regwrite && MEM_WB_rd != 5'b0 && MEM_WB_rd == ID_EX_rs2) begin
+            t_forwardB = 2'b01;
         end
+        else t_forwardB = 2'b00;
     end
+    assign forwardA = t_forwardA;
+    assign forwardB = t_forwardB;
+    
 endmodule
