@@ -2,6 +2,7 @@
 
 module ID_EX_reg(
     input clk,
+    input rstn,
     input flush,
     input[31:0] instr,
     input[63:0] PC, imm, RD1, RD2,
@@ -19,8 +20,8 @@ module ID_EX_reg(
     reg t_regwrite, t_ALUSrc, t_MemRead, t_MemWrite, t_MemtoReg, t_Branch;
     reg[3:0] t_ALUControl;
     
-    always@(posedge clk) begin
-        if (flush) begin
+    always@(posedge clk or negedge rstn) begin
+        if (!rstn || flush) begin
             t_instr <= 32'b0;
             t_PC <= 64'b0;
             t_imm <= 64'b0;

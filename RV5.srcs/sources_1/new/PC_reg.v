@@ -30,13 +30,11 @@ module PC_reg(
     
     initial begin nowPC = 64'b0; end
     
-    always@(negedge rstn) begin
-        if (!rstn) nowPC <= 64'b0;
-        else begin nowPC <= nowPC; end
-    end
-    
-    always@(posedge clk) begin
-        if (PCwrite) begin
+    always@(posedge clk or negedge rstn) begin
+        if (!rstn) begin
+            nowPC <= 64'b0;
+        end
+        else if (PCwrite) begin
             nowPC = nextPC;
             if (nowPC > `INSTR_NUM * 4) nowPC = 0;
             else nowPC = nowPC;

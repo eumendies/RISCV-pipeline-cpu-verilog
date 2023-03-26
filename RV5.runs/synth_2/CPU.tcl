@@ -70,6 +70,11 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_2" START { ROLLUP_AUTO }
+set_param checkpoint.writeSynthRtdsInDcp 1
+set_param chipscope.maxJobs 4
+set_param xicom.use_bs_reader 1
+set_msg_config -id {Synth 8-256} -limit 10000
+set_msg_config -id {Synth 8-638} -limit 10000
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a100tcsg324-1
 
@@ -92,11 +97,14 @@ read_verilog -library xil_defaultlib {
   E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/Clk_div.v
   E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/Controller.v
   E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/EX_MEM_reg.v
+  E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/Forwarding.v
+  E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/Hazard_unit.v
   E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/ID_EX_reg.v
   E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/IF_ID_reg.v
   E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/ImmGen.v
   E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/MEM_WB_reg.v
-  E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/Mux.v
+  E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/MUX_3.v
+  E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/Mux_2.v
   E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_adder.v
   E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v
   E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v

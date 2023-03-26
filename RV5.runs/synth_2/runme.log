@@ -10,7 +10,6 @@
     ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 
 source CPU.tcl -notrace
-create_project: Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 395.785 ; gain = 68.617
 Command: read_checkpoint -auto_incremental -incremental E:/vivado/RV5/RV5/RV5.srcs/utils_1/imports/synth_2/ALU.dcp
 INFO: [Vivado 12-5825] Read reference checkpoint from E:/vivado/RV5/RV5/RV5.srcs/utils_1/imports/synth_2/ALU.dcp for incremental synthesis
 INFO: [Vivado 12-7989] Please ensure there are no constraint changes
@@ -19,14 +18,12 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Device 21-403] Loading part xc7a100tcsg324-1
-INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
-INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 24028
+INFO: [Synth 8-7075] Helper process launched with PID 17440
 INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [D:/Environment/vivado/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 1232.648 ; gain = 408.977
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1229.324 ; gain = 407.082
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'CPU' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:23]
 INFO: [Synth 8-6157] synthesizing module 'Clk_div' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/Clk_div.v:23]
@@ -34,71 +31,148 @@ INFO: [Synth 8-6155] done synthesizing module 'Clk_div' (0#1) [E:/vivado/RV5/RV5
 INFO: [Synth 8-6157] synthesizing module 'PC_reg' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:23]
 INFO: [Synth 8-6155] done synthesizing module 'PC_reg' (0#1) [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:23]
 INFO: [Synth 8-6157] synthesizing module 'ROM' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/ROM.v:23]
-INFO: [Synth 8-6157] synthesizing module 'imem' [E:/vivado/RV5/RV5/RV5.runs/synth_2/.Xil/Vivado-460-LAPTOP-7D1D3GGC/realtime/imem_stub.v:5]
-INFO: [Synth 8-6155] done synthesizing module 'imem' (0#1) [E:/vivado/RV5/RV5/RV5.runs/synth_2/.Xil/Vivado-460-LAPTOP-7D1D3GGC/realtime/imem_stub.v:5]
+INFO: [Synth 8-6157] synthesizing module 'imem' [E:/vivado/RV5/RV5/RV5.runs/synth_2/.Xil/Vivado-20980-LAPTOP-7D1D3GGC/realtime/imem_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'imem' (0#1) [E:/vivado/RV5/RV5/RV5.runs/synth_2/.Xil/Vivado-20980-LAPTOP-7D1D3GGC/realtime/imem_stub.v:5]
 INFO: [Synth 8-6155] done synthesizing module 'ROM' (0#1) [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/ROM.v:23]
 INFO: [Synth 8-6157] synthesizing module 'IF_ID_reg' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/IF_ID_reg.v:23]
 INFO: [Synth 8-6155] done synthesizing module 'IF_ID_reg' (0#1) [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/IF_ID_reg.v:23]
 INFO: [Synth 8-6157] synthesizing module 'Controller' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/Controller.v:23]
 INFO: [Synth 8-6155] done synthesizing module 'Controller' (0#1) [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/Controller.v:23]
+INFO: [Synth 8-6157] synthesizing module 'Hazard_unit' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/Hazard_unit.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'Hazard_unit' (0#1) [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/Hazard_unit.v:23]
 INFO: [Synth 8-6157] synthesizing module 'ImmGen' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/ImmGen.v:23]
 INFO: [Synth 8-6155] done synthesizing module 'ImmGen' (0#1) [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/ImmGen.v:23]
 INFO: [Synth 8-6157] synthesizing module 'RegFile' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RegFile.v:23]
 INFO: [Synth 8-6155] done synthesizing module 'RegFile' (0#1) [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RegFile.v:23]
 INFO: [Synth 8-6157] synthesizing module 'ID_EX_reg' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/ID_EX_reg.v:3]
 INFO: [Synth 8-6155] done synthesizing module 'ID_EX_reg' (0#1) [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/ID_EX_reg.v:3]
-INFO: [Synth 8-6157] synthesizing module 'Mux' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/Mux.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'Mux' (0#1) [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/Mux.v:23]
+INFO: [Synth 8-6157] synthesizing module 'MUX_3' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/MUX_3.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'MUX_3' (0#1) [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/MUX_3.v:23]
+INFO: [Synth 8-6157] synthesizing module 'MUX_2' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/Mux_2.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'MUX_2' (0#1) [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/Mux_2.v:23]
 INFO: [Synth 8-6157] synthesizing module 'ALU' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/ALU.v:23]
 INFO: [Synth 8-6155] done synthesizing module 'ALU' (0#1) [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/ALU.v:23]
-INFO: [Synth 8-6157] synthesizing module 'PC_adder' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_adder.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'PC_adder' (0#1) [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_adder.v:23]
 INFO: [Synth 8-6157] synthesizing module 'EX_MEM_reg' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/EX_MEM_reg.v:3]
 INFO: [Synth 8-6155] done synthesizing module 'EX_MEM_reg' (0#1) [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/EX_MEM_reg.v:3]
+INFO: [Synth 8-6157] synthesizing module 'PC_adder' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_adder.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'PC_adder' (0#1) [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_adder.v:23]
 INFO: [Synth 8-6157] synthesizing module 'RAM' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:23]
 INFO: [Synth 8-6155] done synthesizing module 'RAM' (0#1) [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:23]
 INFO: [Synth 8-6157] synthesizing module 'MEM_WB_reg' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/MEM_WB_reg.v:23]
 INFO: [Synth 8-6155] done synthesizing module 'MEM_WB_reg' (0#1) [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/MEM_WB_reg.v:23]
+INFO: [Synth 8-6157] synthesizing module 'Forwarding' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/Forwarding.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'Forwarding' (0#1) [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/Forwarding.v:23]
 INFO: [Synth 8-6085] Hierarchical reference on 'rf' stops possible memory inference [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RegFile.v:31]
-WARNING: [Synth 8-567] referenced signal 'reg_data' should be on the sensitivity list [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:148]
+INFO: [Synth 8-6085] Hierarchical reference on 'store' stops possible memory inference [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:34]
+WARNING: [Synth 8-567] referenced signal 'reg_data' should be on the sensitivity list [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:187]
+WARNING: [Synth 8-567] referenced signal 'ram_data' should be on the sensitivity list [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:187]
 INFO: [Synth 8-6157] synthesizing module 'seg7x16' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/seg7x16.v:23]
 INFO: [Synth 8-155] case statement is not full and has no default [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/seg7x16.v:88]
 INFO: [Synth 8-6155] done synthesizing module 'seg7x16' (0#1) [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/seg7x16.v:23]
 INFO: [Synth 8-6155] done synthesizing module 'CPU' (0#1) [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:23]
-WARNING: [Synth 8-7137] Register ReadData_reg in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:39]
-WARNING: [Synth 8-7137] Register store_reg[31] in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:40]
-WARNING: [Synth 8-7137] Register store_reg[30] in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:40]
-WARNING: [Synth 8-7137] Register store_reg[29] in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:40]
-WARNING: [Synth 8-7137] Register store_reg[28] in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:40]
-WARNING: [Synth 8-7137] Register store_reg[27] in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:40]
-WARNING: [Synth 8-7137] Register store_reg[26] in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:40]
-WARNING: [Synth 8-7137] Register store_reg[25] in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:40]
-WARNING: [Synth 8-7137] Register store_reg[24] in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:40]
-WARNING: [Synth 8-7137] Register store_reg[23] in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:40]
-WARNING: [Synth 8-7137] Register store_reg[22] in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:40]
-WARNING: [Synth 8-7137] Register store_reg[21] in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:40]
-WARNING: [Synth 8-7137] Register store_reg[20] in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:40]
-WARNING: [Synth 8-7137] Register store_reg[19] in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:40]
-WARNING: [Synth 8-7137] Register store_reg[18] in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:40]
-WARNING: [Synth 8-7137] Register store_reg[17] in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:40]
-WARNING: [Synth 8-7137] Register store_reg[16] in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:40]
-WARNING: [Synth 8-7137] Register store_reg[15] in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:40]
-WARNING: [Synth 8-7137] Register store_reg[14] in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:40]
-WARNING: [Synth 8-7137] Register store_reg[13] in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:40]
-WARNING: [Synth 8-7137] Register store_reg[12] in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:40]
-WARNING: [Synth 8-7137] Register store_reg[11] in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:40]
-WARNING: [Synth 8-7137] Register store_reg[10] in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:40]
-WARNING: [Synth 8-7137] Register store_reg[9] in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:40]
-WARNING: [Synth 8-7137] Register store_reg[8] in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:40]
-WARNING: [Synth 8-7137] Register store_reg[7] in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:40]
-WARNING: [Synth 8-7137] Register store_reg[6] in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:40]
-WARNING: [Synth 8-7137] Register store_reg[5] in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:40]
-WARNING: [Synth 8-7137] Register store_reg[4] in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:40]
-WARNING: [Synth 8-7137] Register store_reg[3] in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:40]
-WARNING: [Synth 8-7137] Register store_reg[2] in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:40]
-WARNING: [Synth 8-7137] Register store_reg[1] in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:40]
-WARNING: [Synth 8-7137] Register store_reg[0] in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:40]
-WARNING: [Synth 8-7137] Register reg_data_reg in module CPU has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:141]
+WARNING: [Synth 8-7137] Register store_reg[255] in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:45]
+WARNING: [Synth 8-7137] Register store_reg[254] in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:45]
+WARNING: [Synth 8-7137] Register store_reg[253] in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:45]
+WARNING: [Synth 8-7137] Register store_reg[252] in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:45]
+WARNING: [Synth 8-7137] Register store_reg[251] in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:45]
+WARNING: [Synth 8-7137] Register store_reg[250] in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:45]
+WARNING: [Synth 8-7137] Register store_reg[249] in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:45]
+WARNING: [Synth 8-7137] Register store_reg[248] in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:45]
+WARNING: [Synth 8-7137] Register store_reg[247] in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:45]
+WARNING: [Synth 8-7137] Register store_reg[246] in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:45]
+WARNING: [Synth 8-7137] Register store_reg[245] in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:45]
+WARNING: [Synth 8-7137] Register store_reg[244] in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:45]
+WARNING: [Synth 8-7137] Register store_reg[243] in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:45]
+WARNING: [Synth 8-7137] Register store_reg[242] in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:45]
+WARNING: [Synth 8-7137] Register store_reg[241] in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:45]
+WARNING: [Synth 8-7137] Register store_reg[240] in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:45]
+WARNING: [Synth 8-7137] Register store_reg[239] in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:45]
+WARNING: [Synth 8-7137] Register store_reg[238] in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:45]
+WARNING: [Synth 8-7137] Register store_reg[237] in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:45]
+WARNING: [Synth 8-7137] Register store_reg[236] in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:45]
+WARNING: [Synth 8-7137] Register store_reg[235] in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:45]
+WARNING: [Synth 8-7137] Register store_reg[234] in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:45]
+WARNING: [Synth 8-7137] Register store_reg[233] in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:45]
+WARNING: [Synth 8-7137] Register store_reg[232] in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:45]
+WARNING: [Synth 8-7137] Register store_reg[231] in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:45]
+WARNING: [Synth 8-7137] Register store_reg[230] in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:45]
+WARNING: [Synth 8-7137] Register store_reg[229] in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:45]
+WARNING: [Synth 8-7137] Register store_reg[228] in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:45]
+WARNING: [Synth 8-7137] Register store_reg[227] in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:45]
+WARNING: [Synth 8-7137] Register store_reg[226] in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:45]
+WARNING: [Synth 8-7137] Register store_reg[225] in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:45]
+WARNING: [Synth 8-7137] Register store_reg[224] in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:45]
+WARNING: [Synth 8-7137] Register store_reg[223] in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:45]
+WARNING: [Synth 8-7137] Register store_reg[222] in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:45]
+WARNING: [Synth 8-7137] Register store_reg[221] in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:45]
+WARNING: [Synth 8-7137] Register store_reg[220] in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:45]
+WARNING: [Synth 8-7137] Register store_reg[219] in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:45]
+WARNING: [Synth 8-7137] Register store_reg[218] in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:45]
+WARNING: [Synth 8-7137] Register store_reg[217] in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:45]
+WARNING: [Synth 8-7137] Register store_reg[216] in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:45]
+WARNING: [Synth 8-7137] Register store_reg[215] in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:45]
+WARNING: [Synth 8-7137] Register store_reg[214] in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:45]
+WARNING: [Synth 8-7137] Register store_reg[213] in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:45]
+WARNING: [Synth 8-7137] Register store_reg[212] in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:45]
+WARNING: [Synth 8-7137] Register store_reg[211] in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:45]
+WARNING: [Synth 8-7137] Register store_reg[210] in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:45]
+WARNING: [Synth 8-7137] Register store_reg[209] in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:45]
+WARNING: [Synth 8-7137] Register store_reg[208] in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:45]
+WARNING: [Synth 8-7137] Register store_reg[207] in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:45]
+WARNING: [Synth 8-7137] Register store_reg[206] in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:45]
+WARNING: [Synth 8-7137] Register store_reg[205] in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:45]
+WARNING: [Synth 8-7137] Register store_reg[204] in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:45]
+WARNING: [Synth 8-7137] Register store_reg[203] in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:45]
+WARNING: [Synth 8-7137] Register store_reg[202] in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:45]
+WARNING: [Synth 8-7137] Register store_reg[201] in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:45]
+WARNING: [Synth 8-7137] Register store_reg[200] in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:45]
+WARNING: [Synth 8-7137] Register store_reg[199] in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:45]
+WARNING: [Synth 8-7137] Register store_reg[198] in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:45]
+WARNING: [Synth 8-7137] Register store_reg[197] in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:45]
+WARNING: [Synth 8-7137] Register store_reg[196] in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:45]
+WARNING: [Synth 8-7137] Register store_reg[195] in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:45]
+WARNING: [Synth 8-7137] Register store_reg[194] in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:45]
+WARNING: [Synth 8-7137] Register store_reg[193] in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:45]
+WARNING: [Synth 8-7137] Register store_reg[192] in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:45]
+WARNING: [Synth 8-7137] Register store_reg[191] in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:45]
+WARNING: [Synth 8-7137] Register store_reg[190] in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:45]
+WARNING: [Synth 8-7137] Register store_reg[189] in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:45]
+WARNING: [Synth 8-7137] Register store_reg[188] in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:45]
+WARNING: [Synth 8-7137] Register store_reg[187] in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:45]
+WARNING: [Synth 8-7137] Register store_reg[186] in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:45]
+WARNING: [Synth 8-7137] Register store_reg[185] in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:45]
+WARNING: [Synth 8-7137] Register store_reg[184] in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:45]
+WARNING: [Synth 8-7137] Register store_reg[183] in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:45]
+WARNING: [Synth 8-7137] Register store_reg[182] in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:45]
+WARNING: [Synth 8-7137] Register store_reg[181] in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:45]
+WARNING: [Synth 8-7137] Register store_reg[180] in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:45]
+WARNING: [Synth 8-7137] Register store_reg[179] in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:45]
+WARNING: [Synth 8-7137] Register store_reg[178] in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:45]
+WARNING: [Synth 8-7137] Register store_reg[177] in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:45]
+WARNING: [Synth 8-7137] Register store_reg[176] in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:45]
+WARNING: [Synth 8-7137] Register store_reg[175] in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:45]
+WARNING: [Synth 8-7137] Register store_reg[174] in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:45]
+WARNING: [Synth 8-7137] Register store_reg[173] in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:45]
+WARNING: [Synth 8-7137] Register store_reg[172] in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:45]
+WARNING: [Synth 8-7137] Register store_reg[171] in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:45]
+WARNING: [Synth 8-7137] Register store_reg[170] in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:45]
+WARNING: [Synth 8-7137] Register store_reg[169] in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:45]
+WARNING: [Synth 8-7137] Register store_reg[168] in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:45]
+WARNING: [Synth 8-7137] Register store_reg[167] in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:45]
+WARNING: [Synth 8-7137] Register store_reg[166] in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:45]
+WARNING: [Synth 8-7137] Register store_reg[165] in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:45]
+WARNING: [Synth 8-7137] Register store_reg[164] in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:45]
+WARNING: [Synth 8-7137] Register store_reg[163] in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:45]
+WARNING: [Synth 8-7137] Register store_reg[162] in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:45]
+WARNING: [Synth 8-7137] Register store_reg[161] in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:45]
+WARNING: [Synth 8-7137] Register store_reg[160] in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:45]
+WARNING: [Synth 8-7137] Register store_reg[159] in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:45]
+WARNING: [Synth 8-7137] Register store_reg[158] in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:45]
+WARNING: [Synth 8-7137] Register store_reg[157] in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:45]
+WARNING: [Synth 8-7137] Register store_reg[156] in module RAM has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:45]
+INFO: [Common 17-14] Message 'Synth 8-7137' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+WARNING: [Synth 8-7129] Port MemRead in module RAM is either unconnected or has no load
+WARNING: [Synth 8-7129] Port clk in module RegFile is either unconnected or has no load
 WARNING: [Synth 8-7129] Port instr[24] in module Controller is either unconnected or has no load
 WARNING: [Synth 8-7129] Port instr[23] in module Controller is either unconnected or has no load
 WARNING: [Synth 8-7129] Port instr[22] in module Controller is either unconnected or has no load
@@ -130,18 +204,18 @@ WARNING: [Synth 8-7129] Port sw_i[2] in module Clk_div is either unconnected or 
 WARNING: [Synth 8-7129] Port sw_i[1] in module Clk_div is either unconnected or has no load
 WARNING: [Synth 8-7129] Port sw_i[0] in module Clk_div is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 1361.465 ; gain = 537.793
+Finished RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1606.859 ; gain = 784.617
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1361.465 ; gain = 537.793
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1606.859 ; gain = 784.617
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1361.465 ; gain = 537.793
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1606.859 ; gain = 784.617
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.236 . Memory (MB): peak = 1361.465 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.305 . Memory (MB): peak = 1606.859 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -172,68 +246,127 @@ INFO: [Project 1-236] Implementation specific constraints were found while readi
 Resolution: To avoid this warning, move constraints listed in [.Xil/CPU_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1467.199 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1626.539 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.044 . Memory (MB): peak = 1467.199 ; gain = 0.000
-INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
-INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.049 . Memory (MB): peak = 1626.539 ; gain = 0.000
 INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [D:/Environment/vivado/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 1467.199 ; gain = 643.527
+Finished Constraint Validation : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 1626.539 ; gain = 804.297
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a100tcsg324-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 1467.199 ; gain = 643.527
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:20 ; elapsed = 00:00:19 . Memory (MB): peak = 1626.539 ; gain = 804.297
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 Applied set_property KEEP_HIERARCHY = SOFT for U_imem/your_instance_name. (constraint file  auto generated constraint).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 1467.199 ; gain = 643.527
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:20 ; elapsed = 00:00:19 . Memory (MB): peak = 1626.539 ; gain = 804.297
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:35 ; elapsed = 00:00:36 . Memory (MB): peak = 1467.199 ; gain = 643.527
+Start Preparing Guide Design
 ---------------------------------------------------------------------------------
+WARNING: [Synth 8-6702] IncrSynth : Design change found in an area of the design that prevents previous synthesis information being used, Reverting to default synthesis
+---------------------------------------------------------------------------------
+Finished Doing Graph Differ : Time (s): cpu = 00:00:21 ; elapsed = 00:00:21 . Memory (MB): peak = 1626.539 ; gain = 804.297
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Preparing Guide Design : Time (s): cpu = 00:00:21 ; elapsed = 00:00:21 . Memory (MB): peak = 1626.539 ; gain = 804.297
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-327] inferring latch for variable 't_PCwrite_reg' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/Hazard_unit.v:44]
+WARNING: [Synth 8-327] inferring latch for variable 't_IF_ID_write_reg' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/Hazard_unit.v:45]
+WARNING: [Synth 8-327] inferring latch for variable 't_IF_ID_flush_reg' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/Hazard_unit.v:54]
+WARNING: [Synth 8-327] inferring latch for variable 't_ID_EX_flush_reg' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/Hazard_unit.v:47]
+WARNING: [Synth 8-327] inferring latch for variable 'rf_reg[31]' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RegFile.v:38]
+WARNING: [Synth 8-327] inferring latch for variable 'rf_reg[30]' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RegFile.v:38]
+WARNING: [Synth 8-327] inferring latch for variable 'rf_reg[29]' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RegFile.v:38]
+WARNING: [Synth 8-327] inferring latch for variable 'rf_reg[28]' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RegFile.v:38]
+WARNING: [Synth 8-327] inferring latch for variable 'rf_reg[27]' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RegFile.v:38]
+WARNING: [Synth 8-327] inferring latch for variable 'rf_reg[26]' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RegFile.v:38]
+WARNING: [Synth 8-327] inferring latch for variable 'rf_reg[25]' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RegFile.v:38]
+WARNING: [Synth 8-327] inferring latch for variable 'rf_reg[24]' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RegFile.v:38]
+WARNING: [Synth 8-327] inferring latch for variable 'rf_reg[23]' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RegFile.v:38]
+WARNING: [Synth 8-327] inferring latch for variable 'rf_reg[22]' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RegFile.v:38]
+WARNING: [Synth 8-327] inferring latch for variable 'rf_reg[21]' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RegFile.v:38]
+WARNING: [Synth 8-327] inferring latch for variable 'rf_reg[20]' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RegFile.v:38]
+WARNING: [Synth 8-327] inferring latch for variable 'rf_reg[19]' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RegFile.v:38]
+WARNING: [Synth 8-327] inferring latch for variable 'rf_reg[18]' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RegFile.v:38]
+WARNING: [Synth 8-327] inferring latch for variable 'rf_reg[17]' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RegFile.v:38]
+WARNING: [Synth 8-327] inferring latch for variable 'rf_reg[16]' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RegFile.v:38]
+WARNING: [Synth 8-327] inferring latch for variable 'rf_reg[15]' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RegFile.v:38]
+WARNING: [Synth 8-327] inferring latch for variable 'rf_reg[14]' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RegFile.v:38]
+WARNING: [Synth 8-327] inferring latch for variable 'rf_reg[13]' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RegFile.v:38]
+WARNING: [Synth 8-327] inferring latch for variable 'rf_reg[12]' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RegFile.v:38]
+WARNING: [Synth 8-327] inferring latch for variable 'rf_reg[11]' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RegFile.v:38]
+WARNING: [Synth 8-327] inferring latch for variable 'rf_reg[10]' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RegFile.v:38]
+WARNING: [Synth 8-327] inferring latch for variable 'rf_reg[9]' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RegFile.v:38]
+WARNING: [Synth 8-327] inferring latch for variable 'rf_reg[8]' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RegFile.v:38]
+WARNING: [Synth 8-327] inferring latch for variable 'rf_reg[7]' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RegFile.v:38]
+WARNING: [Synth 8-327] inferring latch for variable 'rf_reg[6]' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RegFile.v:38]
+WARNING: [Synth 8-327] inferring latch for variable 'rf_reg[5]' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RegFile.v:38]
+WARNING: [Synth 8-327] inferring latch for variable 'rf_reg[4]' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RegFile.v:38]
+WARNING: [Synth 8-327] inferring latch for variable 'rf_reg[3]' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RegFile.v:38]
+WARNING: [Synth 8-327] inferring latch for variable 'rf_reg[2]' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RegFile.v:38]
+WARNING: [Synth 8-327] inferring latch for variable 'rf_reg[1]' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RegFile.v:38]
+WARNING: [Synth 8-327] inferring latch for variable 'i' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:44]
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:34 ; elapsed = 00:00:35 . Memory (MB): peak = 1626.539 ; gain = 804.297
+---------------------------------------------------------------------------------
+
+
+Incremental Synthesis Report Summary:
+
+1. Incremental synthesis run: no
+
+   Reason for not running incremental synthesis : Design change found in an area of the design that prevents previous synthesis information being used
+
+
+INFO: [Synth 8-7130] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
 ---------------------------------------------------------------------------------
 Detailed RTL Component Info : 
 +---Adders : 
-	   2 Input   64 Bit       Adders := 2     
+	   2 Input   64 Bit       Adders := 3     
 	   3 Input   64 Bit       Adders := 1     
+	   2 Input    8 Bit       Adders := 1     
 	   2 Input    5 Bit       Adders := 1     
 	   2 Input    3 Bit       Adders := 1     
 +---XORs : 
 	   2 Input     64 Bit         XORs := 1     
 +---Registers : 
-	               64 Bit    Registers := 35    
-	                8 Bit    Registers := 33    
+	               64 Bit    Registers := 15    
+	               32 Bit    Registers := 4     
+	                8 Bit    Registers := 258   
 	                5 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
 	                3 Bit    Registers := 1     
+	                1 Bit    Registers := 14    
 +---Muxes : 
-	   2 Input   64 Bit        Muxes := 16    
-	   4 Input   64 Bit        Muxes := 1     
+	   2 Input   64 Bit        Muxes := 20    
 	   3 Input   64 Bit        Muxes := 1     
-	   2 Input    8 Bit        Muxes := 58    
-	   9 Input    8 Bit        Muxes := 7     
+	   4 Input   64 Bit        Muxes := 3     
+	   2 Input   32 Bit        Muxes := 2     
+	   2 Input    8 Bit        Muxes := 1210  
+	   9 Input    8 Bit        Muxes := 21    
 	  18 Input    8 Bit        Muxes := 1     
 	   8 Input    8 Bit        Muxes := 1     
+	   9 Input    4 Bit        Muxes := 22    
 	  11 Input    4 Bit        Muxes := 1     
-	   9 Input    4 Bit        Muxes := 1     
-	   3 Input    2 Bit        Muxes := 3     
-	   2 Input    2 Bit        Muxes := 1     
+	   2 Input    4 Bit        Muxes := 1     
 	   4 Input    2 Bit        Muxes := 1     
-	   2 Input    1 Bit        Muxes := 32    
+	   3 Input    2 Bit        Muxes := 3     
+	   2 Input    2 Bit        Muxes := 3     
+	   2 Input    1 Bit        Muxes := 10    
 	   3 Input    1 Bit        Muxes := 6     
 	   4 Input    1 Bit        Muxes := 1     
-	   8 Input    1 Bit        Muxes := 4     
-	   9 Input    1 Bit        Muxes := 28    
+	   5 Input    1 Bit        Muxes := 1     
 	  18 Input    1 Bit        Muxes := 1     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
@@ -250,7 +383,110 @@ Finished Part Resource Summary
 ---------------------------------------------------------------------------------
 Start Cross Boundary and Area Optimization
 ---------------------------------------------------------------------------------
-WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+WARNING: [Synth 8-264] enable of latch i__30 is always disabled
+WARNING: [Synth 8-264] enable of latch i__30 is always disabled
+WARNING: [Synth 8-264] enable of latch i__29 is always disabled
+WARNING: [Synth 8-264] enable of latch i__29 is always disabled
+WARNING: [Synth 8-264] enable of latch i__28 is always disabled
+WARNING: [Synth 8-264] enable of latch i__28 is always disabled
+WARNING: [Synth 8-264] enable of latch i__27 is always disabled
+WARNING: [Synth 8-264] enable of latch i__27 is always disabled
+WARNING: [Synth 8-264] enable of latch i__26 is always disabled
+WARNING: [Synth 8-264] enable of latch i__26 is always disabled
+WARNING: [Synth 8-264] enable of latch i__25 is always disabled
+WARNING: [Synth 8-264] enable of latch i__25 is always disabled
+WARNING: [Synth 8-264] enable of latch i__24 is always disabled
+WARNING: [Synth 8-264] enable of latch i__24 is always disabled
+WARNING: [Synth 8-264] enable of latch i__23 is always disabled
+WARNING: [Synth 8-264] enable of latch i__23 is always disabled
+WARNING: [Synth 8-264] enable of latch i__22 is always disabled
+WARNING: [Synth 8-264] enable of latch i__22 is always disabled
+WARNING: [Synth 8-264] enable of latch i__21 is always disabled
+WARNING: [Synth 8-264] enable of latch i__21 is always disabled
+WARNING: [Synth 8-264] enable of latch i__20 is always disabled
+WARNING: [Synth 8-264] enable of latch i__20 is always disabled
+WARNING: [Synth 8-264] enable of latch i__19 is always disabled
+WARNING: [Synth 8-264] enable of latch i__19 is always disabled
+WARNING: [Synth 8-264] enable of latch i__18 is always disabled
+WARNING: [Synth 8-264] enable of latch i__18 is always disabled
+WARNING: [Synth 8-264] enable of latch i__17 is always disabled
+WARNING: [Synth 8-264] enable of latch i__17 is always disabled
+WARNING: [Synth 8-264] enable of latch i__16 is always disabled
+WARNING: [Synth 8-264] enable of latch i__16 is always disabled
+WARNING: [Synth 8-264] enable of latch i__15 is always disabled
+WARNING: [Synth 8-264] enable of latch i__15 is always disabled
+WARNING: [Synth 8-264] enable of latch i__14 is always disabled
+WARNING: [Synth 8-264] enable of latch i__14 is always disabled
+WARNING: [Synth 8-264] enable of latch i__13 is always disabled
+WARNING: [Synth 8-264] enable of latch i__13 is always disabled
+WARNING: [Synth 8-264] enable of latch i__12 is always disabled
+WARNING: [Synth 8-264] enable of latch i__12 is always disabled
+WARNING: [Synth 8-264] enable of latch i__11 is always disabled
+WARNING: [Synth 8-264] enable of latch i__11 is always disabled
+WARNING: [Synth 8-264] enable of latch i__10 is always disabled
+WARNING: [Synth 8-264] enable of latch i__10 is always disabled
+WARNING: [Synth 8-264] enable of latch i__9 is always disabled
+WARNING: [Synth 8-264] enable of latch i__9 is always disabled
+WARNING: [Synth 8-264] enable of latch i__8 is always disabled
+WARNING: [Synth 8-264] enable of latch i__8 is always disabled
+WARNING: [Synth 8-264] enable of latch i__7 is always disabled
+WARNING: [Synth 8-264] enable of latch i__7 is always disabled
+WARNING: [Synth 8-264] enable of latch i__6 is always disabled
+WARNING: [Synth 8-264] enable of latch i__6 is always disabled
+WARNING: [Synth 8-264] enable of latch i__5 is always disabled
+WARNING: [Synth 8-264] enable of latch i__5 is always disabled
+WARNING: [Synth 8-264] enable of latch i__4 is always disabled
+WARNING: [Synth 8-264] enable of latch i__4 is always disabled
+WARNING: [Synth 8-264] enable of latch i__3 is always disabled
+WARNING: [Synth 8-264] enable of latch i__3 is always disabled
+WARNING: [Synth 8-264] enable of latch i__2 is always disabled
+WARNING: [Synth 8-264] enable of latch i__2 is always disabled
+WARNING: [Synth 8-264] enable of latch i__1 is always disabled
+WARNING: [Synth 8-264] enable of latch i__1 is always disabled
+WARNING: [Synth 8-264] enable of latch i__0 is always disabled
+WARNING: [Synth 8-264] enable of latch i__0 is always disabled
+WARNING: [Synth 8-264] enable of latch i is always disabled
+WARNING: [Synth 8-264] enable of latch i is always disabled
+WARNING: [Synth 8-264] enable of latch i__30 is always disabled
+WARNING: [Synth 8-264] enable of latch i__30 is always disabled
+WARNING: [Synth 8-264] enable of latch i__29 is always disabled
+WARNING: [Synth 8-264] enable of latch i__29 is always disabled
+WARNING: [Synth 8-264] enable of latch i__28 is always disabled
+WARNING: [Synth 8-264] enable of latch i__28 is always disabled
+WARNING: [Synth 8-264] enable of latch i__27 is always disabled
+WARNING: [Synth 8-264] enable of latch i__27 is always disabled
+WARNING: [Synth 8-264] enable of latch i__26 is always disabled
+WARNING: [Synth 8-264] enable of latch i__26 is always disabled
+WARNING: [Synth 8-264] enable of latch i__25 is always disabled
+WARNING: [Synth 8-264] enable of latch i__25 is always disabled
+WARNING: [Synth 8-264] enable of latch i__24 is always disabled
+WARNING: [Synth 8-264] enable of latch i__24 is always disabled
+WARNING: [Synth 8-264] enable of latch i__23 is always disabled
+WARNING: [Synth 8-264] enable of latch i__23 is always disabled
+WARNING: [Synth 8-264] enable of latch i__22 is always disabled
+WARNING: [Synth 8-264] enable of latch i__22 is always disabled
+WARNING: [Synth 8-264] enable of latch i__21 is always disabled
+WARNING: [Synth 8-264] enable of latch i__21 is always disabled
+WARNING: [Synth 8-264] enable of latch i__20 is always disabled
+WARNING: [Synth 8-264] enable of latch i__20 is always disabled
+WARNING: [Synth 8-264] enable of latch i__19 is always disabled
+WARNING: [Synth 8-264] enable of latch i__19 is always disabled
+WARNING: [Synth 8-264] enable of latch i__18 is always disabled
+WARNING: [Synth 8-264] enable of latch i__18 is always disabled
+WARNING: [Synth 8-264] enable of latch i__17 is always disabled
+WARNING: [Synth 8-264] enable of latch i__17 is always disabled
+WARNING: [Synth 8-264] enable of latch i__16 is always disabled
+WARNING: [Synth 8-264] enable of latch i__16 is always disabled
+WARNING: [Synth 8-264] enable of latch i__15 is always disabled
+WARNING: [Synth 8-264] enable of latch i__15 is always disabled
+WARNING: [Synth 8-264] enable of latch i__14 is always disabled
+WARNING: [Synth 8-264] enable of latch i__14 is always disabled
+WARNING: [Synth 8-264] enable of latch i__13 is always disabled
+WARNING: [Synth 8-264] enable of latch i__13 is always disabled
+INFO: [Common 17-14] Message 'Synth 8-264' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Common 17-14] Message 'Synth 8-264' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Synth 8-5544] ROM "o_sel_r" won't be mapped to Block RAM because address size (3) smaller than threshold (5)
+WARNING: [Synth 8-7129] Port clk in module RegFile is either unconnected or has no load
 WARNING: [Synth 8-7129] Port instr[24] in module Controller is either unconnected or has no load
 WARNING: [Synth 8-7129] Port instr[23] in module Controller is either unconnected or has no load
 WARNING: [Synth 8-7129] Port instr[22] in module Controller is either unconnected or has no load
@@ -266,200 +502,129 @@ WARNING: [Synth 8-7129] Port instr[10] in module Controller is either unconnecte
 WARNING: [Synth 8-7129] Port instr[9] in module Controller is either unconnected or has no load
 WARNING: [Synth 8-7129] Port instr[8] in module Controller is either unconnected or has no load
 WARNING: [Synth 8-7129] Port instr[7] in module Controller is either unconnected or has no load
-WARNING: [Synth 8-7129] Port sw_i[10] in module CPU is either unconnected or has no load
-WARNING: [Synth 8-7129] Port sw_i[9] in module CPU is either unconnected or has no load
-WARNING: [Synth 8-7129] Port sw_i[8] in module CPU is either unconnected or has no load
-WARNING: [Synth 8-7129] Port sw_i[7] in module CPU is either unconnected or has no load
-WARNING: [Synth 8-7129] Port sw_i[6] in module CPU is either unconnected or has no load
-WARNING: [Synth 8-7129] Port sw_i[5] in module CPU is either unconnected or has no load
-WARNING: [Synth 8-7129] Port sw_i[4] in module CPU is either unconnected or has no load
-WARNING: [Synth 8-7129] Port sw_i[3] in module CPU is either unconnected or has no load
-WARNING: [Synth 8-7129] Port sw_i[2] in module CPU is either unconnected or has no load
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'U_PC/nowPC_reg[63]__0/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'U_PC/nowPC_reg[62]__0/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'U_PC/nowPC_reg[61]__0/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'U_PC/nowPC_reg[60]__0/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'U_PC/nowPC_reg[59]__0/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'U_PC/nowPC_reg[58]__0/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'U_PC/nowPC_reg[57]__0/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'U_PC/nowPC_reg[56]__0/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'U_PC/nowPC_reg[55]__0/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'U_PC/nowPC_reg[54]__0/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'U_PC/nowPC_reg[53]__0/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'U_PC/nowPC_reg[52]__0/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'U_PC/nowPC_reg[51]__0/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'U_PC/nowPC_reg[50]__0/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'U_PC/nowPC_reg[49]__0/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'U_PC/nowPC_reg[48]__0/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'U_PC/nowPC_reg[47]__0/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'U_PC/nowPC_reg[46]__0/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'U_PC/nowPC_reg[45]__0/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'U_PC/nowPC_reg[44]__0/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'U_PC/nowPC_reg[43]__0/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'U_PC/nowPC_reg[42]__0/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'U_PC/nowPC_reg[41]__0/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'U_PC/nowPC_reg[40]__0/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'U_PC/nowPC_reg[39]__0/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'U_PC/nowPC_reg[38]__0/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'U_PC/nowPC_reg[37]__0/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'U_PC/nowPC_reg[36]__0/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'U_PC/nowPC_reg[35]__0/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'U_PC/nowPC_reg[34]__0/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'U_PC/nowPC_reg[33]__0/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'U_PC/nowPC_reg[32]__0/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'U_PC/nowPC_reg[31]__0/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'U_PC/nowPC_reg[30]__0/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'U_PC/nowPC_reg[29]__0/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'U_PC/nowPC_reg[28]__0/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'U_PC/nowPC_reg[27]__0/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'U_PC/nowPC_reg[26]__0/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'U_PC/nowPC_reg[25]__0/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'U_PC/nowPC_reg[24]__0/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'U_PC/nowPC_reg[23]__0/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'U_PC/nowPC_reg[22]__0/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'U_PC/nowPC_reg[21]__0/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'U_PC/nowPC_reg[20]__0/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'U_PC/nowPC_reg[19]__0/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'U_PC/nowPC_reg[18]__0/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'U_PC/nowPC_reg[17]__0/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'U_PC/nowPC_reg[16]__0/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'U_PC/nowPC_reg[15]__0/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 1st driver pin 'U_PC/nowPC_reg[14]__0/Q' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6859] multi-driven net on pin Q with 2nd driver pin 'GND' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-INFO: [Common 17-14] Message 'Synth 8-6859' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
-CRITICAL WARNING: [Synth 8-6858] multi-driven net Q is connected to at least one constant driver which has been preserved, other driver is ignored [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:31]
+INFO: [Synth 8-3886] merging instance 'ram_data_reg[56]' (FDE) to 'ram_data_reg[8]'
+INFO: [Synth 8-3886] merging instance 'ram_data_reg[48]' (FDE) to 'ram_data_reg[8]'
+INFO: [Synth 8-3886] merging instance 'ram_data_reg[40]' (FDE) to 'ram_data_reg[8]'
+INFO: [Synth 8-3886] merging instance 'ram_data_reg[32]' (FDE) to 'ram_data_reg[8]'
+INFO: [Synth 8-3886] merging instance 'ram_data_reg[24]' (FDE) to 'ram_data_reg[8]'
+INFO: [Synth 8-3886] merging instance 'ram_data_reg[16]' (FDE) to 'ram_data_reg[8]'
+INFO: [Synth 8-3886] merging instance 'ram_data_reg[8]' (FDE) to 'ram_data_reg[9]'
+INFO: [Synth 8-3886] merging instance 'ram_data_reg[58]' (FDE) to 'ram_data_reg[9]'
+INFO: [Synth 8-3886] merging instance 'ram_data_reg[50]' (FDE) to 'ram_data_reg[9]'
+INFO: [Synth 8-3886] merging instance 'ram_data_reg[42]' (FDE) to 'ram_data_reg[9]'
+INFO: [Synth 8-3886] merging instance 'ram_data_reg[34]' (FDE) to 'ram_data_reg[9]'
+INFO: [Synth 8-3886] merging instance 'ram_data_reg[26]' (FDE) to 'ram_data_reg[9]'
+INFO: [Synth 8-3886] merging instance 'ram_data_reg[18]' (FDE) to 'ram_data_reg[9]'
+INFO: [Synth 8-3886] merging instance 'ram_data_reg[10]' (FDE) to 'ram_data_reg[9]'
+INFO: [Synth 8-3886] merging instance 'ram_data_reg[59]' (FDE) to 'ram_data_reg[9]'
+INFO: [Synth 8-3886] merging instance 'ram_data_reg[51]' (FDE) to 'ram_data_reg[9]'
+INFO: [Synth 8-3886] merging instance 'ram_data_reg[43]' (FDE) to 'ram_data_reg[9]'
+INFO: [Synth 8-3886] merging instance 'ram_data_reg[35]' (FDE) to 'ram_data_reg[9]'
+INFO: [Synth 8-3886] merging instance 'ram_data_reg[27]' (FDE) to 'ram_data_reg[9]'
+INFO: [Synth 8-3886] merging instance 'ram_data_reg[19]' (FDE) to 'ram_data_reg[9]'
+INFO: [Synth 8-3886] merging instance 'ram_data_reg[11]' (FDE) to 'ram_data_reg[9]'
+INFO: [Synth 8-3886] merging instance 'ram_data_reg[57]' (FDE) to 'ram_data_reg[9]'
+INFO: [Synth 8-3886] merging instance 'ram_data_reg[49]' (FDE) to 'ram_data_reg[9]'
+INFO: [Synth 8-3886] merging instance 'ram_data_reg[41]' (FDE) to 'ram_data_reg[9]'
+INFO: [Synth 8-3886] merging instance 'ram_data_reg[33]' (FDE) to 'ram_data_reg[9]'
+INFO: [Synth 8-3886] merging instance 'ram_data_reg[25]' (FDE) to 'ram_data_reg[9]'
+INFO: [Synth 8-3886] merging instance 'ram_data_reg[17]' (FDE) to 'ram_data_reg[9]'
+INFO: [Synth 8-3886] merging instance 'ram_data_reg[9]' (FDE) to 'ram_data_reg[12]'
+INFO: [Synth 8-3886] merging instance 'ram_data_reg[62]' (FDE) to 'ram_data_reg[12]'
+INFO: [Synth 8-3886] merging instance 'ram_data_reg[54]' (FDE) to 'ram_data_reg[12]'
+INFO: [Synth 8-3886] merging instance 'ram_data_reg[46]' (FDE) to 'ram_data_reg[12]'
+INFO: [Synth 8-3886] merging instance 'ram_data_reg[38]' (FDE) to 'ram_data_reg[12]'
+INFO: [Synth 8-3886] merging instance 'ram_data_reg[30]' (FDE) to 'ram_data_reg[12]'
+INFO: [Synth 8-3886] merging instance 'ram_data_reg[22]' (FDE) to 'ram_data_reg[12]'
+INFO: [Synth 8-3886] merging instance 'ram_data_reg[14]' (FDE) to 'ram_data_reg[12]'
+INFO: [Synth 8-3886] merging instance 'ram_data_reg[63]' (FDE) to 'ram_data_reg[12]'
+INFO: [Synth 8-3886] merging instance 'ram_data_reg[55]' (FDE) to 'ram_data_reg[12]'
+INFO: [Synth 8-3886] merging instance 'ram_data_reg[47]' (FDE) to 'ram_data_reg[12]'
+INFO: [Synth 8-3886] merging instance 'ram_data_reg[39]' (FDE) to 'ram_data_reg[12]'
+INFO: [Synth 8-3886] merging instance 'ram_data_reg[31]' (FDE) to 'ram_data_reg[12]'
+INFO: [Synth 8-3886] merging instance 'ram_data_reg[23]' (FDE) to 'ram_data_reg[12]'
+INFO: [Synth 8-3886] merging instance 'ram_data_reg[15]' (FDE) to 'ram_data_reg[12]'
+INFO: [Synth 8-3886] merging instance 'ram_data_reg[61]' (FDE) to 'ram_data_reg[12]'
+INFO: [Synth 8-3886] merging instance 'ram_data_reg[53]' (FDE) to 'ram_data_reg[12]'
+INFO: [Synth 8-3886] merging instance 'ram_data_reg[45]' (FDE) to 'ram_data_reg[12]'
+INFO: [Synth 8-3886] merging instance 'ram_data_reg[37]' (FDE) to 'ram_data_reg[12]'
+INFO: [Synth 8-3886] merging instance 'ram_data_reg[29]' (FDE) to 'ram_data_reg[12]'
+INFO: [Synth 8-3886] merging instance 'ram_data_reg[21]' (FDE) to 'ram_data_reg[12]'
+INFO: [Synth 8-3886] merging instance 'ram_data_reg[13]' (FDE) to 'ram_data_reg[12]'
+INFO: [Synth 8-3886] merging instance 'ram_data_reg[60]' (FDE) to 'ram_data_reg[12]'
+INFO: [Synth 8-3886] merging instance 'ram_data_reg[52]' (FDE) to 'ram_data_reg[12]'
+INFO: [Synth 8-3886] merging instance 'ram_data_reg[44]' (FDE) to 'ram_data_reg[12]'
+INFO: [Synth 8-3886] merging instance 'ram_data_reg[36]' (FDE) to 'ram_data_reg[12]'
+INFO: [Synth 8-3886] merging instance 'ram_data_reg[28]' (FDE) to 'ram_data_reg[12]'
+INFO: [Synth 8-3886] merging instance 'ram_data_reg[20]' (FDE) to 'ram_data_reg[12]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\ram_data_reg[12] )
+INFO: [Synth 8-3886] merging instance 'reg2/t_imm_reg[31]' (FDC) to 'reg2/t_imm_reg[32]'
+INFO: [Synth 8-3886] merging instance 'reg2/t_imm_reg[32]' (FDC) to 'reg2/t_imm_reg[33]'
+INFO: [Synth 8-3886] merging instance 'reg2/t_imm_reg[33]' (FDC) to 'reg2/t_imm_reg[34]'
+INFO: [Synth 8-3886] merging instance 'reg2/t_imm_reg[34]' (FDC) to 'reg2/t_imm_reg[35]'
+INFO: [Synth 8-3886] merging instance 'reg2/t_imm_reg[35]' (FDC) to 'reg2/t_imm_reg[36]'
+INFO: [Synth 8-3886] merging instance 'reg2/t_imm_reg[36]' (FDC) to 'reg2/t_imm_reg[37]'
+INFO: [Synth 8-3886] merging instance 'reg2/t_imm_reg[37]' (FDC) to 'reg2/t_imm_reg[38]'
+INFO: [Synth 8-3886] merging instance 'reg2/t_imm_reg[38]' (FDC) to 'reg2/t_imm_reg[39]'
+INFO: [Synth 8-3886] merging instance 'reg2/t_imm_reg[39]' (FDC) to 'reg2/t_imm_reg[40]'
+INFO: [Synth 8-3886] merging instance 'reg2/t_imm_reg[40]' (FDC) to 'reg2/t_imm_reg[41]'
+INFO: [Synth 8-3886] merging instance 'reg2/t_imm_reg[41]' (FDC) to 'reg2/t_imm_reg[42]'
+INFO: [Synth 8-3886] merging instance 'reg2/t_imm_reg[42]' (FDC) to 'reg2/t_imm_reg[43]'
+INFO: [Synth 8-3886] merging instance 'reg2/t_imm_reg[43]' (FDC) to 'reg2/t_imm_reg[44]'
+INFO: [Synth 8-3886] merging instance 'reg2/t_imm_reg[44]' (FDC) to 'reg2/t_imm_reg[45]'
+INFO: [Synth 8-3886] merging instance 'reg2/t_imm_reg[45]' (FDC) to 'reg2/t_imm_reg[46]'
+INFO: [Synth 8-3886] merging instance 'reg2/t_imm_reg[46]' (FDC) to 'reg2/t_imm_reg[47]'
+INFO: [Synth 8-3886] merging instance 'reg2/t_imm_reg[47]' (FDC) to 'reg2/t_imm_reg[48]'
+INFO: [Synth 8-3886] merging instance 'reg2/t_imm_reg[48]' (FDC) to 'reg2/t_imm_reg[49]'
+INFO: [Synth 8-3886] merging instance 'reg2/t_imm_reg[49]' (FDC) to 'reg2/t_imm_reg[50]'
+INFO: [Synth 8-3886] merging instance 'reg2/t_imm_reg[50]' (FDC) to 'reg2/t_imm_reg[51]'
+INFO: [Synth 8-3886] merging instance 'reg2/t_imm_reg[51]' (FDC) to 'reg2/t_imm_reg[52]'
+INFO: [Synth 8-3886] merging instance 'reg2/t_imm_reg[52]' (FDC) to 'reg2/t_imm_reg[53]'
+INFO: [Synth 8-3886] merging instance 'reg2/t_imm_reg[53]' (FDC) to 'reg2/t_imm_reg[54]'
+INFO: [Synth 8-3886] merging instance 'reg2/t_imm_reg[54]' (FDC) to 'reg2/t_imm_reg[55]'
+INFO: [Synth 8-3886] merging instance 'reg2/t_imm_reg[55]' (FDC) to 'reg2/t_imm_reg[56]'
+INFO: [Synth 8-3886] merging instance 'reg2/t_imm_reg[56]' (FDC) to 'reg2/t_imm_reg[57]'
+INFO: [Synth 8-3886] merging instance 'reg2/t_imm_reg[57]' (FDC) to 'reg2/t_imm_reg[58]'
+INFO: [Synth 8-3886] merging instance 'reg2/t_imm_reg[58]' (FDC) to 'reg2/t_imm_reg[59]'
+INFO: [Synth 8-3886] merging instance 'reg2/t_imm_reg[59]' (FDC) to 'reg2/t_imm_reg[60]'
+INFO: [Synth 8-3886] merging instance 'reg2/t_imm_reg[60]' (FDC) to 'reg2/t_imm_reg[61]'
+INFO: [Synth 8-3886] merging instance 'reg2/t_imm_reg[61]' (FDC) to 'reg2/t_imm_reg[62]'
+INFO: [Synth 8-3886] merging instance 'reg2/t_imm_reg[62]' (FDC) to 'reg2/t_imm_reg[63]'
+INFO: [Synth 8-3886] merging instance 'reg3/t_imm_reg[63]' (FDC) to 'reg3/t_imm_reg[31]'
+INFO: [Synth 8-3886] merging instance 'reg3/t_imm_reg[31]' (FDC) to 'reg3/t_imm_reg[32]'
+INFO: [Synth 8-3886] merging instance 'reg3/t_imm_reg[32]' (FDC) to 'reg3/t_imm_reg[33]'
+INFO: [Synth 8-3886] merging instance 'reg3/t_imm_reg[33]' (FDC) to 'reg3/t_imm_reg[34]'
+INFO: [Synth 8-3886] merging instance 'reg3/t_imm_reg[34]' (FDC) to 'reg3/t_imm_reg[35]'
+INFO: [Synth 8-3886] merging instance 'reg3/t_imm_reg[35]' (FDC) to 'reg3/t_imm_reg[36]'
+INFO: [Synth 8-3886] merging instance 'reg3/t_imm_reg[36]' (FDC) to 'reg3/t_imm_reg[37]'
+INFO: [Synth 8-3886] merging instance 'reg3/t_imm_reg[37]' (FDC) to 'reg3/t_imm_reg[38]'
+INFO: [Synth 8-3886] merging instance 'reg3/t_imm_reg[38]' (FDC) to 'reg3/t_imm_reg[39]'
+INFO: [Synth 8-3886] merging instance 'reg3/t_imm_reg[39]' (FDC) to 'reg3/t_imm_reg[40]'
+INFO: [Synth 8-3886] merging instance 'reg3/t_imm_reg[40]' (FDC) to 'reg3/t_imm_reg[41]'
+INFO: [Synth 8-3886] merging instance 'reg3/t_imm_reg[41]' (FDC) to 'reg3/t_imm_reg[42]'
+INFO: [Synth 8-3886] merging instance 'reg3/t_imm_reg[42]' (FDC) to 'reg3/t_imm_reg[43]'
+INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+INFO: [Common 17-14] Message 'Synth 8-3886' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:33 ; elapsed = 00:01:35 . Memory (MB): peak = 1467.199 ; gain = 643.527
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:58 ; elapsed = 00:01:31 . Memory (MB): peak = 1626.539 ; gain = 804.297
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:43 ; elapsed = 00:01:45 . Memory (MB): peak = 1467.199 ; gain = 643.527
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:02 ; elapsed = 00:01:36 . Memory (MB): peak = 1626.539 ; gain = 804.297
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:02:28 ; elapsed = 00:02:30 . Memory (MB): peak = 1594.566 ; gain = 770.895
+Finished Timing Optimization : Time (s): cpu = 00:01:07 ; elapsed = 00:01:41 . Memory (MB): peak = 1626.539 ; gain = 804.297
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:02:38 ; elapsed = 00:02:40 . Memory (MB): peak = 1627.230 ; gain = 803.559
+Finished Technology Mapping : Time (s): cpu = 00:01:11 ; elapsed = 00:01:53 . Memory (MB): peak = 1626.539 ; gain = 804.297
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -477,37 +642,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:02:47 ; elapsed = 00:02:50 . Memory (MB): peak = 1641.793 ; gain = 818.121
+Finished IO Insertion : Time (s): cpu = 00:01:20 ; elapsed = 00:02:02 . Memory (MB): peak = 1626.539 ; gain = 804.297
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:02:47 ; elapsed = 00:02:50 . Memory (MB): peak = 1641.793 ; gain = 818.121
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:20 ; elapsed = 00:02:02 . Memory (MB): peak = 1626.539 ; gain = 804.297
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:02:49 ; elapsed = 00:02:51 . Memory (MB): peak = 1641.793 ; gain = 818.121
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:21 ; elapsed = 00:02:03 . Memory (MB): peak = 1626.539 ; gain = 804.297
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:02:49 ; elapsed = 00:02:51 . Memory (MB): peak = 1641.793 ; gain = 818.121
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:21 ; elapsed = 00:02:03 . Memory (MB): peak = 1626.539 ; gain = 804.297
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:02:49 ; elapsed = 00:02:52 . Memory (MB): peak = 1641.793 ; gain = 818.121
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:23 ; elapsed = 00:02:05 . Memory (MB): peak = 1626.539 ; gain = 804.297
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:02:49 ; elapsed = 00:02:52 . Memory (MB): peak = 1641.793 ; gain = 818.121
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:23 ; elapsed = 00:02:05 . Memory (MB): peak = 1626.539 ; gain = 804.297
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -525,44 +690,51 @@ Report Cell Usage:
 |      |Cell   |Count |
 +------+-------+------+
 |1     |imem   |     1|
-|2     |BUFG   |     2|
-|3     |CARRY4 |    51|
-|4     |LUT1   |    25|
-|5     |LUT2   |   203|
-|6     |LUT3   |  2377|
-|7     |LUT4   |   262|
-|8     |LUT5   |   436|
-|9     |LUT6   |  3111|
-|10    |MUXF7  |   772|
-|11    |MUXF8  |   146|
-|12    |FDCE   |  2411|
-|13    |FDPE   |    88|
-|14    |FDRE   |    64|
-|15    |IBUF   |     9|
-|16    |OBUF   |    16|
+|2     |BUFG   |     3|
+|3     |CARRY4 |    91|
+|4     |LUT1   |    84|
+|5     |LUT2   |  4154|
+|6     |LUT3   |  2193|
+|7     |LUT4   |  2034|
+|8     |LUT5   |  2392|
+|9     |LUT6   | 10927|
+|10    |MUXF7  |  2094|
+|11    |MUXF8  |   648|
+|12    |FDCE   |  3068|
+|13    |FDCP   |   504|
+|14    |FDPE   |  1880|
+|15    |FDRE   |    72|
+|16    |LD     |     1|
+|17    |LDC    |  3698|
+|18    |LDP    |    82|
+|19    |IBUF   |     9|
+|20    |OBUF   |    16|
 +------+-------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:02:49 ; elapsed = 00:02:52 . Memory (MB): peak = 1641.793 ; gain = 818.121
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:23 ; elapsed = 00:02:05 . Memory (MB): peak = 1626.539 ; gain = 804.297
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 192 critical warnings and 25 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:02:30 ; elapsed = 00:02:46 . Memory (MB): peak = 1641.793 ; gain = 712.387
-Synthesis Optimization Complete : Time (s): cpu = 00:02:50 ; elapsed = 00:02:52 . Memory (MB): peak = 1641.793 ; gain = 818.121
+Synthesis finished with 0 errors, 0 critical warnings and 153 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:09 ; elapsed = 00:02:01 . Memory (MB): peak = 1626.539 ; gain = 784.617
+Synthesis Optimization Complete : Time (s): cpu = 00:01:23 ; elapsed = 00:02:06 . Memory (MB): peak = 1626.539 ; gain = 804.297
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.237 . Memory (MB): peak = 1654.508 ; gain = 0.000
-INFO: [Netlist 29-17] Analyzing 969 Unisim elements for replacement
+Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.360 . Memory (MB): peak = 1626.539 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 7118 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1659.195 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 1626.539 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
-No Unisim elements were transformed.
+  A total of 4285 instances were transformed.
+  FDCP => FDCP (FDCE, FDPE, LDCE, LUT3, VCC): 504 instances
+  LD => LDCE: 1 instance 
+  LDC => LDCE: 3698 instances
+  LDP => LDPE: 82 instances
 
-Synth Design complete, checksum: 4fe24577
+Synth Design complete, checksum: b64fa71c
 INFO: [Common 17-83] Releasing license: Synthesis
-60 Infos, 108 Warnings, 164 Critical Warnings and 0 Errors encountered.
+170 Infos, 305 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:03:01 ; elapsed = 00:03:06 . Memory (MB): peak = 1659.195 ; gain = 1231.016
-INFO: [runtcl-6] Synthesis results are not added to the cache due to CRITICAL_WARNING
+synth_design: Time (s): cpu = 00:01:30 ; elapsed = 00:02:15 . Memory (MB): peak = 1626.539 ; gain = 1199.238
 INFO: [Common 17-1381] The checkpoint 'E:/vivado/RV5/RV5/RV5.runs/synth_2/CPU.dcp' has been generated.
 INFO: [runtcl-4] Executing : report_utilization -file CPU_utilization_synth.rpt -pb CPU_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Thu Mar 23 09:30:06 2023...
+INFO: [Common 17-206] Exiting Vivado at Sun Mar 26 15:31:57 2023...

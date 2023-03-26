@@ -2,6 +2,7 @@
 
 module EX_MEM_reg(
     input clk,
+    input rstn,
     input[31:0] instr,
     input[63:0] PC, alu_result, RD2, imm,
     input regwrite, MemRead, MemWrite, MemtoReg, Zero, Branch,
@@ -15,18 +16,33 @@ module EX_MEM_reg(
     reg[31:0] t_instr;
     reg[63:0] t_PC, t_alu_result, t_RD2, t_imm;
     reg t_regwrite, t_MemRead, t_MemWrite, t_MemtoReg, t_Zero, t_Branch;
-    always@(posedge clk) begin
-        t_instr <= instr;
-        t_PC <= PC;
-        t_RD2 <= RD2;
-        t_alu_result <= alu_result;
-        t_imm <= imm;
-        t_regwrite <= regwrite;
-        t_MemRead <= MemRead;
-        t_MemWrite <= MemWrite;
-        t_MemtoReg <= MemtoReg;
-        t_Zero <= Zero;
-        t_Branch <= Branch;
+    always@(posedge clk or negedge rstn) begin
+        if (!rstn) begin
+            t_instr <= 32'b0;
+            t_PC <= 64'b0;
+            t_RD2 <= 64'b0;
+            t_alu_result <= 64'b0;
+            t_imm <= 64'b0;
+            t_regwrite <= 1'b0;
+            t_MemRead <= 1'b0;
+            t_MemWrite <= 1'b0;
+            t_MemtoReg <= 1'b0;
+            t_Zero <= 1'b0;
+            t_Branch <= 1'b0;
+        end
+        else begin
+            t_instr <= instr;
+            t_PC <= PC;
+            t_RD2 <= RD2;
+            t_alu_result <= alu_result;
+            t_imm <= imm;
+            t_regwrite <= regwrite;
+            t_MemRead <= MemRead;
+            t_MemWrite <= MemWrite;
+            t_MemtoReg <= MemtoReg;
+            t_Zero <= Zero;
+            t_Branch <= Branch;
+        end
     end
     assign EX_MEM_instr = t_instr;
     assign EX_MEM_PC = t_PC;

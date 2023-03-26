@@ -22,6 +22,7 @@
 
 module IF_ID_reg(
     input clk,
+    input rstn,
     input IF_ID_write, flush,
     input[31:0] instr,
     input[63:0] PC,
@@ -31,8 +32,8 @@ module IF_ID_reg(
     
     reg[31:0] t_instr;
     reg[63:0] t_PC;
-    always@(posedge clk) begin
-        if (flush) begin
+    always@(posedge clk or negedge rstn) begin
+        if (flush || !rstn) begin
             t_instr <= 32'b0;
             t_PC <= 32'b0;
         end

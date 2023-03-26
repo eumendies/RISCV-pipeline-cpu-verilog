@@ -22,6 +22,7 @@
 
 module MEM_WB_reg(
     input clk,
+    input rstn,
     input[31:0] instr,
     input[63:0] alu_result, mem_data,
     input regwrite, MemtoReg, 
@@ -34,12 +35,21 @@ module MEM_WB_reg(
     reg[63:0] t_alu_result, t_mem_data;
     reg t_regwrite, t_MemtoReg;
     
-    always@(posedge clk) begin
-        t_instr <= instr;
-        t_alu_result <= alu_result;
-        t_mem_data <= mem_data;
-        t_regwrite <= regwrite;
-        t_MemtoReg <= MemtoReg;
+    always@(posedge clk or negedge rstn) begin
+        if (!rstn) begin
+            t_instr <= 32'b0;
+            t_alu_result <= 64'b0;
+            t_mem_data <= 64'b0;
+            t_regwrite <= 1'b0;
+            t_MemtoReg <= 1'b0;
+        end
+        else begin
+            t_instr <= instr;
+            t_alu_result <= alu_result;
+            t_mem_data <= mem_data;
+            t_regwrite <= regwrite;
+            t_MemtoReg <= MemtoReg;
+        end
     end
     assign MEM_WB_instr = t_instr;
     assign MEM_WB_alu_result = t_alu_result;

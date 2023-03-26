@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2022.2 (win64) Build 3671981 Fri Oct 14 05:00:03 MDT 2022
-| Date         : Thu Mar 23 09:30:06 2023
+| Date         : Sun Mar 26 15:31:57 2023
 | Host         : LAPTOP-7D1D3GGC running 64-bit major release  (build 9200)
 | Command      : report_utilization -file CPU_utilization_synth.rpt -pb CPU_utilization_synth.pb
 | Design       : CPU
@@ -28,18 +28,18 @@ Table of Contents
 1. Slice Logic
 --------------
 
-+-------------------------+------+-------+------------+-----------+-------+
-|        Site Type        | Used | Fixed | Prohibited | Available | Util% |
-+-------------------------+------+-------+------------+-----------+-------+
-| Slice LUTs*             | 5065 |     0 |          0 |     63400 |  7.99 |
-|   LUT as Logic          | 5065 |     0 |          0 |     63400 |  7.99 |
-|   LUT as Memory         |    0 |     0 |          0 |     19000 |  0.00 |
-| Slice Registers         | 2563 |     0 |          0 |    126800 |  2.02 |
-|   Register as Flip Flop | 2563 |     0 |          0 |    126800 |  2.02 |
-|   Register as Latch     |    0 |     0 |          0 |    126800 |  0.00 |
-| F7 Muxes                |  772 |     0 |          0 |     31700 |  2.44 |
-| F8 Muxes                |  146 |     0 |          0 |     15850 |  0.92 |
-+-------------------------+------+-------+------------+-----------+-------+
++-------------------------+-------+-------+------------+-----------+-------+
+|        Site Type        |  Used | Fixed | Prohibited | Available | Util% |
++-------------------------+-------+-------+------------+-----------+-------+
+| Slice LUTs*             | 21631 |     0 |          0 |     63400 | 34.12 |
+|   LUT as Logic          | 21631 |     0 |          0 |     63400 | 34.12 |
+|   LUT as Memory         |     0 |     0 |          0 |     19000 |  0.00 |
+| Slice Registers         | 10313 |     0 |          0 |    126800 |  8.13 |
+|   Register as Flip Flop |  6028 |     0 |          0 |    126800 |  4.75 |
+|   Register as Latch     |  4285 |     0 |          0 |    126800 |  3.38 |
+| F7 Muxes                |  2094 |     0 |          0 |     31700 |  6.61 |
+| F8 Muxes                |   648 |     0 |          0 |     15850 |  4.09 |
++-------------------------+-------+-------+------------+-----------+-------+
 * Warning! The Final LUT count, after physical optimizations and full implementation, is typically lower. Run opt_design after synthesis, if not already completed, for a more realistic count.
 Warning! LUT value is adjusted to account for LUT combining.
 
@@ -50,16 +50,16 @@ Warning! LUT value is adjusted to account for LUT combining.
 +-------+--------------+-------------+--------------+
 | Total | Clock Enable | Synchronous | Asynchronous |
 +-------+--------------+-------------+--------------+
-| 0     |            _ |           - |            - |
+| 1512  |            _ |           - |            - |
 | 0     |            _ |           - |          Set |
 | 0     |            _ |           - |        Reset |
 | 0     |            _ |         Set |            - |
 | 0     |            _ |       Reset |            - |
 | 0     |          Yes |           - |            - |
-| 88    |          Yes |           - |          Set |
-| 2411  |          Yes |           - |        Reset |
+| 1962  |          Yes |           - |          Set |
+| 6767  |          Yes |           - |        Reset |
 | 0     |          Yes |         Set |            - |
-| 64    |          Yes |       Reset |            - |
+| 72    |          Yes |       Reset |            - |
 +-------+--------------+-------------+--------------+
 
 
@@ -114,7 +114,7 @@ Warning! LUT value is adjusted to account for LUT combining.
 +------------+------+-------+------------+-----------+-------+
 |  Site Type | Used | Fixed | Prohibited | Available | Util% |
 +------------+------+-------+------------+-----------+-------+
-| BUFGCTRL   |    2 |     0 |          0 |        32 |  6.25 |
+| BUFGCTRL   |    3 |     0 |          0 |        32 |  9.38 |
 | BUFIO      |    0 |     0 |          0 |        24 |  0.00 |
 | MMCME2_ADV |    0 |     0 |          0 |         6 |  0.00 |
 | PLLE2_ADV  |    0 |     0 |          0 |         6 |  0.00 |
@@ -145,25 +145,27 @@ Warning! LUT value is adjusted to account for LUT combining.
 7. Primitives
 -------------
 
-+----------+------+---------------------+
-| Ref Name | Used | Functional Category |
-+----------+------+---------------------+
-| LUT6     | 3111 |                 LUT |
-| FDCE     | 2411 |        Flop & Latch |
-| LUT3     | 2377 |                 LUT |
-| MUXF7    |  772 |               MuxFx |
-| LUT5     |  436 |                 LUT |
-| LUT4     |  262 |                 LUT |
-| LUT2     |  203 |                 LUT |
-| MUXF8    |  146 |               MuxFx |
-| FDPE     |   88 |        Flop & Latch |
-| FDRE     |   64 |        Flop & Latch |
-| CARRY4   |   51 |          CarryLogic |
-| LUT1     |   25 |                 LUT |
-| OBUF     |   16 |                  IO |
-| IBUF     |    9 |                  IO |
-| BUFG     |    2 |               Clock |
-+----------+------+---------------------+
++----------+-------+---------------------+
+| Ref Name |  Used | Functional Category |
++----------+-------+---------------------+
+| LUT6     | 10927 |                 LUT |
+| LDCE     |  4203 |        Flop & Latch |
+| LUT2     |  4154 |                 LUT |
+| FDCE     |  3572 |        Flop & Latch |
+| LUT3     |  2697 |                 LUT |
+| LUT5     |  2392 |                 LUT |
+| FDPE     |  2384 |        Flop & Latch |
+| MUXF7    |  2094 |               MuxFx |
+| LUT4     |  2034 |                 LUT |
+| MUXF8    |   648 |               MuxFx |
+| CARRY4   |    91 |          CarryLogic |
+| LUT1     |    84 |                 LUT |
+| LDPE     |    82 |        Flop & Latch |
+| FDRE     |    72 |        Flop & Latch |
+| OBUF     |    16 |                  IO |
+| IBUF     |     9 |                  IO |
+| BUFG     |     3 |               Clock |
++----------+-------+---------------------+
 
 
 8. Black Boxes
