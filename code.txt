@@ -6,6 +6,7 @@ ld s3, 3(x0)
 add t0, x0, s3
 sd s1, 3(x0)
 beq s2, s0, func
+add s3, s1, s2
 or s1, s1, s0
 func:
 and s1, s1, s0

@@ -22,8 +22,8 @@ Compiling module xil_defaultlib.ID_EX_reg
 Compiling module xil_defaultlib.MUX_3
 Compiling module xil_defaultlib.MUX_2
 Compiling module xil_defaultlib.ALU
-Compiling module xil_defaultlib.PC_adder
 Compiling module xil_defaultlib.EX_MEM_reg
+Compiling module xil_defaultlib.PC_adder
 Compiling module xil_defaultlib.RAM
 Compiling module xil_defaultlib.MEM_WB_reg
 Compiling module xil_defaultlib.Forwarding

@@ -22,7 +22,7 @@
 
 module IF_ID_reg(
     input clk,
-    input IF_ID_write,
+    input IF_ID_write, flush,
     input[31:0] instr,
     input[63:0] PC,
     output[31:0] IF_ID_instr,
@@ -32,7 +32,11 @@ module IF_ID_reg(
     reg[31:0] t_instr;
     reg[63:0] t_PC;
     always@(posedge clk) begin
-        if (IF_ID_write) begin
+        if (flush) begin
+            t_instr <= 32'b0;
+            t_PC <= 32'b0;
+        end
+        else if (IF_ID_write) begin
             t_instr <= instr;
             t_PC <= PC;
         end

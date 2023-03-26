@@ -45,6 +45,7 @@ module CPU(
     wire[63:0] IF_ID_PC;
     wire[31:0] IF_ID_instr;
     wire IF_ID_write;
+    wire IF_ID_flush;
     
     // ID/EX流水线寄存器的值    
     wire[63:0] ID_EX_PC, ID_EX_imm, ID_EX_RD1, ID_EX_RD2;
@@ -52,20 +53,21 @@ module CPU(
     wire ID_EX_regwrite, ID_EX_ALUSrc, ID_EX_MemRead;
     wire ID_EX_MemWrite, ID_EX_MemtoReg, ID_EX_Branch;
     wire[3:0] ID_EX_ALUControl;
-    wire flush;
+    wire ID_EX_flush;
     
     // EX/MEM流水线寄存器的值
     wire[31:0] EX_MEM_instr;
-    wire[63:0] EX_MEM_PC, EX_MEM_alu_result, EX_MEM_RD2;
+    wire[63:0] EX_MEM_PC, EX_MEM_alu_result, EX_MEM_RD2, EX_MEM_imm;
     wire EX_MEM_regwrite, EX_MEM_MemRead;
     wire EX_MEM_MemWrite, EX_MEM_MemtoReg;
+    wire EX_MEM_Zero, EX_MEM_Branch;
     
     // MEM/WB流水线寄存器的值
     wire[31:0] MEM_WB_instr;
     wire[63:0] MEM_WB_alu_result, MEM_WB_mem_data;
     wire MEM_WB_regwrite, MEM_WB_MemtoReg;
     
-    IF_ID_reg reg1(.clk(clk), .instr(instr), .PC(nowPC), .IF_ID_write(IF_ID_write),
+    IF_ID_reg reg1(.clk(clk), .flush(IF_ID_flush), .instr(instr), .PC(nowPC), .IF_ID_write(IF_ID_write),
                    .IF_ID_instr(IF_ID_instr), .IF_ID_PC(IF_ID_PC));
  
     // 控制信号
@@ -78,7 +80,9 @@ module CPU(
     // load-use冒险检测单元
     Hazard_unit U_detector(.ID_EX_MemRead(ID_EX_MemRead), .ID_EX_rd(ID_EX_instr[11:7]), 
                            .IF_ID_rs1(IF_ID_instr[19:15]), .IF_ID_rs2(IF_ID_instr[24:20]),
-                           .PCwrite(PCwrite), .IF_ID_write(IF_ID_write), .flush(flush));
+                           .IF_ID_opcode(IF_ID_instr[6:0]), .ID_EX_opcode(ID_EX_instr[6:0]),
+                           .EX_MEM_opcode(EX_MEM_instr[6:0]),
+                           .PCwrite(PCwrite), .IF_ID_write(IF_ID_write), .IF_ID_flush(IF_ID_flush), .ID_EX_flush(ID_EX_flush));
     
     // 立即数
     wire[63:0] imm;
@@ -93,7 +97,7 @@ module CPU(
 
     // ID/EX流水线寄存器
     // 保存指令、PC、立即数、寄存器读取的数据、控制信号
-    ID_EX_reg reg2(.clk(clk), .instr(IF_ID_instr), .flush(flush), .PC(IF_ID_PC), 
+    ID_EX_reg reg2(.clk(clk), .instr(IF_ID_instr), .flush(ID_EX_flush), .PC(IF_ID_PC), 
                    .imm(imm), .RD1(RD1), .RD2(RD2), .regwrite(regwrite), .ALUSrc(ALUSrc), 
                    .MemRead(MemRead), .MemWrite(MemWrite), .MemtoReg(MemtoReg),
                    .Branch(Branch), .ALUControl(ALUControl),
@@ -121,19 +125,20 @@ module CPU(
     // ALU计算结果
     wire[63:0] alu_result;
     ALU U_ALU(.A(src1), .B(src2), .ALUControl(ID_EX_ALUControl), .C(alu_result), .Zero(Zero));
-    
-    // PC加法器
-    PC_adder U_PCadder(.clk(clk), .nowPC(nowPC), .ID_EX_PC(ID_EX_PC),
-                       .imm(ID_EX_imm), .Branch(ID_EX_Branch), .Zero(Zero), .newPC(newPC));
 
     // EX/MEM流水线寄存器
-    EX_MEM_reg reg3(.clk(clk), .instr(ID_EX_instr), .PC(ID_EX_PC), .alu_result(alu_result),
+    EX_MEM_reg reg3(.clk(clk), .instr(ID_EX_instr), .PC(ID_EX_PC), .alu_result(alu_result), .imm(ID_EX_imm),
                     .RD2(ID_EX_RD2), .regwrite(ID_EX_regwrite), .MemRead(ID_EX_MemRead), 
-                    .MemWrite(ID_EX_MemWrite), .MemtoReg(ID_EX_MemtoReg),
-                    .EX_MEM_instr(EX_MEM_instr), .EX_MEM_PC(EX_MEM_PC), 
+                    .MemWrite(ID_EX_MemWrite), .MemtoReg(ID_EX_MemtoReg), .Zero(Zero), .Branch(ID_EX_Branch),
+                    .EX_MEM_instr(EX_MEM_instr), .EX_MEM_PC(EX_MEM_PC), .EX_MEM_imm(EX_MEM_imm),
                     .EX_MEM_alu_result(EX_MEM_alu_result), .EX_MEM_RD2(EX_MEM_RD2),
                     .EX_MEM_regwrite(EX_MEM_regwrite), .EX_MEM_MemRead(EX_MEM_MemRead),
-                    .EX_MEM_MemWrite(EX_MEM_MemWrite), .EX_MEM_MemtoReg(EX_MEM_MemtoReg));
+                    .EX_MEM_MemWrite(EX_MEM_MemWrite), .EX_MEM_MemtoReg(EX_MEM_MemtoReg),
+                    .EX_MEM_Zero(EX_MEM_Zero), .EX_MEM_Branch(EX_MEM_Branch));
+    
+    // PC加法器
+    PC_adder U_PCadder(.clk(clk), .nowPC(nowPC), .EX_MEM_PC(EX_MEM_PC),
+                       .imm(EX_MEM_imm), .Branch(EX_MEM_Branch), .Zero(EX_MEM_Zero), .newPC(newPC));
     
     // 数据存储器
     wire[63:0] mem_data;
