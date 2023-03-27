@@ -9,3 +9,4 @@
 * testbench文件路径：RV5.srcs/sim_1/new
 * 进行仿真前需要将CPU.v中各元件的clk端口的输入信号由Clk_CPU改为clk，Clk_CPU为分频后的时钟信号，在下板实测时使用
 * 指令存储器使用了vivado提供的IP核
+* 博客地址：[流水线](https://eumendies.me/2023/03/27/verilog%E5%AE%9E%E7%8E%B0RISC-V%E6%B5%81%E6%B0%B4%E7%BA%BF%E5%A4%84%E7%90%86%E5%99%A8/)

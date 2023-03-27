@@ -1,4 +1,5 @@
 `timescale 1ns / 1ps
+`include "config.v"
 
 module ID_EX_reg(
     input clk,
@@ -39,8 +40,15 @@ module ID_EX_reg(
             t_instr <= instr;
             t_PC <= PC;
             t_imm <= imm;
-            t_RD1 <= RD1;
-            t_RD2 <= RD2;
+            // jalÖ¸Áî£¬ÈÃalu¼ÆËãPC+4´æÈërd
+            if (instr[6:0] == `UJ_OPCODE) begin
+                t_RD1 <= PC;
+                t_RD2 <= 4;
+            end
+            else begin
+                t_RD1 <= RD1;
+                t_RD2 <= RD2;
+            end
             t_regwrite <= regwrite;
             t_ALUSrc <= ALUSrc;
             t_MemRead <= MemRead;

@@ -87,6 +87,16 @@ module Controller(
             MemtoReg = 1'b0;
             Branch = 1'b0;
         end
+        // UJ-types
+        else if (instr[6:0] == `UJ_OPCODE) begin
+            regwrite = 1'b1;
+            ALUSrc = 1'b0;
+            ALUOp = `MEM_OP;
+            MemRead = 1'b0;
+            MemWrite = 1'b0;
+            MemtoReg = 1'b0;
+            Branch = 1'b1;
+        end
         else begin
             regwrite = 1'b0;
             ALUSrc = 1'b0;
