@@ -1,0 +1,7 @@
+li x8, 0xffffffff
+li x9, 0xffffffff
+li x10, 0xffffffff
+sb x8, 0(x0)
+sh x8, 0(x0)
+sw x8, 0(x0)
+sd x8, 0(x0)

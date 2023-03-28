@@ -64,6 +64,14 @@
 `define SRAI_FUNCT3     3'b101
 `define ORI_FUNCT3      3'b110
 `define ANDI_FUNCT3     3'b111
+`define LB_FUNCT3       3'b000
+`define LH_FUNCT3       3'b001
+`define LW_FUNCT3       3'b010
+`define LD_FUNCT3       3'b011
+`define SB_FUNCT3       3'b000
+`define SH_FUNCT3       3'b001
+`define SW_FUNCT3       3'b010
+`define SD_FUNCT3       3'b011
 
 // funct7
 `define ADD_FUNCT7  7'b0000000

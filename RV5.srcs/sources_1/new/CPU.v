@@ -142,7 +142,7 @@ module CPU(
     
     // Êý¾Ý´æ´¢Æ÷
     wire[63:0] mem_data;
-    RAM U_RAM(.clk(clk), .rstn(rstn), .MemWrite(EX_MEM_MemWrite), .MemRead(EX_MEM_MemRead), 
+    RAM U_RAM(.clk(clk), .rstn(rstn), .instr_funct3(EX_MEM_instr[14:12]), .MemWrite(EX_MEM_MemWrite), .MemRead(EX_MEM_MemRead), 
               .address(EX_MEM_alu_result), .WD(EX_MEM_RD2), .ReadData(mem_data));
     
     MEM_WB_reg reg4(.clk(clk), .rstn(rstn), .instr(EX_MEM_instr), .alu_result(EX_MEM_alu_result), 

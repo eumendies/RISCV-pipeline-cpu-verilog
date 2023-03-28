@@ -17,6 +17,7 @@
   <File Type="BITSTR-MMI" Name="CPU.mmi"/>
   <File Type="ROUTE-METHODOLOGY-DRC" Name="CPU_methodology_drc_routed.rpt"/>
   <File Type="BITSTR-SYSDEF" Name="CPU.sysdef"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="CPU_methodology_drc_routed.pb"/>
   <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
   <File Type="BITSTR-LTX" Name="CPU.ltx"/>
   <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
@@ -25,8 +26,11 @@
   <File Type="PLACE-IO" Name="CPU_io_placed.rpt"/>
   <File Type="PLACE-UTIL" Name="CPU_utilization_placed.rpt"/>
   <File Type="PLACE-UTIL-PB" Name="CPU_utilization_placed.pb"/>
+  <File Type="ROUTE-RQS" Name="CPU_routed.rqs"/>
   <File Type="PLACE-CTRL" Name="CPU_control_sets_placed.rpt"/>
+  <File Type="ROUTE-RQS-RPT" Name="route_report_qor_suggestions_0.rpt"/>
   <File Type="PLACE-PRE-SIMILARITY" Name="CPU_incremental_reuse_pre_placed.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-RQS-RPT" Name="postroute_physopt_report_qor_suggestions_0.rpt"/>
   <File Type="ROUTE-DRC" Name="CPU_drc_routed.rpt"/>
   <File Type="ROUTE-DRC-PB" Name="CPU_drc_routed.pb"/>
   <File Type="ROUTE-PWR-RPX" Name="CPU_power_routed.rpx"/>
@@ -48,7 +52,6 @@
   <File Type="PHYSOPT-DCP" Name="CPU_physopt.dcp"/>
   <File Type="POSTROUTE-PHYSOPT-DCP" Name="CPU_postroute_physopt.dcp"/>
   <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="CPU_postroute_physopt_bb.dcp"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="CPU_methodology_drc_routed.pb"/>
   <File Type="ROUTE-DRC-RPX" Name="CPU_drc_routed.rpx"/>
   <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="CPU_methodology_drc_routed.rpx"/>
   <File Type="PDI-FILE" Name="CPU.pdi"/>
@@ -57,10 +60,7 @@
   <File Type="RNPI_FILE" Name="CPU.rnpi"/>
   <File Type="NPI_FILE" Name="CPU.npi"/>
   <File Type="RBD_FILE" Name="CPU.rbd"/>
-  <File Type="ROUTE-RQS" Name="CPU_routed.rqs"/>
   <File Type="POSTROUTE-PHYSOPT-RQS" Name="CPU_postroute_physopted.rqs"/>
-  <File Type="ROUTE-RQS-RPT" Name="route_report_qor_suggestions_0.rpt"/>
-  <File Type="POSTROUTE-PHYSOPT-RQS-RPT" Name="postroute_physopt_report_qor_suggestions_0.rpt"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/new/config.v">
