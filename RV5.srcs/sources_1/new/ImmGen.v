@@ -30,7 +30,9 @@ module ImmGen(
     
     always@(*) begin
         // I-types, addi, slli
-        if (instr[6:0] == `I_OPCODE || instr[6:0] == `LOAD_OPCODE) begin
+        // load instruction
+        // jalr
+        if (instr[6:0] == `I_OPCODE || instr[6:0] == `LOAD_OPCODE || instr[6:0] == `JALR_OPCODE) begin
             result = {{52{instr[31]}} ,instr[31:20]};
         end
         // S-type, sd, sb, sw

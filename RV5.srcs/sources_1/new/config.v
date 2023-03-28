@@ -31,6 +31,7 @@
 `define auipc_OPCODE    7'b0010111
 `define UJ_OPCODE       7'b1101111
 `define LOAD_OPCODE     7'b0000011
+`define JALR_OPCODE     7'b1100111
 
 // ALUOp control signal
 `define R_OP    2'b10

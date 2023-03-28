@@ -1,0 +1,10 @@
+addi x0, x0, 1
+addi x0, x0, 2
+jal ra, func
+addi x0, x0, 3
+addi x0, x0, 4
+addi x0, x0, 5
+addi x0, x0, 6
+func:
+addi x0, x0, 7
+jalr x0, ra, 0

@@ -3,9 +3,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date: 2023/03/27 19:26:33
+// Create Date: 2023/03/28 21:03:59
 // Design Name: 
-// Module Name: test_jal
+// Module Name: test_jal_jalr
 // Project Name: 
 // Target Devices: 
 // Tool Versions: 
@@ -20,7 +20,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 
-module test_jal();
+module test_jal_jalr();
 
 reg clk, rstn;
 reg[63:0] nowPC, newPC;

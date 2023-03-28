@@ -2,17 +2,17 @@
 2020.2
 Oct 14 2022
 05:20:55
-E:/vivado/RV5/RV5/RV5.gen/sources_1/ip/imem/sim/imem.v,1679994358,verilog,,E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/ALU.v,,imem,,,,,,,,
+E:/vivado/RV5/RV5/RV5.gen/sources_1/ip/imem/sim/imem.v,1680009113,verilog,,E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/ALU.v,,imem,,,,,,,,
 E:/vivado/RV5/RV5/RV5.sim/sim_1/behav/xsim/glbl.v,1665704903,verilog,,,,glbl,,,,,,,,
 E:/vivado/RV5/RV5/RV5.srcs/sim_1/new/test.tb,1679796972,verilog,,,,test_tb,,,,,,,,
 E:/vivado/RV5/RV5/RV5.srcs/sim_1/new/test_forwarding.v,1679810609,verilog,,,,test_forwarding,,,,,,,,
+,,,,,,test_jal_jalr,,,,,,,,
 E:/vivado/RV5/RV5/RV5.srcs/sim_1/new/test_pipeline.v,1679798760,verilog,,,,test_pipeline,,,,,,,,
-,,,,,,test_store,,,,,,,,
 E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/ALU.v,1679467829,verilog,,E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v,E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/config.v,ALU,,,,,,,,
 E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v,1679986215,verilog,,E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/Clk_div.v,,CPU,,,,,,,,
 E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/Clk_div.v,1679814072,verilog,,E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/Controller.v,,Clk_div,,,,,,,,
 E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/Controller.v,1679990326,verilog,,E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/EX_MEM_reg.v,E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/config.v,Controller,,,,,,,,
-E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/EX_MEM_reg.v,1679812434,verilog,,E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/Forwarding.v,,EX_MEM_reg,,,,,,,,
+E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/EX_MEM_reg.v,1679812434,verilog,,E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/Forwarding.v,E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/config.v,EX_MEM_reg,,,,,,,,
 E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/Forwarding.v,1679918180,verilog,,E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/Hazard_unit.v,E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/config.v,Forwarding,,,,,,,,
 E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/Hazard_unit.v,1679919751,verilog,,E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/ID_EX_reg.v,E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/config.v,Hazard_unit,,,,,,,,
 E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/ID_EX_reg.v,1679918388,verilog,,E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/IF_ID_reg.v,E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/config.v,ID_EX_reg,,,,,,,,
@@ -26,5 +26,5 @@ E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v,1679640981,verilog,,E:/vivado/
 E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v,1679620089,verilog,,E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/ROM.v,E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/config.v,RAM,,,,,,,,
 E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/ROM.v,1679553151,verilog,,E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RegFile.v,,ROM,,,,,,,,
 E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RegFile.v,1679618970,verilog,,E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/seg7x16.v,,RegFile,,,,,,,,
-E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/config.v,1679985125,verilog,,,,,,,,,,,,
-E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/seg7x16.v,1679223443,verilog,,E:/vivado/RV5/RV5/RV5.srcs/sim_1/new/test_store.v,,seg7x16,,,,,,,,
+E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/config.v,1680006102,verilog,,,,,,,,,,,,
+E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/seg7x16.v,1679223443,verilog,,E:/vivado/RV5/RV5/RV5.srcs/sim_1/new/test_jal_jalr.v,,seg7x16,,,,,,,,
