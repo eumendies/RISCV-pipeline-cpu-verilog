@@ -21,9 +21,9 @@
 `include "config.v"
 
 module ALU(
-    input signed[63:0] A, B,
+    input[63:0] A, B,
     input[3:0] ALUControl,
-    output signed[63:0] C,
+    output[63:0] C,
     output reg Zero
     );
 
@@ -38,9 +38,12 @@ module ALU(
             `ALU_SRL: result = A >> B;
             `ALU_SRA: result = A >>> B;
             `ALU_SLT: begin
-                        if (A < B) result = 1;
-                        else result = 0;
+                        if (A[63] == 1'b1 && B[63] == 1'b0) result = 1'b1;
+                        else if (A[63] == 1'b0 && B[63] == 1'b1) result = 1'b0;
+                        else if (A[63] == 1'b1 && B[63] == 1'b1) result = (A > B) ? 1 : 0;
+                        else result = (A < B) ? 1 : 0;
                       end
+            `ALU_SLTU: result = (A < B) ? 1 : 0;
             `ALU_XOR: result = A ^ B;
             `ALU_NOP: result = 0;
             default: result = 0; 

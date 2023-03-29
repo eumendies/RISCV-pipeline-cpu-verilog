@@ -98,6 +98,16 @@ module Controller(
             MemtoReg = 1'b0;
             Branch = 1'b1;
         end
+        // U-types, lui, auipc
+        else if (instr[6:0] == `LUI_OPCODE || instr[6:0] == `AUIPC_OPCODE) begin
+            regwrite = 1'b1;
+            ALUSrc = 1'b1;
+            ALUOp = `MEM_OP;
+            MemRead = 1'b0;
+            MemWrite = 1'b0;
+            MemtoReg = 1'b0;
+            Branch = 1'b0;
+        end
         else begin
             regwrite = 1'b0;
             ALUSrc = 1'b0;
@@ -115,6 +125,12 @@ module Controller(
             else if (funct3 == `SUB_FUNCT3 && funct7 == `SUB_FUNCT7) ALUControl = `ALU_SUB;
             else if (funct3 == `AND_FUNCT3 && funct7 == `AND_FUNCT7) ALUControl = `ALU_AND;
             else if (funct3 == `OR_FUNCT3 && funct7 == `OR_FUNCT7) ALUControl = `ALU_OR;
+            else if (funct3 == `SLL_FUNCT3 && funct7 == `SLL_FUNCT7) ALUControl = `ALU_SLL;
+            else if (funct3 == `SLT_FUNCT3 && funct7 == `SLT_FUNCT7) ALUControl = `ALU_SLT;
+            else if (funct3 == `SLTU_FUNCT3 && funct7 == `SLTU_FUNCT7) ALUControl = `ALU_SLTU;
+            else if (funct3 == `XOR_FUNCT3 && funct7 == `XOR_FUNCT7) ALUControl = `ALU_XOR;
+            else if (funct3 == `SRL_FUNCT3 && funct7 == `SRL_FUNCT7) ALUControl = `ALU_SRL;
+            else if (funct3 == `SRA_FUNCT3 && funct7 == `SRA_FUNCT7) ALUControl = `ALU_SRA;
             else ALUControl = `ALU_NOP;
         end
         // I-types
@@ -145,6 +161,5 @@ module Controller(
             ALUControl = `ALU_NOP;
         end
     end
-    
     
 endmodule

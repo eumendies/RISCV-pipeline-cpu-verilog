@@ -40,7 +40,9 @@ module ID_EX_reg(
             t_instr <= instr;
             t_PC <= PC;
             t_imm <= imm;
-            t_RD1 <= RD1;
+            if (instr[6:0] == `LUI_OPCODE) t_RD1 <= 64'b0;
+            else if (instr[6:0] == `AUIPC_OPCODE) t_RD1 <= PC;
+            else t_RD1 <= RD1;
             t_RD2 <= RD2;
             t_regwrite <= regwrite;
             t_ALUSrc <= ALUSrc;

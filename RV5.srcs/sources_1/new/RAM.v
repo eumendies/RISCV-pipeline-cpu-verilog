@@ -34,7 +34,7 @@ module RAM(
     // 256B RAM, 按字节寻址
     reg[7:0] store[255:0];
     integer data_len;
-    integer i;
+    integer i, unsigned_flag;
     // 8个字节
     reg[7:0] RD[7:0];
     reg[7:0] t_WD[7:0];
@@ -83,13 +83,24 @@ module RAM(
             else if (instr_funct3 == `LH_FUNCT3) data_len = 2;
             else if (instr_funct3 == `LW_FUNCT3) data_len = 4;
             else if (instr_funct3 == `LD_FUNCT3) data_len = 8;
+            else if (instr_funct3 == `LBU_FUNCT3) data_len = 1;
+            else if (instr_funct3 == `LHU_FUNCT3) data_len = 2;
+            else if (instr_funct3 == `LWU_FUNCT3) data_len = 4;
             else data_len = 0;
+            // 确定是否为无符号读取
+            if (instr_funct3 == `LBU_FUNCT3 || instr_funct3 == `LHU_FUNCT3 || instr_funct3 == `LWU_FUNCT3) begin
+                unsigned_flag = 1;
+            end
+            else unsigned_flag = 0;
+            // 逐字节读取
             for (i = 0; i < data_len; i = i + 1) begin
                 RD[i] <= store[address + i];
             end
-            for (i = 0; i < 8 - data_len; i = i + 1) begin
-                // 符号扩展
-                RD[7 - i] <= {8{RD[data_len - 1][7]}};
+            if (unsigned_flag == 0) begin
+                for (i = 0; i < 8 - data_len; i = i + 1) begin
+                    // 符号扩展
+                    RD[7 - i] <= {8{RD[data_len - 1][7]}};
+                end
             end
         end
         else begin

@@ -51,7 +51,7 @@ module Forwarding(
         else t_forwardB = 2'b00;
         
         // 若ID/EX寄存器中的指令为U型或UJ型指令，不进行前递
-        if (ID_EX_opcode == `lui_OPCODE || ID_EX_opcode == `auipc_OPCODE || ID_EX_opcode == `UJ_OPCODE) begin
+        if (ID_EX_opcode == `LUI_OPCODE || ID_EX_opcode == `AUIPC_OPCODE || ID_EX_opcode == `UJ_OPCODE) begin
             t_forwardA = 2'b00;
             t_forwardB = 2'b00;
         end

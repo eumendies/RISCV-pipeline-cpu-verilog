@@ -1,6 +1,6 @@
 Vivado Simulator v2022.2
 Copyright 1986-1999, 2001-2022 Xilinx, Inc. All Rights Reserved.
-Running: D:/Environment/vivado/Vivado/2022.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L dist_mem_gen_v8_0_13 -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot test_jal_jalr_behav xil_defaultlib.test_jal_jalr xil_defaultlib.glbl -log elaborate.log 
+Running: D:/Environment/vivado/Vivado/2022.2/bin/unwrapped/win64.o/xelab.exe --incr --debug typical --relax --mt 2 -L xil_defaultlib -L dist_mem_gen_v8_0_13 -L unisims_ver -L unimacro_ver -L secureip -L xpm --snapshot test_U_behav xil_defaultlib.test_U xil_defaultlib.glbl -log elaborate.log 
 Using 2 slave threads.
 Starting static elaboration
 Pass Through NonSizing Optimizer
@@ -29,6 +29,6 @@ Compiling module xil_defaultlib.MEM_WB_reg
 Compiling module xil_defaultlib.Forwarding
 Compiling module xil_defaultlib.seg7x16
 Compiling module xil_defaultlib.CPU
-Compiling module xil_defaultlib.test_jal_jalr
+Compiling module xil_defaultlib.test_U
 Compiling module xil_defaultlib.glbl
-Built simulation snapshot test_jal_jalr_behav
+Built simulation snapshot test_U_behav
