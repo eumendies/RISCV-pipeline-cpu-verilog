@@ -1,0 +1,16 @@
+addi x5, x0, 1
+addi x6, x0, 2
+addi x7, x0, -1
+blt x5, x6, func1
+addi x5, x0, 2
+func1:
+bne x5, x6, func2
+addi x5, x0, 2
+func2:
+bgeu x7, x6, func3
+addi x5, x0, 2
+func3:
+bltu x5, x7, func4
+addi x5, x0, 2
+func4:
+addi x5, x0, 0x666

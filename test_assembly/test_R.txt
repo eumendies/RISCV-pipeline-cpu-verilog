@@ -5,3 +5,6 @@ xor x8, x5, x6
 srl x9, x5, x7
 sra x10, x5, x7
 sll x11, x5, x7
+addi x5, x0, -1
+addi x6, x0, -2
+slt x7, x5, x6

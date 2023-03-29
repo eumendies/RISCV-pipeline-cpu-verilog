@@ -26,7 +26,7 @@ module PC_adder(
     input[6:0] EX_MEM_opcode,
     input[63:0] imm,
     input Branch,
-    input Zero,
+    input jump,
     output[63:0] newPC
     );
     
@@ -36,7 +36,7 @@ module PC_adder(
     always@(*) begin
         // 如果需要跳转，更新PC为EX_MEM_PC + imm
         // 如果不需要跳转，将现在用于取指的PC加上4
-        if ((Branch && Zero) || EX_MEM_opcode == `UJ_OPCODE) begin
+        if ((Branch && jump) || EX_MEM_opcode == `UJ_OPCODE) begin
             result <= EX_MEM_PC + imm;
         end
         else if (EX_MEM_opcode == `JALR_OPCODE) begin

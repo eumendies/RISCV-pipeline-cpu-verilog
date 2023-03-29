@@ -20,7 +20,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 // ROM中指令数量
-`define INSTR_NUM 11
+`define INSTR_NUM 30
 
 // opcode
 `define R_OPCODE        7'b0110011
@@ -83,6 +83,12 @@
 `define SH_FUNCT3       3'b001
 `define SW_FUNCT3       3'b010
 `define SD_FUNCT3       3'b011
+`define BEQ_FUNCT3      3'b000
+`define BNE_FUNCT3      3'b001
+`define BLT_FUNCT3      3'b100
+`define BGE_FUNCT3      3'b101
+`define BLTU_FUNCT3     3'b110
+`define BGEU_FUNCT3     3'b111
 
 // funct7
 `define ADD_FUNCT7      7'b0000000

@@ -40,7 +40,6 @@ module ALU(
             `ALU_SLT: begin
                         if (A[63] == 1'b1 && B[63] == 1'b0) result = 1'b1;
                         else if (A[63] == 1'b0 && B[63] == 1'b1) result = 1'b0;
-                        else if (A[63] == 1'b1 && B[63] == 1'b1) result = (A > B) ? 1 : 0;
                         else result = (A < B) ? 1 : 0;
                       end
             `ALU_SLTU: result = (A < B) ? 1 : 0;
