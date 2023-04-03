@@ -24,15 +24,15 @@ module PC_reg(
     input clk,
     input rstn,
     input PCwrite,
-    input[63:0] nextPC,
-    output reg [63:0] nowPC
+    input[`BIT_WIDTH] nextPC,
+    output reg [`BIT_WIDTH] nowPC
     );
     
-    initial begin nowPC = 64'b0; end
+    initial begin nowPC = 32'b0; end
     
     always@(posedge clk or negedge rstn) begin
         if (!rstn) begin
-            nowPC <= 64'b0;
+            nowPC <= 32'b0;
         end
         else if (PCwrite) begin
             nowPC = nextPC;

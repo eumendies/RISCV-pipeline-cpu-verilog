@@ -138,13 +138,10 @@ module Controller(
             if (funct3 == `ADDI_FUNCT3) ALUControl = `ALU_ADD;
             else if (funct3 == `SLLI_FUNCT3) ALUControl = `ALU_SLL;
             else if (funct3 == `SLTI_FUNCT3) ALUControl = `ALU_SLT;
-            else if (funct3 == `SLTIU_FUNCT3) ALUControl = `ALU_SLT;
+            else if (funct3 == `SLTIU_FUNCT3) ALUControl = `ALU_SLTU;
             else if (funct3 == `XORI_FUNCT3) ALUControl = `ALU_XOR;
-            else if (funct3 == `SRLI_FUNCT3 || funct3 == `SRAI_FUNCT3) begin
-                if (funct7 == `SRLI_FUNCT7) ALUControl = `ALU_SRL;
-                else if (funct7 == `SRAI_FUNCT7) ALUControl = `ALU_SRA;
-                else ALUControl = `ALU_NOP;
-            end
+            else if (funct3 == `SRLI_FUNCT3 && funct7 == `SRLI_FUNCT7) ALUControl = `ALU_SRL;
+            else if (funct3 == `SRAI_FUNCT3 && funct7 == `SRAI_FUNCT7) ALUControl = `ALU_SRA;
             else if (funct3 == `ORI_FUNCT3) ALUControl = `ALU_OR;
             else if (funct3 == `ANDI_FUNCT3) ALUControl = `ALU_AND;
             else ALUControl = `ALU_NOP;

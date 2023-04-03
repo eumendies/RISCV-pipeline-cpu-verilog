@@ -21,16 +21,16 @@
 `include "config.v"
 
 module PC_adder(
-    input[63:0] nowPC,
-    input[63:0] EX_MEM_PC, EX_MEM_RD1,
+    input[`BIT_WIDTH] nowPC,
+    input[`BIT_WIDTH] EX_MEM_PC, EX_MEM_RD1,
     input[6:0] EX_MEM_opcode,
-    input[63:0] imm,
+    input[`BIT_WIDTH] imm,
     input Branch,
     input jump,
-    output[63:0] newPC
+    output[`BIT_WIDTH] newPC
     );
     
-    reg[63:0] result;
+    reg[`BIT_WIDTH] result;
     initial begin result <= 4; end
     
     always@(*) begin

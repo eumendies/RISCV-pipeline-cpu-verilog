@@ -23,11 +23,11 @@
 module test_store();
 
 reg clk, rstn;
-reg[63:0] nowPC;
+reg[31:0] nowPC;
 reg[31:0] instr, IF_ID_instr, ID_EX_instr, EX_MEM_instr, MEM_WB_instr;
-reg[63:0] address;
-reg[63:0] x8;
-reg[63:0] target;
+reg[31:0] address;
+reg[31:0] x8;
+reg[31:0] target;
 
 CPU t_CPU(.clk(clk), .rstn(rstn));
 

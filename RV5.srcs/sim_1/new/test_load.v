@@ -22,11 +22,11 @@
 
 module test_load();
 reg clk, rstn;
-reg[63:0] nowPC;
+reg[31:0] nowPC;
 reg[31:0] instr, IF_ID_instr, ID_EX_instr, EX_MEM_instr, MEM_WB_instr;
 reg MemtoReg;
-reg[63:0] address, mem_data, MEM_WB_mem_data, WD;
-reg[63:0] x8;
+reg[31:0] address, mem_data, MEM_WB_mem_data, WD;
+reg[31:0] x8;
 
 CPU t_CPU(.clk(clk), .rstn(rstn));
 

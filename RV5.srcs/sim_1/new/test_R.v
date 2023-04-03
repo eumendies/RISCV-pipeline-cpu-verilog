@@ -23,9 +23,9 @@
 module test_R();
 
 reg clk, rstn;
-reg[63:0] nowPC;
+reg[31:0] nowPC;
 reg[31:0] instr, IF_ID_instr, ID_EX_instr, EX_MEM_instr, MEM_WB_instr;
-reg[63:0] alu_result;
+reg[31:0] alu_result;
 
 CPU t_CPU(.clk(clk), .rstn(rstn));
 

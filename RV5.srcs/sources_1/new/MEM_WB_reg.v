@@ -18,28 +18,28 @@
 // Additional Comments:
 // 
 //////////////////////////////////////////////////////////////////////////////////
-
+`include "config.v"
 
 module MEM_WB_reg(
     input clk,
     input rstn,
     input[31:0] instr,
-    input[63:0] alu_result, mem_data,
+    input[`BIT_WIDTH] alu_result, mem_data,
     input regwrite, MemtoReg, 
     output[31:0] MEM_WB_instr,
-    output[63:0] MEM_WB_alu_result, MEM_WB_mem_data,
+    output[`BIT_WIDTH] MEM_WB_alu_result, MEM_WB_mem_data,
     output MEM_WB_regwrite, MEM_WB_MemtoReg
     );
     
     reg[31:0] t_instr;
-    reg[63:0] t_alu_result, t_mem_data;
+    reg[`BIT_WIDTH] t_alu_result, t_mem_data;
     reg t_regwrite, t_MemtoReg;
     
     always@(posedge clk or negedge rstn) begin
         if (!rstn) begin
             t_instr <= 32'b0;
-            t_alu_result <= 64'b0;
-            t_mem_data <= 64'b0;
+            t_alu_result <= 32'b0;
+            t_mem_data <= 32'b0;
             t_regwrite <= 1'b0;
             t_MemtoReg <= 1'b0;
         end

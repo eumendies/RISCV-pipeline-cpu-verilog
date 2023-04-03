@@ -18,16 +18,16 @@
 // Additional Comments:
 // 
 //////////////////////////////////////////////////////////////////////////////////
-
+`include "config.v"
 
 module MUX_2(
-    input[63:0] opt1,
-    input[63:0] opt2,
+    input[`BIT_WIDTH] opt1,
+    input[`BIT_WIDTH] opt2,
     input control,
-    output[63:0] result
+    output[`BIT_WIDTH] result
     );
     
-    reg[63:0] temp;
+    reg[`BIT_WIDTH] temp;
     always@(*) begin
         if (!control) temp = opt1;
         else temp = opt2;

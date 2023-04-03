@@ -22,7 +22,7 @@
 
 module Comparator(
     input[31:0] instr,
-    input[63:0] A, B,
+    input[`BIT_WIDTH] A, B,
     output reg jump
     );
     

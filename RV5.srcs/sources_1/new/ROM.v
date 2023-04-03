@@ -18,10 +18,10 @@
 // Additional Comments:
 // 
 //////////////////////////////////////////////////////////////////////////////////
-
+`include "config.v"
 
 module ROM(
-    input[63:0] PC,
+    input[`BIT_WIDTH] PC,
     output[31:0] instr
     );
    

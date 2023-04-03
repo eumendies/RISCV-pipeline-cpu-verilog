@@ -26,18 +26,18 @@ module RAM(
     input MemWrite,
     input MemRead,
     input[2:0] instr_funct3,
-    input[63:0] address,
-    input[63:0] WD,
-    output[63:0] ReadData
+    input[`BIT_WIDTH] address,
+    input[`BIT_WIDTH] WD,
+    output[`BIT_WIDTH] ReadData
     );
 
     // 256B RAM, 按字节寻址
     reg[7:0] store[255:0];
     integer data_len;
     integer i, unsigned_flag;
-    // 8个字节
-    reg[7:0] RD[7:0];
-    reg[7:0] t_WD[7:0];
+    // 4个字节
+    reg[7:0] RD[3:0];
+    reg[7:0] t_WD[3:0];
     initial begin
         for (i = 0; i < 256; i = i + 1) begin
             store[i] <= i;
@@ -60,11 +60,12 @@ module RAM(
             t_WD[1] = WD[15:8];
             t_WD[2] = WD[23:16];
             t_WD[3] = WD[31:24];
-            t_WD[4] = WD[39:32];
-            t_WD[5] = WD[47:40];
-            t_WD[6] = WD[55:48];
-            t_WD[7] = WD[63:56];
-            for (i = 0; i < 8 - data_len; i = i + 1) begin
+//            t_WD[4] = WD[39:32];
+//            t_WD[5] = WD[47:40];
+//            t_WD[6] = WD[55:48];
+//            t_WD[7] = WD[63:56];
+            // 将超出data_len的部分改为内存中的值，避免覆盖内存中的值
+            for (i = 0; i < 4 - data_len; i = i + 1) begin
                 t_WD[data_len + i] = store[address + data_len + i];
             end
             // 一个字节一个字节存储
@@ -72,10 +73,10 @@ module RAM(
             store[address + 1] <= t_WD[1];
             store[address + 2] <= t_WD[2];
             store[address + 3] <= t_WD[3];
-            store[address + 4] <= t_WD[4];
-            store[address + 5] <= t_WD[5];
-            store[address + 6] <= t_WD[6];
-            store[address + 7] <= t_WD[7];
+//            store[address + 4] <= t_WD[4];
+//            store[address + 5] <= t_WD[5];
+//            store[address + 6] <= t_WD[6];
+//            store[address + 7] <= t_WD[7];
         end
         else if (MemRead) begin
             // 确定要读取的长度
@@ -97,9 +98,15 @@ module RAM(
                 RD[i] <= store[address + i];
             end
             if (unsigned_flag == 0) begin
-                for (i = 0; i < 8 - data_len; i = i + 1) begin
+                for (i = 0; i < 4 - data_len; i = i + 1) begin
                     // 符号扩展
-                    RD[7 - i] <= {8{RD[data_len - 1][7]}};
+                    RD[3 - i] <= {8{RD[data_len - 1][7]}};
+                end
+            end
+            else begin
+                for (i = 0; i < 4 - data_len; i = i + 1) begin
+                    // 填充0
+                    RD[3 - i] <= {8'b0};
                 end
             end
         end
@@ -112,9 +119,9 @@ module RAM(
     assign ReadData[15:8] = RD[1];
     assign ReadData[23:16] = RD[2];
     assign ReadData[31:24] = RD[3];
-    assign ReadData[39:32] = RD[4];
-    assign ReadData[47:40] = RD[5];
-    assign ReadData[55:48] = RD[6];
-    assign ReadData[63:56] = RD[7];
+//    assign ReadData[39:32] = RD[4];
+//    assign ReadData[47:40] = RD[5];
+//    assign ReadData[55:48] = RD[6];
+//    assign ReadData[63:56] = RD[7];
     
 endmodule

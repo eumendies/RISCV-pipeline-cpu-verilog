@@ -23,10 +23,10 @@
 module test_jal_jalr();
 
 reg clk, rstn;
-reg[63:0] nowPC, newPC;
+reg[31:0] nowPC, newPC;
 reg[31:0] instr, IF_ID_instr, ID_EX_instr, EX_MEM_instr, MEM_WB_instr;
-reg[63:0] ID_EX_imm, alu_result;
-reg[63:0] ra;
+reg[31:0] ID_EX_imm, alu_result;
+reg[31:0] ra;
 
 CPU t_CPU(.clk(clk), .rstn(rstn));
 

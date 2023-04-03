@@ -18,15 +18,15 @@
 // Additional Comments:
 // 
 //////////////////////////////////////////////////////////////////////////////////
-
+`include "config.v"
 
 module MUX_3(
-    input[63:0] opt1, opt2, opt3,
+    input[`BIT_WIDTH] opt1, opt2, opt3,
     input[1:0] control,
-    output[63:0] result
+    output[`BIT_WIDTH] result
     );
     
-    reg[63:0] temp;
+    reg[`BIT_WIDTH] temp;
     always@(*) begin
         case(control) 
             2'b00: temp = opt1;

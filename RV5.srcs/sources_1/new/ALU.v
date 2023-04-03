@@ -21,13 +21,13 @@
 `include "config.v"
 
 module ALU(
-    input[63:0] A, B,
+    input[`BIT_WIDTH] A, B,
     input[3:0] ALUControl,
-    output[63:0] C,
+    output[`BIT_WIDTH] C,
     output reg Zero
     );
 
-    reg[63:0] result;
+    reg[`BIT_WIDTH] result;
     always@(*) begin
         case (ALUControl)
             `ALU_AND: result = A & B;
@@ -36,10 +36,10 @@ module ALU(
             `ALU_SUB: result = A - B;
             `ALU_SLL: result = A << B;
             `ALU_SRL: result = A >> B;
-            `ALU_SRA: result = A >>> B;
+            `ALU_SRA: result = $signed(A) >>> B;
             `ALU_SLT: begin
-                        if (A[63] == 1'b1 && B[63] == 1'b0) result = 1'b1;
-                        else if (A[63] == 1'b0 && B[63] == 1'b1) result = 1'b0;
+                        if (A[31] == 1'b1 && B[31] == 1'b0) result = 1'b1;
+                        else if (A[31] == 1'b0 && B[31] == 1'b1) result = 1'b0;
                         else result = (A < B) ? 1 : 0;
                       end
             `ALU_SLTU: result = (A < B) ? 1 : 0;

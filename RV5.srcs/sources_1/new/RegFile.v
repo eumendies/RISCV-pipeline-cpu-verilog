@@ -18,17 +18,17 @@
 // Additional Comments:
 // 
 //////////////////////////////////////////////////////////////////////////////////
-
+`include "config.v"
 
 module RegFile(
     input clk,
     input rstn,
     input RFWr,
     input[4:0] rs1, rs2, rd,
-    input[63:0] WD,
-    output[63:0] RD1, RD2
+    input[`BIT_WIDTH] WD,
+    output[`BIT_WIDTH] RD1, RD2
     );
-    reg[63:0] rf[31:0];
+    reg[`BIT_WIDTH] rf[31:0];
     
     integer i;
     always@(*) begin

@@ -22,6 +22,9 @@
 // ROM中指令数量
 `define INSTR_NUM 30
 
+// 指定数据位宽
+`define BIT_WIDTH 31:0
+
 // opcode
 `define R_OPCODE        7'b0110011
 `define I_OPCODE        7'b0010011

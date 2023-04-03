@@ -23,7 +23,7 @@
 module test_pipeline();
 
 reg clk, rstn;
-reg[63:0] nowPC, newPC;
+reg[31:0] nowPC, newPC;
 reg[31:0] instr, IF_ID_instr, ID_EX_instr, EX_MEM_instr, MEM_WB_instr;
 
 CPU t_CPU(.clk(clk), .rstn(rstn));

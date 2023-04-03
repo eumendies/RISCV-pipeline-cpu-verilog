@@ -18,20 +18,20 @@
 // Additional Comments:
 // 
 //////////////////////////////////////////////////////////////////////////////////
-
+`include "config.v"
 
 module IF_ID_reg(
     input clk,
     input rstn,
     input IF_ID_write, flush,
     input[31:0] instr,
-    input[63:0] PC,
+    input[`BIT_WIDTH] PC,
     output[31:0] IF_ID_instr,
-    output[63:0] IF_ID_PC
+    output[`BIT_WIDTH] IF_ID_PC
     );
     
     reg[31:0] t_instr;
-    reg[63:0] t_PC;
+    reg[`BIT_WIDTH] t_PC;
     always@(posedge clk or negedge rstn) begin
         if (flush || !rstn) begin
             t_instr <= 32'b0;
