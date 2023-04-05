@@ -18,7 +18,7 @@
 // Additional Comments:
 // 
 //////////////////////////////////////////////////////////////////////////////////
-
+`include "config.v"
 
 module CPU(
     input clk,
@@ -32,8 +32,8 @@ module CPU(
     Clk_div U_clk(.clk(clk), .rstn(rstn), .sw_i(sw_i), .Clk_CPU(Clk_CPU));
     
     // PC寄存器
-    wire[63:0] newPC;
-    wire[63:0] nowPC;
+    wire[`BIT_WIDTH] newPC;
+    wire[`BIT_WIDTH] nowPC;
     wire PCwrite;
     PC_reg U_PC(.clk(clk), .rstn(rstn), .PCwrite(PCwrite), .nextPC(newPC), .nowPC(nowPC));
     
@@ -42,13 +42,13 @@ module CPU(
     ROM U_imem(.PC(nowPC), .instr(instr));
     
     // IF/ID流水线寄存器的值
-    wire[63:0] IF_ID_PC;
+    wire[`BIT_WIDTH] IF_ID_PC;
     wire[31:0] IF_ID_instr;
     wire IF_ID_write;
     wire IF_ID_flush;
     
     // ID/EX流水线寄存器的值    
-    wire[63:0] ID_EX_PC, ID_EX_imm, ID_EX_RD1, ID_EX_RD2;
+    wire[`BIT_WIDTH] ID_EX_PC, ID_EX_imm, ID_EX_RD1, ID_EX_RD2;
     wire[31:0] ID_EX_instr;
     wire ID_EX_regwrite, ID_EX_ALUSrc, ID_EX_MemRead;
     wire ID_EX_MemWrite, ID_EX_MemtoReg, ID_EX_Branch;
@@ -57,14 +57,14 @@ module CPU(
     
     // EX/MEM流水线寄存器的值
     wire[31:0] EX_MEM_instr;
-    wire[63:0] EX_MEM_PC, EX_MEM_alu_result, EX_MEM_RD1, EX_MEM_RD2, EX_MEM_imm;
+    wire[`BIT_WIDTH] EX_MEM_PC, EX_MEM_alu_result, EX_MEM_RD1, EX_MEM_RD2, EX_MEM_imm;
     wire EX_MEM_regwrite, EX_MEM_MemRead;
     wire EX_MEM_MemWrite, EX_MEM_MemtoReg;
     wire EX_MEM_jump, EX_MEM_Branch;
     
     // MEM/WB流水线寄存器的值
     wire[31:0] MEM_WB_instr;
-    wire[63:0] MEM_WB_alu_result, MEM_WB_mem_data;
+    wire[`BIT_WIDTH] MEM_WB_alu_result, MEM_WB_mem_data;
     wire MEM_WB_regwrite, MEM_WB_MemtoReg;
     
     IF_ID_reg reg1(.clk(clk), .rstn(rstn), .flush(IF_ID_flush), .instr(instr), .PC(nowPC), 
@@ -85,12 +85,12 @@ module CPU(
                            .PCwrite(PCwrite), .IF_ID_write(IF_ID_write), .IF_ID_flush(IF_ID_flush), .ID_EX_flush(ID_EX_flush));
     
     // 立即数
-    wire[63:0] imm;
+    wire[`BIT_WIDTH] imm;
     ImmGen U_imm(.instr(IF_ID_instr), .imm(imm));
     
     // 寄存器堆
-    wire[63:0] WD;
-    wire[63:0] RD1, RD2; 
+    wire[`BIT_WIDTH] WD;
+    wire[`BIT_WIDTH] RD1, RD2; 
     RegFile U_RF(.clk(clk), .rstn(rstn), .RFWr(MEM_WB_regwrite),
              .rs1(IF_ID_instr[19:15]), .rs2(IF_ID_instr[24:20]), .rd(MEM_WB_instr[11:7]),
              .WD(WD), .RD1(RD1), .RD2(RD2));
@@ -112,7 +112,7 @@ module CPU(
     wire[1:0] forwardA, forwardB;
  
     // ALU操作数2
-    wire[63:0] src1, t_src2, src2; 
+    wire[`BIT_WIDTH] src1, t_src2, src2; 
     MUX_3 U_src1_mux(.opt1(ID_EX_RD1), .opt2(WD), .opt3(EX_MEM_alu_result), 
                      .control(forwardA), .result(src1));
     MUX_3 U_src2_mux(.opt1(ID_EX_RD2), .opt2(WD), .opt3(EX_MEM_alu_result), 
@@ -127,7 +127,7 @@ module CPU(
     // 零输出信号
     wire Zero; 
     // ALU计算结果
-    wire[63:0] alu_result;
+    wire[`BIT_WIDTH] alu_result;
     ALU U_ALU(.A(src1), .B(src2), .ALUControl(ID_EX_ALUControl), .C(alu_result), .Zero(Zero));
 
     // EX/MEM流水线寄存器
@@ -141,16 +141,25 @@ module CPU(
                     .EX_MEM_jump(EX_MEM_jump), .EX_MEM_Branch(EX_MEM_Branch));
     
     // PC加法器
-    PC_adder U_PCadder(.nowPC(nowPC), .EX_MEM_PC(EX_MEM_PC), .EX_MEM_RD1(EX_MEM_RD1), 
+    PC_adder U_PCadder(.nowPC(nowPC), .EX_MEM_PC(EX_MEM_PC), .EX_MEM_alu_result(EX_MEM_alu_result), 
                        .EX_MEM_opcode(EX_MEM_instr[6:0]), .imm(EX_MEM_imm), 
                        .Branch(EX_MEM_Branch), .jump(EX_MEM_jump), .newPC(newPC));
     
+    wire forward_store;
+    // 存储指令前递单元
+    Forwarding_store U_forward2(.EX_MEM_MemWrite(EX_MEM_MemWrite), .EX_MEM_rs2(EX_MEM_instr[24:20]),
+                                .MEM_WB_regwrite(MEM_WB_regwrite), .MEM_WB_rd(MEM_WB_instr[11:7]),
+                                .forward_store(forward_store));
+ 
+    wire[`BIT_WIDTH] MEM_WD;
+    MUX_2 U_mem_mux(.opt1(EX_MEM_RD2), .opt2(WD), .control(forward_store), .result(MEM_WD));
+
     // 数据存储器
-    wire[63:0] mem_data;
+    wire[`BIT_WIDTH] mem_data;
     RAM U_RAM(.clk(clk), .rstn(rstn), .instr_funct3(EX_MEM_instr[14:12]), .MemWrite(EX_MEM_MemWrite), .MemRead(EX_MEM_MemRead), 
-              .address(EX_MEM_alu_result), .WD(EX_MEM_RD2), .ReadData(mem_data));
+              .address(EX_MEM_alu_result), .WD(MEM_WD), .ReadData(mem_data));
     
-    MEM_WB_reg reg4(.clk(clk), .rstn(rstn), .instr(EX_MEM_instr), .alu_result(EX_MEM_alu_result), 
+    MEM_WB_reg reg4(.clk(clk), .rstn(rstn), .instr(EX_MEM_instr), .PC(EX_MEM_PC), .alu_result(EX_MEM_alu_result), 
                     .mem_data(mem_data), .regwrite(EX_MEM_regwrite), .MemtoReg(EX_MEM_MemtoReg), 
                     .MEM_WB_instr(MEM_WB_instr), .MEM_WB_alu_result(MEM_WB_alu_result),
                     .MEM_WB_mem_data(MEM_WB_mem_data), .MEM_WB_regwrite(MEM_WB_regwrite),
@@ -167,7 +176,7 @@ module CPU(
     
     //*********************** LED展示部分 ***************************
     reg[4:0] reg_addr;
-    reg[63:0] reg_data;
+    reg[`BIT_WIDTH] reg_data;
     // 循环产生寄存器号并取寄存器内容
     always@(posedge Clk_CPU or negedge rstn) begin
         if (!rstn) begin reg_addr = 5'b0; end
@@ -178,7 +187,7 @@ module CPU(
     end
     
     reg[7:0] ram_addr;
-    reg[63:0] ram_data;
+    reg[`BIT_WIDTH] ram_data;
     // 循环取得RAM中的内容（一个字节一个字节读取）
     always@(posedge Clk_CPU or negedge rstn) begin
         if (!rstn) begin ram_addr = 8'b0; end
@@ -189,7 +198,7 @@ module CPU(
     end
 
     // 选择展示内容
-    reg[63:0] display_data;
+    reg[`BIT_WIDTH] display_data;
     always@(sw_i or instr or nowPC) begin
         if (sw_i[0] == 0) begin
             case (sw_i[14:11])

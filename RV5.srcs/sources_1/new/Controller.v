@@ -91,7 +91,7 @@ module Controller(
         // jalr
         else if (instr[6:0] == `UJ_OPCODE || instr[6:0] == `JALR_OPCODE) begin
             regwrite = 1'b1;
-            ALUSrc = 1'b0;
+            ALUSrc = 1'b1;
             ALUOp = `MEM_OP;
             MemRead = 1'b0;
             MemWrite = 1'b0;

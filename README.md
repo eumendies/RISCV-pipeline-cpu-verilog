@@ -4,6 +4,7 @@
 
 * 平台：vivado v2022.2
 * 仿真软件：vivado v2022.2、modelsim 10.4
+* FPGA板：Nexys A7
 * 参考教材：Computer Organization and Design The Hardware Software Interface(RISCV edition)
 
 ## 功能描述
@@ -14,7 +15,6 @@
 2. 冒险处理：
 	* 通过前递解决数据冒险，插入一个bubble解决load-use数据冒险
 	* 通过插入三个bubble解决控制冒险
-	* **尚未处理关于store指令的数据冒险，只解决了需要前递至ALU的数据冒险，需要额外的前递单元解决前递至RAM的数据冒险**
 3. 目前已经测试的指令：
 	* R-type: add, sub, or, and, xor, sll, srl, sra, slt, sltu
 	* I-type: addi, andi, ori, xori, slti, jalr
@@ -22,7 +22,7 @@
 	* UJ-type: jal
 	* U-type: lui, auipc
 	* SB-type: beq, bne, blt, bge, bltu, bgeu
-4. 如果要改为64位，需要在config.v文件中将`define BIT_WIDTH 31:0`改为`define BIT_WIDTH 63:0`，同时还要更改RAM中的读写逻辑
+4. 如果要改为64位，需要在config.v文件中将`define BIT_WIDTH 31:0`改为`define BIT_WIDTH 63:0`，同时要更改RAM中的读写逻辑，还有ALU、比较器中的有符号比较。
 
 ## 文件结构
 

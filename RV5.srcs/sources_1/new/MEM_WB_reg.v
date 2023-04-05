@@ -24,7 +24,7 @@ module MEM_WB_reg(
     input clk,
     input rstn,
     input[31:0] instr,
-    input[`BIT_WIDTH] alu_result, mem_data,
+    input[`BIT_WIDTH] PC, alu_result, mem_data,
     input regwrite, MemtoReg, 
     output[31:0] MEM_WB_instr,
     output[`BIT_WIDTH] MEM_WB_alu_result, MEM_WB_mem_data,
@@ -45,7 +45,10 @@ module MEM_WB_reg(
         end
         else begin
             t_instr <= instr;
-            t_alu_result <= alu_result;
+            if (instr[6:0] == `UJ_OPCODE || instr[6:0] == `JALR_OPCODE) begin
+                t_alu_result <= PC + 4;
+            end
+            else t_alu_result <= alu_result;
             t_mem_data <= mem_data;
             t_regwrite <= regwrite;
             t_MemtoReg <= MemtoReg;

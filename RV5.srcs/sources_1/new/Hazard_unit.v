@@ -40,7 +40,8 @@ module Hazard_unit(
 
     always@(*) begin
         // 处理load-use冒险
-        if (ID_EX_MemRead && (ID_EX_rd == IF_ID_rs1 || ID_EX_rd == IF_ID_rs2)) begin
+        // load-store可以通过前递来解决
+        if (ID_EX_MemRead && (ID_EX_rd == IF_ID_rs1 || ID_EX_rd == IF_ID_rs2) && IF_ID_opcode != `S_OPCODE) begin
             t_PCwrite = 1'b0;
             t_IF_ID_write = 1'b0;
             // 清除的是下一条进入ID/EX寄存器的指令

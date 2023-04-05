@@ -46,7 +46,6 @@ module Comparator(
                  default: jump = 1'b0;
             endcase
         end
-        else if (instr[6:0] == `UJ_OPCODE || instr[6:0] == `JALR_OPCODE) jump = 1'b1;
         else jump = 1'b0;
     end
 endmodule

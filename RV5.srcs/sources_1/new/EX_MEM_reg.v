@@ -37,10 +37,7 @@ module EX_MEM_reg(
             t_PC <= PC;
             t_RD1 <= RD1;
             t_RD2 <= RD2;
-            if (instr[6:0] == `UJ_OPCODE || instr[6:0] == `JALR_OPCODE) begin
-                t_alu_result <= PC + 4;
-            end
-            else t_alu_result <= alu_result;
+            t_alu_result <= alu_result;
             t_imm <= imm;
             t_regwrite <= regwrite;
             t_MemRead <= MemRead;
