@@ -35,13 +35,15 @@ module PC_adder(
     
     always@(*) begin
         // 如果需要跳转，更新PC为EX_MEM_PC + imm
-        // 如果不需要跳转，将现在用于取指的PC加上4
+        // 如果不需要跳转，更新为EX_MEM_PC + 4
+        // 如果不是跳转指令，更新为nowPC + 4
         if ((Branch && jump) || EX_MEM_opcode == `UJ_OPCODE) begin
             result <= EX_MEM_PC + imm;
         end
         else if (EX_MEM_opcode == `JALR_OPCODE) begin
             result <= EX_MEM_RD1 + imm;
         end
+        else if (Branch && !jump) result <= EX_MEM_PC + 4;
         else result <= nowPC + 4; 
     end
     assign newPC = result;

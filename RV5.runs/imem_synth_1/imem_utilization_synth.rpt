@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2022.2 (win64) Build 3671981 Fri Oct 14 05:00:03 MDT 2022
-| Date         : Mon Apr  3 18:46:08 2023
+| Date         : Wed Apr  5 15:00:24 2023
 | Host         : LAPTOP-7D1D3GGC running 64-bit major release  (build 9200)
 | Command      : report_utilization -file imem_utilization_synth.rpt -pb imem_utilization_synth.pb
 | Design       : imem
@@ -148,9 +148,9 @@ Warning! LUT value is adjusted to account for LUT combining.
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| LUT3     |    2 |                 LUT |
+| LUT4     |    2 |                 LUT |
 | LUT6     |    1 |                 LUT |
-| LUT5     |    1 |                 LUT |
+| LUT3     |    1 |                 LUT |
 +----------+------+---------------------+
 
 

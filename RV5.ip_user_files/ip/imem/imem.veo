@@ -55,7 +55,7 @@
 
 //----------- Begin Cut here for INSTANTIATION Template ---// INST_TAG
 imem your_instance_name (
-  .a(a),      // input wire [6 : 0] a
+  .a(a),      // input wire [8 : 0] a
   .spo(spo)  // output wire [31 : 0] spo
 );
 // INST_TAG_END ------ End INSTANTIATION Template ---------

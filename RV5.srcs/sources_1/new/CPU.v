@@ -122,7 +122,7 @@ module CPU(
     
     // 比较器判断分支是否发生
     wire jump;
-    Comparator U_cmp(.A(src1), .B(src2), .jump(jump));
+    Comparator U_cmp(.instr(ID_EX_instr), .A(src1), .B(src2), .jump(jump));
     
     // 零输出信号
     wire Zero; 

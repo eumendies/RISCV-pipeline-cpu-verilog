@@ -48,17 +48,18 @@ module Hazard_unit(
         end
         // 处理控制冒险
         else if (IF_ID_opcode == `SB_OPCODE || ID_EX_opcode == `SB_OPCODE || EX_MEM_opcode == `SB_OPCODE
-                || IF_ID_opcode == `UJ_OPCODE || ID_EX_opcode == `UJ_OPCODE || EX_MEM_opcode == `UJ_OPCODE) begin
-            // 遇到分支指令时插入三条空指令
-            if (IF_ID_opcode == `SB_OPCODE || IF_ID_opcode == `UJ_OPCODE) begin
+                || IF_ID_opcode == `UJ_OPCODE || ID_EX_opcode == `UJ_OPCODE || EX_MEM_opcode == `UJ_OPCODE
+                || IF_ID_opcode == `JALR_OPCODE || ID_EX_opcode == `JALR_OPCODE || EX_MEM_opcode == `JALR_OPCODE) begin
+            // 遇到跳转指令时插入三条空指令
+            if (IF_ID_opcode == `SB_OPCODE || IF_ID_opcode == `UJ_OPCODE || IF_ID_opcode == `JALR_OPCODE) begin
                 t_PCwrite = 1'b0;
                 t_IF_ID_flush = 1'b1;
             end
-            if (ID_EX_opcode == `SB_OPCODE || ID_EX_opcode == `UJ_OPCODE) begin
+            if (ID_EX_opcode == `SB_OPCODE || ID_EX_opcode == `UJ_OPCODE || ID_EX_opcode == `JALR_OPCODE) begin
                 t_PCwrite = 1'b0;
                 t_IF_ID_flush = 1'b1;
             end
-            if (EX_MEM_opcode == `SB_OPCODE || EX_MEM_opcode == `UJ_OPCODE) begin
+            if (EX_MEM_opcode == `SB_OPCODE || EX_MEM_opcode == `UJ_OPCODE || EX_MEM_opcode == `JALR_OPCODE) begin
                 // MEM阶段获得新的PC值，将PCwrite置位  
                 t_PCwrite = 1'b1;
                 t_IF_ID_flush = 1'b1;

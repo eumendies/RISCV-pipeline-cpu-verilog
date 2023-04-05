@@ -24,6 +24,7 @@ module test_U();
 
 reg clk, rstn;
 reg[31:0] nowPC;
+reg jump;
 reg[31:0] instr, IF_ID_instr, ID_EX_instr, EX_MEM_instr, MEM_WB_instr;
 reg[31:0] alu_result;
 reg[31:0] x[0:31];
@@ -42,6 +43,7 @@ always #50 clk = ~clk;
 
 integer i;
 always@(posedge clk) begin
+        jump = t_CPU.EX_MEM_jump;
         nowPC = t_CPU.nowPC;
         instr = t_CPU.instr;
         IF_ID_instr = t_CPU.IF_ID_instr;

@@ -29,20 +29,21 @@ module Comparator(
     always@(*) begin
         if (instr[6:0] == `SB_OPCODE) begin
             case (instr[14:12])
-                `BEQ_FUNCT3: jump = (A == B) ? 1 : 0;
-                `BNE_FUNCT3: jump = (A == B) ? 0 : 1;
+                `BEQ_FUNCT3: jump = (A == B) ? 1'b1 : 1'b0;
+                `BNE_FUNCT3: jump = (A == B) ? 1'b0 : 1'b1;
                 `BLT_FUNCT3: begin
-                                if (A[63] == 1'b1 && B[63] == 1'b0) jump = 1'b1;
-                                else if (A[63] == 1'b0 && B[63] == 1'b1) jump = 1'b0;
+                                if (A[31] == 1'b1 && B[31] == 1'b0) jump = 1'b1;
+                                else if (A[31] == 1'b0 && B[31] == 1'b1) jump = 1'b0;
                                 else jump = (A < B) ? 1 : 0;
                              end
                  `BGE_FUNCT3: begin
-                                if (A[63] == 1'b1 && B[63] == 1'b0) jump = 1'b0;
-                                else if (A[63] == 1'b0 && B[63] == 1'b1) jump = 1'b1;
-                                else jump = (A >= B) ? 1 : 0;
+                                if (A[31] == 1'b1 && B[31] == 1'b0) jump = 1'b0;
+                                else if (A[31] == 1'b0 && B[31] == 1'b1) jump = 1'b1;
+                                else jump = (A >= B) ? 1'b1 : 1'b0;
                               end
-                 `BLTU_FUNCT3: jump = (A < B) ? 1 : 0;
-                 `BGEU_FUNCT3: jump = (A >= B) ? 1 : 0;
+                 `BLTU_FUNCT3: jump = (A < B) ? 1'b1 : 1'b0;
+                 `BGEU_FUNCT3: jump = (A >= B) ? 1'b1 : 1'b0;
+                 default: jump = 1'b0;
             endcase
         end
         else if (instr[6:0] == `UJ_OPCODE || instr[6:0] == `JALR_OPCODE) jump = 1'b1;

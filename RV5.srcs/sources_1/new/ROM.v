@@ -25,7 +25,7 @@ module ROM(
     output[31:0] instr
     );
    
-   reg[6:0] addr; 
+   reg[8:0] addr; 
    always@(*) begin
         addr = PC >> 2;
    end 
