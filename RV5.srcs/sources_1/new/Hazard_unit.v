@@ -39,8 +39,8 @@ module Hazard_unit(
     
 
     always@(*) begin
-        // 处理load-use冒险
-        // load-store可以通过前递来解决
+        // 处理load-use冒险，插入一个气泡
+        // load-store可以通过前递来解决，不需要插入气泡
         if (ID_EX_MemRead && (ID_EX_rd == IF_ID_rs1 || ID_EX_rd == IF_ID_rs2) && IF_ID_opcode != `S_OPCODE) begin
             t_PCwrite = 1'b0;
             t_IF_ID_write = 1'b0;
@@ -55,15 +55,18 @@ module Hazard_unit(
             if (IF_ID_opcode == `SB_OPCODE || IF_ID_opcode == `UJ_OPCODE || IF_ID_opcode == `JALR_OPCODE) begin
                 t_PCwrite = 1'b0;
                 t_IF_ID_flush = 1'b1;
+                t_ID_EX_flush = 1'b0;
             end
             if (ID_EX_opcode == `SB_OPCODE || ID_EX_opcode == `UJ_OPCODE || ID_EX_opcode == `JALR_OPCODE) begin
                 t_PCwrite = 1'b0;
                 t_IF_ID_flush = 1'b1;
+                t_ID_EX_flush = 1'b0;
             end
             if (EX_MEM_opcode == `SB_OPCODE || EX_MEM_opcode == `UJ_OPCODE || EX_MEM_opcode == `JALR_OPCODE) begin
                 // MEM阶段获得新的PC值，将PCwrite置位  
                 t_PCwrite = 1'b1;
                 t_IF_ID_flush = 1'b1;
+                t_ID_EX_flush = 1'b0;
             end
         end
         else begin
