@@ -1,8 +1,0 @@
-set_property SRC_FILE_INFO {cfile:e:/vivado/RV5/RV5/RV5.gen/sources_1/ip/imem/imem/imem_in_context.xdc rfile:../../../../../RV5.gen/sources_1/ip/imem/imem/imem_in_context.xdc id:1 order:EARLY scoped_inst:U_imem} [current_design]
-set_property SRC_FILE_INFO {cfile:C:/Users/14315/Desktop/vivado/第二次实验/icf.xdc rfile:C:/Users/14315/Desktop/vivado/第二次实验/icf.xdc id:2} [current_design]
-set_property src_info {type:SCOPED_XDC file:1 line:1 export:INPUT save:INPUT read:READ} [current_design]
-set_property IS_IP_OOC_CELL true [get_cells U_imem]
-set_property src_info {type:XDC file:2 line:3 export:INPUT save:INPUT read:READ} [current_design]
-create_clock -period 100.000 -name sys_clk_pin -waveform {0.000 50.000} -add [get_ports clk]
-set_property src_info {type:TCL file:{} line:-1 export:INPUT save:INPUT read:READ} [current_design]
-set_property KEEP_HIERARCHY SOFT [get_cells U_imem]
