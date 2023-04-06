@@ -28,10 +28,10 @@ module RegFile(
     input[`BIT_WIDTH] WD,
     output[`BIT_WIDTH] RD1, RD2
     );
-    reg[`BIT_WIDTH] rf[31:0];
     
+    reg[`BIT_WIDTH] rf[31:0];
     integer i;
-    always@(*) begin
+    always@(posedge clk or negedge rstn) begin
         // ³õÊ¼»¯¼Ä´æÆ÷
         if (!rstn) begin
             for (i = 0; i < 32; i = i + 1) begin
@@ -45,7 +45,7 @@ module RegFile(
         end
         else begin rf[0] <= 0; end
     end
-    
+        
     assign RD1 = (rs1 != 0) ? rf[rs1] : 0;
     assign RD2 = (rs2 != 0) ? rf[rs2] : 0; 
 

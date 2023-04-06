@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="impl_2" LaunchPart="xc7a100tcsg324-1" LaunchTime="1679815925">
+<GenRun Id="impl_2" LaunchPart="xc7a100tcsg324-1" LaunchTime="1680779787">
   <File Type="ROUTE-PWR" Name="CPU_power_routed.rpt"/>
   <File Type="PA-TCL" Name="CPU.tcl"/>
   <File Type="ROUTE-PWR-SUM" Name="CPU_power_summary_routed.pb"/>
@@ -17,7 +17,6 @@
   <File Type="BITSTR-MMI" Name="CPU.mmi"/>
   <File Type="ROUTE-METHODOLOGY-DRC" Name="CPU_methodology_drc_routed.rpt"/>
   <File Type="BITSTR-SYSDEF" Name="CPU.sysdef"/>
-  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="CPU_methodology_drc_routed.pb"/>
   <File Type="BITSTR-LTX" Name="debug_nets.ltx"/>
   <File Type="BITSTR-LTX" Name="CPU.ltx"/>
   <File Type="WBT-USG" Name="usage_statistics_webtalk.html"/>
@@ -26,11 +25,8 @@
   <File Type="PLACE-IO" Name="CPU_io_placed.rpt"/>
   <File Type="PLACE-UTIL" Name="CPU_utilization_placed.rpt"/>
   <File Type="PLACE-UTIL-PB" Name="CPU_utilization_placed.pb"/>
-  <File Type="ROUTE-RQS" Name="CPU_routed.rqs"/>
   <File Type="PLACE-CTRL" Name="CPU_control_sets_placed.rpt"/>
-  <File Type="ROUTE-RQS-RPT" Name="route_report_qor_suggestions_0.rpt"/>
   <File Type="PLACE-PRE-SIMILARITY" Name="CPU_incremental_reuse_pre_placed.rpt"/>
-  <File Type="POSTROUTE-PHYSOPT-RQS-RPT" Name="postroute_physopt_report_qor_suggestions_0.rpt"/>
   <File Type="ROUTE-DRC" Name="CPU_drc_routed.rpt"/>
   <File Type="ROUTE-DRC-PB" Name="CPU_drc_routed.pb"/>
   <File Type="ROUTE-PWR-RPX" Name="CPU_power_routed.rpx"/>
@@ -52,6 +48,7 @@
   <File Type="PHYSOPT-DCP" Name="CPU_physopt.dcp"/>
   <File Type="POSTROUTE-PHYSOPT-DCP" Name="CPU_postroute_physopt.dcp"/>
   <File Type="POSTROUTE-PHYSOPT-BLACKBOX-DCP" Name="CPU_postroute_physopt_bb.dcp"/>
+  <File Type="ROUTE-METHODOLOGY-DRC-PB" Name="CPU_methodology_drc_routed.pb"/>
   <File Type="ROUTE-DRC-RPX" Name="CPU_drc_routed.rpx"/>
   <File Type="ROUTE-METHODOLOGY-DRC-RPX" Name="CPU_methodology_drc_routed.rpx"/>
   <File Type="PDI-FILE" Name="CPU.pdi"/>
@@ -60,9 +57,19 @@
   <File Type="RNPI_FILE" Name="CPU.rnpi"/>
   <File Type="NPI_FILE" Name="CPU.npi"/>
   <File Type="RBD_FILE" Name="CPU.rbd"/>
+  <File Type="ROUTE-RQS" Name="CPU_routed.rqs"/>
   <File Type="POSTROUTE-PHYSOPT-RQS" Name="CPU_postroute_physopted.rqs"/>
+  <File Type="ROUTE-RQS-RPT" Name="route_report_qor_suggestions_0.rpt"/>
+  <File Type="POSTROUTE-PHYSOPT-RQS-RPT" Name="postroute_physopt_report_qor_suggestions_0.rpt"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/ip/imem/imem.xci">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/new/config.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -84,6 +91,13 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
+    <File Path="$PSRCDIR/sources_1/new/Comparator.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/new/Controller.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
@@ -99,6 +113,13 @@
       </FileInfo>
     </File>
     <File Path="$PSRCDIR/sources_1/new/Forwarding.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/Forwarding_store.v">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -203,15 +224,67 @@
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PSRCDIR/sources_1/new/Instr_decoder.v">
+    <File Path="$PPRDIR/test_assembly/test_ld_sd.coe">
       <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
       </FileInfo>
     </File>
-    <File Path="$PPRDIR/test.coe">
+    <File Path="$PPRDIR/test_assembly/test_jal.coe">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/test_assembly/test_load.coe">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/test_assembly/test_store.coe">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/test_assembly/test_jalr.coe">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/test_assembly/test_R.coe">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/test_assembly/test_U.coe">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/test_assembly/test_SB.coe">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/test_assembly/test_sra.coe">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/test_assembly/fibonacci.coe">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PPRDIR/test_assembly/overall.coe">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -262,5 +335,4 @@
     <Step Id="write_bitstream"/>
     <Step Id="write_device_image"/>
   </Strategy>
-  <BlockFileSet Type="BlockSrcs" Name="imem"/>
 </GenRun>

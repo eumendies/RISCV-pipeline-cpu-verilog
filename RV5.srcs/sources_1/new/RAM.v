@@ -33,92 +33,81 @@ module RAM(
 
     // 256B RAM, 按字节寻址
     reg[7:0] store[255:0];
-    integer data_len;
-    integer i, unsigned_flag;
+    integer i;
     // 4个字节
-    reg[7:0] RD[3:0];
-    reg[7:0] t_WD[3:0];
-    initial begin
-        for (i = 0; i < 256; i = i + 1) begin
-            store[i] <= i;
-        end
-        data_len <= 0;
-    end
+    reg[7:0] t_RD[3:0];
     
     always@(*) begin
         if (!rstn) begin
             for (i = 0; i < 32; i = i + 1) begin store[i] <= i + 1; end
         end
-        else if (MemWrite) begin
-            if (instr_funct3 == `SB_FUNCT3) data_len = 1;
-            else if (instr_funct3 == `SH_FUNCT3) data_len = 2;
-            else if (instr_funct3 == `SW_FUNCT3) data_len = 4;
-            else if (instr_funct3 == `SD_FUNCT3) data_len = 8;
-            else data_len = 0;
-            // 拆成字节
-            t_WD[0] = WD[7:0];
-            t_WD[1] = WD[15:8];
-            t_WD[2] = WD[23:16];
-            t_WD[3] = WD[31:24];
-//            t_WD[4] = WD[39:32];
-//            t_WD[5] = WD[47:40];
-//            t_WD[6] = WD[55:48];
-//            t_WD[7] = WD[63:56];
-            // 将超出data_len的部分改为内存中的值，避免覆盖内存中的值
-            for (i = 0; i < 4 - data_len; i = i + 1) begin
-                t_WD[data_len + i] = store[address + data_len + i];
+        if (MemWrite) begin
+            if (instr_funct3 == `SB_FUNCT3) begin
+                  store[address] <= WD[7:0];
             end
-            // 一个字节一个字节存储
-            store[address + 0] <= t_WD[0];
-            store[address + 1] <= t_WD[1];
-            store[address + 2] <= t_WD[2];
-            store[address + 3] <= t_WD[3];
-//            store[address + 4] <= t_WD[4];
-//            store[address + 5] <= t_WD[5];
-//            store[address + 6] <= t_WD[6];
-//            store[address + 7] <= t_WD[7];
+            else if (instr_funct3 == `SH_FUNCT3) begin
+                store[address] <= WD[7:0];
+                store[address + 1] <= WD[15:8];
+            end
+            else if (instr_funct3 == `SW_FUNCT3) begin
+                store[address] <= WD[7:0];
+                store[address + 1] <= WD[15:8];
+                store[address + 2] <= WD[23:16];
+                store[address + 3] <= WD[31:24];
+            end
+            // else if (instr_funct3 == `SD_FUNCT3);
         end
-        else if (MemRead) begin
-            // 确定要读取的长度
-            if (instr_funct3 == `LB_FUNCT3) data_len = 1;
-            else if (instr_funct3 == `LH_FUNCT3) data_len = 2;
-            else if (instr_funct3 == `LW_FUNCT3) data_len = 4;
-            else if (instr_funct3 == `LD_FUNCT3) data_len = 8;
-            else if (instr_funct3 == `LBU_FUNCT3) data_len = 1;
-            else if (instr_funct3 == `LHU_FUNCT3) data_len = 2;
-            else if (instr_funct3 == `LWU_FUNCT3) data_len = 4;
-            else data_len = 0;
-            // 确定是否为无符号读取
-            if (instr_funct3 == `LBU_FUNCT3 || instr_funct3 == `LHU_FUNCT3 || instr_funct3 == `LWU_FUNCT3) begin
-                unsigned_flag = 1;
+        if (MemRead) begin
+            if (instr_funct3 == `LB_FUNCT3) begin
+                t_RD[0] = store[address];
+                t_RD[1] = {8{t_RD[0][7]}};
+                t_RD[2] = {8{t_RD[0][7]}};
+                t_RD[3] = {8{t_RD[0][7]}};
             end
-            else unsigned_flag = 0;
-            // 逐字节读取
-            for (i = 0; i < data_len; i = i + 1) begin
-                RD[i] <= store[address + i];
+            else if (instr_funct3 == `LH_FUNCT3) begin
+                t_RD[0] = store[address];
+                t_RD[1] = store[address + 1];
+                t_RD[2] = {8{t_RD[1][7]}};
+                t_RD[3] = {8{t_RD[1][7]}};
             end
-            if (unsigned_flag == 0) begin
-                for (i = 0; i < 4 - data_len; i = i + 1) begin
-                    // 符号扩展
-                    RD[3 - i] <= {8{RD[data_len - 1][7]}};
-                end
+            else if (instr_funct3 == `LW_FUNCT3) begin
+                t_RD[0] = store[address];
+                t_RD[1] = store[address + 1];
+                t_RD[2] = store[address + 2];
+                t_RD[3] = store[address + 3];
+            end
+            // else if (instr_funct3 == `LD_FUNCT3);
+            else if (instr_funct3 == `LBU_FUNCT3) begin
+                t_RD[0] = store[address];
+                t_RD[1] = 8'b0;
+                t_RD[2] = 8'b0;
+                t_RD[3] = 8'b0;
+            end
+            else if (instr_funct3 == `LHU_FUNCT3) begin
+                t_RD[0] = store[address];
+                t_RD[1] = store[address + 1];
+                t_RD[2] = 8'b0;
+                t_RD[3] = 8'b0;
+            end
+            else if (instr_funct3 == `LWU_FUNCT3) begin
+                t_RD[0] = store[address];
+                t_RD[1] = store[address + 1];
+                t_RD[2] = store[address + 2];
+                t_RD[3] = 8'b0;
             end
             else begin
-                for (i = 0; i < 4 - data_len; i = i + 1) begin
-                    // 填充0
-                    RD[3 - i] <= {8'b0};
-                end
+                t_RD[0] = 8'b0;
+                t_RD[1] = 8'b0;
+                t_RD[2] = 8'b0;
+                t_RD[3] = 8'b0;
             end
-        end
-        else begin
-            store[i] <= store[i]; 
         end
     end
     
-    assign ReadData[7:0] = RD[0];
-    assign ReadData[15:8] = RD[1];
-    assign ReadData[23:16] = RD[2];
-    assign ReadData[31:24] = RD[3];
+    assign ReadData[7:0] = t_RD[0];
+    assign ReadData[15:8] = t_RD[1];
+    assign ReadData[23:16] = t_RD[2];
+    assign ReadData[31:24] = t_RD[3];
 //    assign ReadData[39:32] = RD[4];
 //    assign ReadData[47:40] = RD[5];
 //    assign ReadData[55:48] = RD[6];

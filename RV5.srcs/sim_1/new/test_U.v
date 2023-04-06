@@ -34,8 +34,9 @@ CPU t_CPU(.clk(clk), .rstn(rstn));
 
 initial begin
     clk = 0;
-    rstn = 0;
-    #10 rstn = 1;
+    rstn = 1;
+    #10 rstn = 0;
+    #10 rstn = ~rstn;
     #50 clk = 1;
 end
 

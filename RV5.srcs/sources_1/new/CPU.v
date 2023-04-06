@@ -90,10 +90,18 @@ module CPU(
     
     // 寄存器堆
     wire[`BIT_WIDTH] WD;
-    wire[`BIT_WIDTH] RD1, RD2; 
+    wire[`BIT_WIDTH] t_RD1, t_RD2; 
     RegFile U_RF(.clk(clk), .rstn(rstn), .RFWr(MEM_WB_regwrite),
              .rs1(IF_ID_instr[19:15]), .rs2(IF_ID_instr[24:20]), .rd(MEM_WB_instr[11:7]),
-             .WD(WD), .RD1(RD1), .RD2(RD2));
+             .WD(WD), .RD1(t_RD1), .RD2(t_RD2));
+             
+    wire[`BIT_WIDTH] RD1, RD2;
+    wire forward_RD1, forward_RD2;
+    Forwarding_WB U_forward_WB(.MEM_WB_regwrite(MEM_WB_regwrite), .MEM_WB_rd(MEM_WB_instr[11:7]),
+                              .IF_ID_rs1(IF_ID_instr[19:15]), .IF_ID_rs2(IF_ID_instr[24:20]),
+                              .forward_RD1(forward_RD1), .forward_RD2(forward_RD2));
+    MUX_2 U_rd1_mux(.opt1(t_RD1), .opt2(WD), .control(forward_RD1), .result(RD1));
+    MUX_2 U_rd2_mux(.opt1(t_RD2), .opt2(WD), .control(forward_RD2), .result(RD2));
 
     // ID/EX流水线寄存器
     // 保存指令、PC、立即数、寄存器读取的数据、控制信号
@@ -180,7 +188,7 @@ module CPU(
     // 循环产生寄存器号并取寄存器内容
     always@(posedge Clk_CPU or negedge rstn) begin
         if (!rstn) begin reg_addr = 5'b0; end
-        else if (sw_i[1] && sw_i[13]) begin
+        else if (sw_i[5:0] == 6'b100000) begin
             reg_addr = reg_addr + 1'b1;
             reg_data = U_RF.rf[reg_addr];
         end
@@ -191,7 +199,7 @@ module CPU(
     // 循环取得RAM中的内容（一个字节一个字节读取）
     always@(posedge Clk_CPU or negedge rstn) begin
         if (!rstn) begin ram_addr = 8'b0; end
-        else if (sw_i[1] && sw_i[12]) begin
+        else if (sw_i[5:0] == 6'b000100) begin
             ram_addr = ram_addr + 1'b1;
             ram_data = U_RAM.store[ram_addr];
         end
@@ -199,15 +207,14 @@ module CPU(
 
     // 选择展示内容
     reg[`BIT_WIDTH] display_data;
-    always@(sw_i or instr or nowPC) begin
-        if (sw_i[0] == 0) begin
-            case (sw_i[14:11])
-                4'b1000: display_data = IF_ID_instr;
-                4'b0100: display_data = reg_data;
-                4'b0010: display_data = ram_data;
-                default: display_data = nowPC;
-            endcase end
-        else begin display_data = 64'b1; end
+    always@(sw_i) begin
+        if (sw_i[5:0] == 6'b000001) display_data = nowPC >> 2;
+        else if (sw_i[5:0] == 6'b000010) display_data = nowPC;
+        else if (sw_i[5:0] == 6'b000011) display_data = IF_ID_instr;
+        else if (sw_i[5:0] == 6'b000100) display_data = ram_data;
+        else if (sw_i[5:0] == 6'b100000) display_data = reg_data;
+        else if (sw_i[5] == 1'b1) display_data = U_RF.rf[sw_i[4:0]];
+        else display_data = 32'hffffffff;
     end
     
     // 七段数码管
@@ -215,7 +222,6 @@ module CPU(
         .clk(clk),
         .rstn(rstn),
         .i_data(display_data),
-        .disp_mode(sw_i[0]),
         .o_seg(disp_seg_o),
         .o_sel(disp_an_o)
     );  

@@ -14,6 +14,10 @@ INFO: [VRFC 10-2263] Analyzing Verilog file "E:/vivado/RV5/RV5/RV5.srcs/sources_
 INFO: [VRFC 10-311] analyzing module EX_MEM_reg
 INFO: [VRFC 10-2263] Analyzing Verilog file "E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/Forwarding.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module Forwarding
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/Forwarding_WB.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Forwarding_WB
+INFO: [VRFC 10-2263] Analyzing Verilog file "E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/Forwarding_store.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Forwarding_store
 INFO: [VRFC 10-2263] Analyzing Verilog file "E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/Hazard_unit.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module Hazard_unit
 INFO: [VRFC 10-2263] Analyzing Verilog file "E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/ID_EX_reg.v" into library xil_defaultlib

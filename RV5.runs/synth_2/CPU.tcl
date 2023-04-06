@@ -72,7 +72,7 @@ proc create_report { reportName command } {
 OPTRACE "synth_2" START { ROLLUP_AUTO }
 set_param checkpoint.writeSynthRtdsInDcp 1
 set_param chipscope.maxJobs 4
-set_param xicom.use_bs_reader 1
+set_param synth.incrementalSynthesisCache C:/Users/14315/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-3952-LAPTOP-7D1D3GGC/incrSyn
 set_msg_config -id {Synth 8-256} -limit 10000
 set_msg_config -id {Synth 8-638} -limit 10000
 OPTRACE "Creating in-memory project" START { }
@@ -90,14 +90,26 @@ set_property ip_output_repo e:/vivado/RV5/RV5/RV5.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
-add_files E:/vivado/RV5/RV5/test.coe
+add_files E:/vivado/RV5/RV5/test_assembly/test_ld_sd.coe
+add_files E:/vivado/RV5/RV5/test_assembly/test_jal.coe
+add_files E:/vivado/RV5/RV5/test_assembly/test_load.coe
+add_files E:/vivado/RV5/RV5/test_assembly/test_store.coe
+add_files E:/vivado/RV5/RV5/test_assembly/test_jalr.coe
+add_files E:/vivado/RV5/RV5/test_assembly/test_R.coe
+add_files E:/vivado/RV5/RV5/test_assembly/test_U.coe
+add_files E:/vivado/RV5/RV5/test_assembly/test_SB.coe
+add_files E:/vivado/RV5/RV5/test_assembly/test_sra.coe
+add_files E:/vivado/RV5/RV5/test_assembly/fibonacci.coe
+add_files e:/vivado/RV5/RV5/test_assembly/overall.coe
 read_verilog -library xil_defaultlib {
   E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/config.v
   E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/ALU.v
   E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/Clk_div.v
+  E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/Comparator.v
   E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/Controller.v
   E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/EX_MEM_reg.v
   E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/Forwarding.v
+  E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/Forwarding_store.v
   E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/Hazard_unit.v
   E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/ID_EX_reg.v
   E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/IF_ID_reg.v
@@ -128,6 +140,8 @@ foreach dcp [get_files -quiet -all -filter file_type=="Design\ Checkpoint"] {
 read_xdc C:/Users/14315/Desktop/vivado/第二次实验/icf.xdc
 set_property used_in_implementation false [get_files C:/Users/14315/Desktop/vivado/第二次实验/icf.xdc]
 
+read_xdc dont_touch.xdc
+set_property used_in_implementation false [get_files dont_touch.xdc]
 set_param ips.enableIPCacheLiteLoad 1
 
 read_checkpoint -auto_incremental -incremental E:/vivado/RV5/RV5/RV5.srcs/utils_1/imports/synth_2/ALU.dcp
