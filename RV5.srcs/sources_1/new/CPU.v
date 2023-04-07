@@ -163,9 +163,14 @@ module CPU(
     MUX_2 U_mem_mux(.opt1(EX_MEM_RD2), .opt2(WD), .control(forward_store), .result(MEM_WD));
 
     // 数据存储器
-    wire[`BIT_WIDTH] mem_data;
+    wire[`BIT_WIDTH] t_mem_data;
     RAM U_RAM(.clk(clk), .rstn(rstn), .instr_funct3(EX_MEM_instr[14:12]), .MemWrite(EX_MEM_MemWrite), .MemRead(EX_MEM_MemRead), 
-              .address(EX_MEM_alu_result), .WD(MEM_WD), .ReadData(mem_data));
+              .address(EX_MEM_alu_result), .WD(MEM_WD), .ReadData(t_mem_data));
+    
+    // 根据指令类型(lb, lh...)裁剪读取的数据
+    wire[`BIT_WIDTH] mem_data;
+    Load_Clip U_clip(.instr_funct3(EX_MEM_instr[14:12]), .t_mem_data(t_mem_data),
+                     .mem_data(mem_data));
     
     MEM_WB_reg reg4(.clk(clk), .rstn(rstn), .instr(EX_MEM_instr), .PC(EX_MEM_PC), .alu_result(EX_MEM_alu_result), 
                     .mem_data(mem_data), .regwrite(EX_MEM_regwrite), .MemtoReg(EX_MEM_MemtoReg), 
