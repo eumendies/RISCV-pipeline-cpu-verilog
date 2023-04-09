@@ -33,13 +33,22 @@ module IF_ID_reg(
     reg[31:0] t_instr;
     reg[`BIT_WIDTH] t_PC;
     always@(posedge clk or negedge rstn) begin
-        if (flush || !rstn) begin
+        // rstn和flush放在两个不同的if语句中，避免寄存器被flush异步复位
+        if (!rstn) begin
+            t_instr <= 32'b0;
+            t_PC <= 32'b0;
+        end
+        else if (flush) begin
             t_instr <= 32'b0;
             t_PC <= 32'b0;
         end
         else if (IF_ID_write) begin
             t_instr <= instr;
             t_PC <= PC;
+        end
+        else begin
+            t_instr <= t_instr;
+            t_PC <= t_PC;
         end
     end
     assign IF_ID_instr = t_instr;

@@ -35,9 +35,11 @@ module PC_reg(
             nowPC <= 32'b0;
         end
         else if (PCwrite) begin
-            nowPC = nextPC;
-            if (nowPC > `INSTR_NUM * 4) nowPC = 0;
-            else nowPC = nowPC;
+            if (nowPC > `INSTR_NUM * 4) nowPC <= 0;
+            else nowPC <= nextPC;
+        end
+        else begin
+            nowPC <= nowPC;
         end
     end
     

@@ -22,7 +22,21 @@ module ID_EX_reg(
     reg[3:0] t_ALUControl;
     
     always@(posedge clk or negedge rstn) begin
-        if (!rstn || flush) begin
+        if (!rstn) begin
+            t_instr <= 32'b0;
+            t_PC <= 32'b0;
+            t_imm <= 32'b0;
+            t_RD1 <= 32'b0;
+            t_RD2 <= 32'b0;
+            t_regwrite <= 1'b0;
+            t_ALUSrc <= 1'b0;
+            t_MemRead <= 1'b0;
+            t_MemWrite <= 1'b0;
+            t_MemtoReg <= 1'b0;
+            t_Branch <= 1'b0;
+            t_ALUControl <= 4'b0000;
+        end
+        else if (flush) begin
             t_instr <= 32'b0;
             t_PC <= 32'b0;
             t_imm <= 32'b0;

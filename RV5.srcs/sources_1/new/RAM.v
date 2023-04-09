@@ -39,9 +39,9 @@ module RAM(
     
     always@(posedge clk or negedge rstn) begin
         if (!rstn) begin
-            for (i = 0; i < 32; i = i + 1) begin store[i] <= i + 1; end
+            for (i = 0; i < 256; i = i + 1) begin store[i] <= i + 1; end
         end
-        if (MemWrite) begin
+        else if (MemWrite) begin
             if (instr_funct3 == `SB_FUNCT3) begin
                   store[address] <= WD[7:0];
             end

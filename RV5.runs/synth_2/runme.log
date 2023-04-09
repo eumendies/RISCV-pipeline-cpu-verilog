@@ -18,6 +18,408 @@ Starting synth_design
 Attempting to get a license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a100t'
 INFO: [Device 21-403] Loading part xc7a100tcsg324-1
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 3352
+INFO: [Synth 8-7075] Helper process launched with PID 32460
+INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [D:/Environment/vivado/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:05 . Memory (MB): peak = 1230.480 ; gain = 408.672
+---------------------------------------------------------------------------------
+INFO: [Synth 8-6157] synthesizing module 'CPU' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:23]
+INFO: [Synth 8-6157] synthesizing module 'Clk_div' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/Clk_div.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'Clk_div' (0#1) [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/Clk_div.v:23]
+INFO: [Synth 8-6157] synthesizing module 'PC_reg' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'PC_reg' (0#1) [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_reg.v:23]
+INFO: [Synth 8-6157] synthesizing module 'ROM' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/ROM.v:23]
+INFO: [Synth 8-6157] synthesizing module 'imem' [E:/vivado/RV5/RV5/RV5.runs/synth_2/.Xil/Vivado-14076-LAPTOP-7D1D3GGC/realtime/imem_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'imem' (0#1) [E:/vivado/RV5/RV5/RV5.runs/synth_2/.Xil/Vivado-14076-LAPTOP-7D1D3GGC/realtime/imem_stub.v:5]
+INFO: [Synth 8-6155] done synthesizing module 'ROM' (0#1) [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/ROM.v:23]
+INFO: [Synth 8-6157] synthesizing module 'IF_ID_reg' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/IF_ID_reg.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'IF_ID_reg' (0#1) [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/IF_ID_reg.v:23]
+INFO: [Synth 8-6157] synthesizing module 'Controller' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/Controller.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'Controller' (0#1) [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/Controller.v:23]
+INFO: [Synth 8-6157] synthesizing module 'Hazard_unit' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/Hazard_unit.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'Hazard_unit' (0#1) [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/Hazard_unit.v:23]
+INFO: [Synth 8-6157] synthesizing module 'ImmGen' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/ImmGen.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'ImmGen' (0#1) [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/ImmGen.v:23]
+INFO: [Synth 8-6157] synthesizing module 'RegFile' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RegFile.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'RegFile' (0#1) [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RegFile.v:23]
+INFO: [Synth 8-6157] synthesizing module 'Forwarding_WB' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/Forwarding_WB.v:24]
+INFO: [Synth 8-6155] done synthesizing module 'Forwarding_WB' (0#1) [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/Forwarding_WB.v:24]
+INFO: [Synth 8-6157] synthesizing module 'MUX_2' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/Mux_2.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'MUX_2' (0#1) [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/Mux_2.v:23]
+INFO: [Synth 8-6157] synthesizing module 'ID_EX_reg' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/ID_EX_reg.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'ID_EX_reg' (0#1) [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/ID_EX_reg.v:4]
+INFO: [Synth 8-6157] synthesizing module 'MUX_3' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/MUX_3.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'MUX_3' (0#1) [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/MUX_3.v:23]
+INFO: [Synth 8-6157] synthesizing module 'Comparator' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/Comparator.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'Comparator' (0#1) [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/Comparator.v:23]
+INFO: [Synth 8-6157] synthesizing module 'ALU' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/ALU.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'ALU' (0#1) [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/ALU.v:23]
+INFO: [Synth 8-6157] synthesizing module 'EX_MEM_reg' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/EX_MEM_reg.v:4]
+INFO: [Synth 8-6155] done synthesizing module 'EX_MEM_reg' (0#1) [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/EX_MEM_reg.v:4]
+INFO: [Synth 8-6157] synthesizing module 'PC_adder' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_adder.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'PC_adder' (0#1) [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/PC_adder.v:23]
+INFO: [Synth 8-6157] synthesizing module 'Forwarding_store' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/Forwarding_store.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'Forwarding_store' (0#1) [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/Forwarding_store.v:23]
+INFO: [Synth 8-6157] synthesizing module 'RAM' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'RAM' (0#1) [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:23]
+INFO: [Synth 8-6157] synthesizing module 'Load_Clip' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/Load_Clip.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'Load_Clip' (0#1) [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/Load_Clip.v:23]
+INFO: [Synth 8-6157] synthesizing module 'MEM_WB_reg' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/MEM_WB_reg.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'MEM_WB_reg' (0#1) [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/MEM_WB_reg.v:23]
+INFO: [Synth 8-6157] synthesizing module 'Forwarding' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/Forwarding.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'Forwarding' (0#1) [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/Forwarding.v:23]
+INFO: [Synth 8-6085] Hierarchical reference on 'rf' stops possible memory inference [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RegFile.v:32]
+INFO: [Synth 8-6085] Hierarchical reference on 'store' stops possible memory inference [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/RAM.v:35]
+WARNING: [Synth 8-567] referenced signal 'nowPC' should be on the sensitivity list [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:215]
+WARNING: [Synth 8-567] referenced signal 'IF_ID_instr' should be on the sensitivity list [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:215]
+WARNING: [Synth 8-567] referenced signal 'ram_data' should be on the sensitivity list [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:215]
+WARNING: [Synth 8-567] referenced signal 'reg_data' should be on the sensitivity list [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:215]
+WARNING: [Synth 8-567] referenced signal 'rf' should be on the sensitivity list [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:215]
+INFO: [Synth 8-6157] synthesizing module 'seg7x16' [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/seg7x16.v:23]
+INFO: [Synth 8-155] case statement is not full and has no default [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/seg7x16.v:81]
+INFO: [Synth 8-6155] done synthesizing module 'seg7x16' (0#1) [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/seg7x16.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'CPU' (0#1) [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:23]
+WARNING: [Synth 8-7137] Register reg_data_reg in module CPU has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:198]
+WARNING: [Synth 8-7137] Register ram_data_reg in module CPU has both Set and reset with same priority. This may cause simulation mismatches. Consider rewriting code  [E:/vivado/RV5/RV5/RV5.srcs/sources_1/new/CPU.v:209]
+WARNING: [Synth 8-7129] Port i_data[63] in module seg7x16 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_data[62] in module seg7x16 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_data[61] in module seg7x16 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_data[60] in module seg7x16 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_data[59] in module seg7x16 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_data[58] in module seg7x16 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_data[57] in module seg7x16 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_data[56] in module seg7x16 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_data[55] in module seg7x16 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_data[54] in module seg7x16 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_data[53] in module seg7x16 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_data[52] in module seg7x16 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_data[51] in module seg7x16 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_data[50] in module seg7x16 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_data[49] in module seg7x16 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_data[48] in module seg7x16 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_data[47] in module seg7x16 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_data[46] in module seg7x16 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_data[45] in module seg7x16 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_data[44] in module seg7x16 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_data[43] in module seg7x16 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_data[42] in module seg7x16 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_data[41] in module seg7x16 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_data[40] in module seg7x16 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_data[39] in module seg7x16 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_data[38] in module seg7x16 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_data[37] in module seg7x16 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_data[36] in module seg7x16 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_data[35] in module seg7x16 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_data[34] in module seg7x16 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_data[33] in module seg7x16 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port i_data[32] in module seg7x16 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port MemRead in module RAM is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[31] in module Comparator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[30] in module Comparator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[29] in module Comparator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[28] in module Comparator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[27] in module Comparator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[26] in module Comparator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[25] in module Comparator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[24] in module Comparator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[23] in module Comparator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[22] in module Comparator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[21] in module Comparator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[20] in module Comparator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[19] in module Comparator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[18] in module Comparator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[17] in module Comparator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[16] in module Comparator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[15] in module Comparator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[11] in module Comparator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[10] in module Comparator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[9] in module Comparator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[8] in module Comparator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[7] in module Comparator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[24] in module Controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[23] in module Controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[22] in module Controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[21] in module Controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[20] in module Controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[19] in module Controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[18] in module Controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[17] in module Controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[16] in module Controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[15] in module Controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[11] in module Controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[10] in module Controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[9] in module Controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[8] in module Controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port instr[7] in module Controller is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sw_i[14] in module Clk_div is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sw_i[13] in module Clk_div is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sw_i[12] in module Clk_div is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sw_i[11] in module Clk_div is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sw_i[10] in module Clk_div is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sw_i[9] in module Clk_div is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sw_i[8] in module Clk_div is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sw_i[7] in module Clk_div is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sw_i[6] in module Clk_div is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sw_i[5] in module Clk_div is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sw_i[4] in module Clk_div is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sw_i[3] in module Clk_div is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sw_i[2] in module Clk_div is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sw_i[1] in module Clk_div is either unconnected or has no load
+WARNING: [Synth 8-7129] Port sw_i[0] in module Clk_div is either unconnected or has no load
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1521.812 ; gain = 700.004
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1521.812 ; gain = 700.004
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1521.812 ; gain = 700.004
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.160 . Memory (MB): peak = 1521.812 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Parsing XDC File [e:/vivado/RV5/RV5/RV5.gen/sources_1/ip/imem/imem/imem_in_context.xdc] for cell 'U_imem/your_instance_name'
+Finished Parsing XDC File [e:/vivado/RV5/RV5/RV5.gen/sources_1/ip/imem/imem/imem_in_context.xdc] for cell 'U_imem/your_instance_name'
+Parsing XDC File [C:/Users/14315/Desktop/vivado/第二次实验/icf.xdc]
+WARNING: [Vivado 12-507] No nets matched 'sw_i_IBUF[15]'. [C:/Users/14315/Desktop/vivado/第二次实验/icf.xdc:5]
+WARNING: [Vivado 12-584] No ports matched 'led_o[0]'. [C:/Users/14315/Desktop/vivado/第二次实验/icf.xdc:45]
+WARNING: [Vivado 12-584] No ports matched 'led_o[1]'. [C:/Users/14315/Desktop/vivado/第二次实验/icf.xdc:46]
+WARNING: [Vivado 12-584] No ports matched 'led_o[2]'. [C:/Users/14315/Desktop/vivado/第二次实验/icf.xdc:47]
+WARNING: [Vivado 12-584] No ports matched 'led_o[3]'. [C:/Users/14315/Desktop/vivado/第二次实验/icf.xdc:48]
+WARNING: [Vivado 12-584] No ports matched 'led_o[4]'. [C:/Users/14315/Desktop/vivado/第二次实验/icf.xdc:49]
+WARNING: [Vivado 12-584] No ports matched 'led_o[5]'. [C:/Users/14315/Desktop/vivado/第二次实验/icf.xdc:50]
+WARNING: [Vivado 12-584] No ports matched 'led_o[6]'. [C:/Users/14315/Desktop/vivado/第二次实验/icf.xdc:51]
+WARNING: [Vivado 12-584] No ports matched 'led_o[7]'. [C:/Users/14315/Desktop/vivado/第二次实验/icf.xdc:52]
+WARNING: [Vivado 12-584] No ports matched 'led_o[8]'. [C:/Users/14315/Desktop/vivado/第二次实验/icf.xdc:53]
+WARNING: [Vivado 12-584] No ports matched 'led_o[9]'. [C:/Users/14315/Desktop/vivado/第二次实验/icf.xdc:54]
+WARNING: [Vivado 12-584] No ports matched 'led_o[10]'. [C:/Users/14315/Desktop/vivado/第二次实验/icf.xdc:55]
+WARNING: [Vivado 12-584] No ports matched 'led_o[11]'. [C:/Users/14315/Desktop/vivado/第二次实验/icf.xdc:56]
+WARNING: [Vivado 12-584] No ports matched 'led_o[12]'. [C:/Users/14315/Desktop/vivado/第二次实验/icf.xdc:57]
+WARNING: [Vivado 12-584] No ports matched 'led_o[13]'. [C:/Users/14315/Desktop/vivado/第二次实验/icf.xdc:58]
+WARNING: [Vivado 12-584] No ports matched 'led_o[14]'. [C:/Users/14315/Desktop/vivado/第二次实验/icf.xdc:59]
+WARNING: [Vivado 12-584] No ports matched 'led_o[15]'. [C:/Users/14315/Desktop/vivado/第二次实验/icf.xdc:60]
+Finished Parsing XDC File [C:/Users/14315/Desktop/vivado/第二次实验/icf.xdc]
+WARNING: [Project 1-498] One or more constraints failed evaluation while reading constraint file [C:/Users/14315/Desktop/vivado/第二次实验/icf.xdc] and the design contains unresolved black boxes. These constraints will be read post-synthesis (as long as their source constraint file is marked as used_in_implementation) and should be applied correctly then. You should review the constraints listed in the file [.Xil/CPU_propImpl.xdc] and check the run log file to verify that these constraints were correctly applied.
+INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/14315/Desktop/vivado/第二次实验/icf.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/CPU_propImpl.xdc].
+Resolution: To avoid this warning, move constraints listed in [.Xil/CPU_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [E:/vivado/RV5/RV5/RV5.runs/synth_2/dont_touch.xdc]
+Finished Parsing XDC File [E:/vivado/RV5/RV5/RV5.runs/synth_2/dont_touch.xdc]
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1521.812 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.039 . Memory (MB): peak = 1521.812 ; gain = 0.000
+INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
+INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
+INFO: [Synth 8-11241] undeclared symbol 'REGCCE', assumed default net type 'wire' [D:/Environment/vivado/Vivado/2022.2/data/verilog/src/unimacro/BRAM_SINGLE_MACRO.v:2170]
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 1521.812 ; gain = 700.004
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7a100tcsg324-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 1521.812 ; gain = 700.004
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+Applied set_property KEEP_HIERARCHY = SOFT for U_imem/your_instance_name. (constraint file  auto generated constraint).
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 1521.812 ; gain = 700.004
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:32 ; elapsed = 00:00:33 . Memory (MB): peak = 1521.812 ; gain = 700.004
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input   32 Bit       Adders := 5     
+	   3 Input   32 Bit       Adders := 1     
+	   2 Input    8 Bit       Adders := 1     
+	   2 Input    5 Bit       Adders := 1     
+	   2 Input    3 Bit       Adders := 1     
++---XORs : 
+	   2 Input     32 Bit         XORs := 1     
++---Registers : 
+	               32 Bit    Registers := 51    
+	                8 Bit    Registers := 258   
+	                5 Bit    Registers := 1     
+	                4 Bit    Registers := 1     
+	                3 Bit    Registers := 1     
+	                1 Bit    Registers := 18    
++---Muxes : 
+	   2 Input   32 Bit        Muxes := 27    
+	   5 Input   32 Bit        Muxes := 1     
+	   3 Input   32 Bit        Muxes := 1     
+	   4 Input   32 Bit        Muxes := 2     
+	   6 Input   32 Bit        Muxes := 1     
+	   3 Input    8 Bit        Muxes := 208   
+	   2 Input    8 Bit        Muxes := 1280  
+	   4 Input    8 Bit        Muxes := 258   
+	   6 Input    8 Bit        Muxes := 2     
+	   8 Input    8 Bit        Muxes := 1     
+	   2 Input    4 Bit        Muxes := 2     
+	  14 Input    4 Bit        Muxes := 1     
+	   6 Input    3 Bit        Muxes := 2     
+	   3 Input    2 Bit        Muxes := 18    
+	   2 Input    2 Bit        Muxes := 5     
+	   2 Input    1 Bit        Muxes := 15    
+	   6 Input    1 Bit        Muxes := 3     
+	   3 Input    1 Bit        Muxes := 1     
+	   4 Input    1 Bit        Muxes := 1     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 240 (col length:80)
+BRAMs: 270 (col length: RAMB18 80 RAMB36 40)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:01:51 ; elapsed = 00:01:53 . Memory (MB): peak = 1941.594 ; gain = 1119.785
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:55 ; elapsed = 00:01:58 . Memory (MB): peak = 1941.594 ; gain = 1119.785
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:02:04 ; elapsed = 00:02:06 . Memory (MB): peak = 1941.594 ; gain = 1119.785
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:02:11 ; elapsed = 00:02:14 . Memory (MB): peak = 1941.594 ; gain = 1119.785
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:02:17 ; elapsed = 00:02:20 . Memory (MB): peak = 1941.594 ; gain = 1119.785
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:02:18 ; elapsed = 00:02:20 . Memory (MB): peak = 1941.594 ; gain = 1119.785
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:02:19 ; elapsed = 00:02:21 . Memory (MB): peak = 1941.594 ; gain = 1119.785
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:02:19 ; elapsed = 00:02:22 . Memory (MB): peak = 1941.594 ; gain = 1119.785
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:02:20 ; elapsed = 00:02:23 . Memory (MB): peak = 1941.594 ; gain = 1119.785
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:02:20 ; elapsed = 00:02:23 . Memory (MB): peak = 1941.594 ; gain = 1119.785
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++------+--------------+----------+
+|      |BlackBox name |Instances |
++------+--------------+----------+
+|1     |imem          |         1|
++------+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |imem   |     1|
+|2     |BUFG   |     2|
+|3     |CARRY4 |    70|
+|4     |LUT1   |    18|
+|5     |LUT2   |   441|
+|6     |LUT3   |   379|
+|7     |LUT4   |   667|
+|8     |LUT5   |  3214|
+|9     |LUT6   | 11466|
+|10    |MUXF7  |  1920|
+|11    |MUXF8  |   776|
+|12    |FDCE   |  2660|
+|13    |FDPE   |  1111|
+|14    |FDRE   |    44|
+|15    |IBUF   |     9|
+|16    |OBUF   |    16|
++------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:02:20 ; elapsed = 00:02:23 . Memory (MB): peak = 1941.594 ; gain = 1119.785
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 1 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:02:08 ; elapsed = 00:02:19 . Memory (MB): peak = 1941.594 ; gain = 1119.785
+Synthesis Optimization Complete : Time (s): cpu = 00:02:20 ; elapsed = 00:02:23 . Memory (MB): peak = 1941.594 ; gain = 1119.785
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.271 . Memory (MB): peak = 1941.594 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 2766 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1941.594 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete, checksum: 4548eec
+INFO: [Common 17-83] Releasing license: Synthesis
+74 Infos, 111 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:02:27 ; elapsed = 00:02:31 . Memory (MB): peak = 1941.594 ; gain = 1513.172
+INFO: [Common 17-1381] The checkpoint 'E:/vivado/RV5/RV5/RV5.runs/synth_2/CPU.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file CPU_utilization_synth.rpt -pb CPU_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Sun Apr  9 15:46:19 2023...
